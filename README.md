@@ -8,6 +8,7 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 |---|---|---|---|---|
 | 1811 | konduktor Scheuerwasser młodszy, kopia z 1835 r. | 150 prętów reńskich ≈ 565 m | Archiwum Państwowe w Opolu, zespół Rejencja Opolska (nr 1191), seria Mapy i plany IX, sygn. 81 | ok. 20 m |
 | 1890 | geometra Weymann | 1:8000 | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/9b189dde-cd14-41d8-885f-6ac1b62f0c5c?page=0) | ok. 9 m |
+| 1908 | Woerl's Reisebücherverlag, Lipsk (plan z przewodnika) | bez podziałki | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/52c71138-9151-42d5-ab13-cb1dde0e522a?page=3) | ok. 7 m (na 5 punktach) |
 
 ## Co jest w repozytorium
 
@@ -16,8 +17,9 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | `index.html` | Strona z nakładkami i przełącznikiem planów |
 | `plan1811.jpg` | Skan planu z 1811 r., pomniejszony do 4476 × 3304 pikseli i przycięty do ramki |
 | `plan1890.jpg` | Skan planu z 1890 r., pomniejszony do 4000 × 3450 pikseli |
-| `prudnik-plany.kmz` | Oba plany i wodociąg 1811 do Google Earth |
-| `plan1811.jpg.points`, `plan1890.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
+| `plan1908.jpg` | Plan z 1908 r., przycięty do ramki mapy |
+| `prudnik-plany.kmz` | Wszystkie plany i wodociąg 1811 do Google Earth |
+| `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
 | `dane/` | Punkty kontrolne, położenia numerów z legend i wodociąg 1811 (JSON) |
 | `narzedzia/` | Szablon strony i skrypt, który buduje z niego `index.html`, plik KMZ i pliki punktów |
 
@@ -89,19 +91,19 @@ Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27, domy nr 515 i 516) stoi nad
 | Nr | Obiekt | Oryginał | Nr domu |
 |---|---|---|---|
 | 1 | Sąd rejonowy, ratusz | Amtsgericht, Rathhaus | 1 |
-| 2 | Przytułek, szpital dla kobiet | Siechenhaus, Frauenhospital | 80 (nie zlokalizowano) |
+| 2 | Przytułek, szpital dla kobiet (położenie przybliżone, z planu 1908) | Siechenhaus, Frauenhospital | 80 |
 | 3 | Katolicka szkoła elementarna dla dziewcząt | Kath. Elementarschule (Mädchen) | 87 |
 | 4 | Kościół parafialny (św. Michała) | Kath. Pfarrkirche | 88 |
 | 5 | Gimnazjum i szkoła elementarna | Gymnasium u. Elementarschule | 89 |
 | 6 | Plebania katolicka | Kath. Pfarrei | 90 |
-| 7 | Przytułek św. Łazarza (dla mężczyzn) | Siechenhaus „St. Lazarus” (Männer) | 154 (nie zlokalizowano) |
-| 8 | Królewski Główny Urząd Celny | Königl. Haupt-Zollamt | 167 (nie zlokalizowano) |
-| 9 | Biura magistratu (Herrenhaus) | Magistrats-Büreaus (Herrenhaus) | 168 (nie zlokalizowano) |
+| 7 | Przytułek św. Łazarza (dla mężczyzn) (położenie przeniesione z planu 1908, przybliżone) | Siechenhaus „St. Lazarus” (Männer) | 154 |
+| 8 | Królewski Główny Urząd Celny (położenie przeniesione z planu 1908, przybliżone) | Königl. Haupt-Zollamt | 167 |
+| 9 | Biura magistratu (Herrenhaus) | Magistrats-Büreaus (Herrenhaus) | 168 |
 | 10 | Więzienie miejskie | Stadtgefängniss | 199 |
 | 11 | Szopa sikawek strażackich | Spritzenschuppen | 213 |
 | 12 | Zbrojownia (arsenał) | Zeughaus | 214 (nie zlokalizowano) |
 | 13 | Stajnie garnizonowe i ujeżdżalnia (na terenie zamku) | Garnisonställe u. Reitbahn | 215, 216 |
-| 14 | Kościół ewangelicki | Evang. Kirche | 236 (nie zlokalizowano) |
+| 14 | Kościół ewangelicki | Evang. Kirche | 236 |
 | 15 | Starostwo powiatowe | Kreisverwaltung | 237 |
 | 16 | Więzienie powiatowe (dziś areszt, ul. Kościuszki 7) | Kreis-Gefängniss | 239 |
 | 17 | Koszary garnizonu, stajnie i ujeżdżalnia | Garnison-Kaserne, Ställe u. Reitbahn | 238, 270 |
@@ -112,8 +114,67 @@ Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27, domy nr 515 i 516) stoi nad
 | 22 | Konwent bonifratrów (klasztor) | Convent der barmh. Brüder (Kloster) | 389 |
 | 23 | Lazaret garnizonowy | Garnison-Lazareth | 392 |
 | 24 | Szkoła symultanna (międzywyznaniowa) | Schulgebäude (simultan) | 395 |
-| 25 | Szpital | Krankenhaus | 451 (nie zlokalizowano) |
+| 25 | Szpital (położenie przeniesione z planu 1908, przybliżone) | Krankenhaus | 451 |
 | 26 | Sierociniec Fundacji św. Anny | Waisenhaus „St. Anna Stift” | 457 |
 | 27 | Stacja pomp wodociągowych (przy jazie na Prudniku) | Wasserhebewerk | 515, 516 |
 
-Pozycje oznaczone „nie zlokalizowano” są w legendzie, ale ich numerów domów nie odnaleziono jeszcze na planie.
+Położenie obiektów nr 2, 7, 8 i 25 przeniesiono z planu 1908, więc jest przybliżone. Nr 9 i 14 po przeniesieniu sprawdzono na planie: trafiają w dom nr 168 i w budynek kościoła. Zbrojowni (nr 12) nie zlokalizowano.
+
+## Plan z 1908 roku
+
+*Neustadt O/S*, plan z przewodnika turystycznego wydawnictwa Woerl's Reisebücherverlag z Lipska. Plan jest uproszczony i nie ma podziałki, ale obiekty są rozmieszczone dokładnie.
+
+- Dopasowanie przez podobieństwo na 5 punktach kontrolnych, średni błąd ok. 7 m. Przy tak małej liczbie punktów błąd na obrzeżach planu może być większy.
+- Punkty kontrolne: ratusz, Wieża Woka (nr 13, *Schloßhofturm*), kościół św. Michała, Wieża Bramy Dolnej (nr 37, *Niedertorturm*), areszt przy ul. Kościuszki 7 (nr 16).
+
+### Oczyszczalnia ścieków z 1908 roku
+
+Na planie jest **oczyszczalnia ścieków** (*Kläranlage*, nr 39), na południe od miasta, nad Prudnikiem, poniżej Dolnego Młyna (*Ndr. Mühle*). Według dopasowania leży ok. 50,3136° N, 17,5770° E (±20 m).
+
+### Stacja pomp w 1908 roku
+
+Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27) leży poza ramką planu. Numer 27 jest wydrukowany pod dolną krawędzią, w kolumnie B, poniżej okolic Heilbrunnen. W 1908 r. stacja pomp nie stała już więc nad Prudnikiem przy jazie, jak na planie z 1890 r., tylko na południowym zachodzie, za miastem.
+
+### Legenda planu 1908 (*Erklärung zum Plan von Neustadt O.-Schl.*)
+
+| Nr | Obiekt | Oryginał |
+|---|---|---|
+| 1 | Sąd rejonowy, ratusz | Amtsgericht-Rathaus |
+| 2 | Przytułek, szpital dla kobiet | Siechenhaus-Frauenhospital |
+| 3 | Katolicka szkoła elementarna dla dziewcząt | Kath. Elementarschule (Mädchen) |
+| 4 | Kościół parafialny (św. Michała) | Kath. Pfarrkirche |
+| 5 | Katolicka szkoła elementarna | Kath. Elementarschule |
+| 6 | Plebania katolicka | Kath. Pfarrei |
+| 7 | Przytułek św. Łazarza dla mężczyzn | Siechenhaus St. Lazarus f. Männer |
+| 8 | Królewski Główny Urząd Celny | Kgl. Hauptzollamt |
+| 9 | Biura magistratu | Magistrat-Bureaus-Stadthaus |
+| 10 | Więzienie miejskie | Stadtgefängnis |
+| 11 | Szopa sikawek strażackich | Spritzenschuppen |
+| 12 | Zbrojownia | Zeughaus |
+| 13 | Wieża zamkowa (Wieża Woka) | Schloßhofturm |
+| 14 | Kościół ewangelicki | Evang. Kirche |
+| 15 | Starostwo powiatowe | Kreisverwaltung |
+| 16 | Więzienie powiatowe (dziś areszt) | Kreisgefängnis |
+| 17 | Ujeżdżalnia | Reitbahn |
+| 18 | Sala gimnastyczna | Turnhalle |
+| 19 | Poczta cesarska | Kaiserl. Post |
+| 20 | Synagoga | Synagoge |
+| 21 | Gazownia | Gasanstalt |
+| 22 | Konwent bonifratrów (klasztor) | Convent d. barmh. Brüder (Kloster) |
+| 23 | Lazaret garnizonowy | Garnison-Lazaret |
+| 24 | Szkoła ewangelicka (symultanna) | Evgl. Schulgebäude (Simultan) |
+| 25 | Szpital miejski | Städtisches Krankenhaus |
+| 26 | Sierociniec Fundacji św. Anny | Waisenhaus St. Anna-Stift |
+| 27 | Stacja pomp wodociągowych (poza ramką planu, na południu) | Wasserhebewerk |
+| 28 | Wojskowy urząd prowiantowy (magazyny) | Proviantamt |
+| 29 | Koszary garnizonu | Garnison-Kaserne |
+| 30 | Pomocniczy skład artylerii | Artillerie-Nebendepot |
+| 31 | Kasyno oficerskie | Offizier-Kasino |
+| 32 | Łaźnia miejska | Städt. Badeanstalt |
+| 33 | Katolicki dom czeladzi | Kath. Gesellenhaus |
+| 34 | Królewskie Gimnazjum Katolickie | Kgl. Kath. Gymnasium |
+| 35 | Nowy kościół ewangelicki | Neue Evangel. Kirche |
+| 36 | Szpital Fundacji Maxa i Hedwig Pinkusów | Krankenhaus (Max u. Hedwig Pinkus-Stiftung) |
+| 37 | Wieża Bramy Dolnej | Niedertorturm |
+| 38 | Rzeźnia z chłodnią | Schlachthaus mit Kühlanlage |
+| 39 | Oczyszczalnia ścieków | Kläranlage |

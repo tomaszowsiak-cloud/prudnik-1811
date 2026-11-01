@@ -77,7 +77,9 @@
    "n": 2,
    "house": "80",
    "de": "Siechenhaus, Frauenhospital",
-   "pl": "Przytułek, szpital dla kobiet"
+   "pl": "Przytułek, szpital dla kobiet (położenie przybliżone, z planu 1908)",
+   "u": 2151.0,
+   "v": 2092.8
   },
   {
    "n": 3,
@@ -115,19 +117,25 @@
    "n": 7,
    "house": "154",
    "de": "Siechenhaus „St. Lazarus” (Männer)",
-   "pl": "Przytułek św. Łazarza (dla mężczyzn)"
+   "pl": "Przytułek św. Łazarza (dla mężczyzn) (położenie przeniesione z planu 1908, przybliżone)",
+   "u": 2358.0,
+   "v": 2081.3
   },
   {
    "n": 8,
    "house": "167",
    "de": "Königl. Haupt-Zollamt",
-   "pl": "Królewski Główny Urząd Celny"
+   "pl": "Królewski Główny Urząd Celny (położenie przeniesione z planu 1908, przybliżone)",
+   "u": 1718.1,
+   "v": 2013.6
   },
   {
    "n": 9,
    "house": "168",
    "de": "Magistrats-Büreaus (Herrenhaus)",
-   "pl": "Biura magistratu (Herrenhaus)"
+   "pl": "Biura magistratu (Herrenhaus)",
+   "u": 2288.1,
+   "v": 1886.6
   },
   {
    "n": 10,
@@ -163,7 +171,9 @@
    "n": 14,
    "house": "236",
    "de": "Evang. Kirche",
-   "pl": "Kościół ewangelicki"
+   "pl": "Kościół ewangelicki",
+   "u": 2001.4,
+   "v": 2051.4
   },
   {
    "n": 15,
@@ -249,7 +259,9 @@
    "n": 25,
    "house": "451",
    "de": "Krankenhaus",
-   "pl": "Szpital"
+   "pl": "Szpital (położenie przeniesione z planu 1908, przybliżone)",
+   "u": 2412.0,
+   "v": 2274.4
   },
   {
    "n": 26,

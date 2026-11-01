@@ -1,0 +1,320 @@
+{
+ "points": [
+  {
+   "id": "p0",
+   "name": "Ratusz (nr 1)",
+   "u": 1094,
+   "v": 1014,
+   "lat": 50.321514,
+   "lon": 17.580574,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p1",
+   "name": "Wieża Woka (nr 13, Schloßhofturm)",
+   "u": 977,
+   "v": 905,
+   "lat": 50.322914,
+   "lon": 17.578288,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p2",
+   "name": "Kościół św. Michała (nr 4)",
+   "u": 1065,
+   "v": 1119,
+   "lat": 50.320313,
+   "lon": 17.579909,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p3",
+   "name": "Wieża Bramy Dolnej (nr 37, Niedertorturm)",
+   "u": 1221,
+   "v": 1062,
+   "lat": 50.320925,
+   "lon": 17.582839,
+   "src": "odtur.pl"
+  },
+  {
+   "id": "p4",
+   "name": "Areszt (nr 16, Kreisgefängnis)",
+   "u": 780,
+   "v": 1106,
+   "lat": 50.320645,
+   "lon": 17.574791,
+   "src": "zabytek.pl"
+  }
+ ],
+ "labels": [
+  {
+   "n": 1,
+   "de": "Amtsgericht-Rathaus",
+   "pl": "Sąd rejonowy, ratusz",
+   "u": 1094,
+   "v": 1014
+  },
+  {
+   "n": 2,
+   "de": "Siechenhaus-Frauenhospital",
+   "pl": "Przytułek, szpital dla kobiet",
+   "u": 1022,
+   "v": 1111
+  },
+  {
+   "n": 3,
+   "de": "Kath. Elementarschule (Mädchen)",
+   "pl": "Katolicka szkoła elementarna dla dziewcząt",
+   "u": 1073,
+   "v": 1086
+  },
+  {
+   "n": 4,
+   "de": "Kath. Pfarrkirche",
+   "pl": "Kościół parafialny (św. Michała)",
+   "u": 1065,
+   "v": 1119
+  },
+  {
+   "n": 5,
+   "de": "Kath. Elementarschule",
+   "pl": "Katolicka szkoła elementarna",
+   "u": 1053,
+   "v": 1145
+  },
+  {
+   "n": 6,
+   "de": "Kath. Pfarrei",
+   "pl": "Plebania katolicka",
+   "u": 1099,
+   "v": 1131
+  },
+  {
+   "n": 7,
+   "de": "Siechenhaus St. Lazarus f. Männer",
+   "pl": "Przytułek św. Łazarza dla mężczyzn",
+   "u": 1164,
+   "v": 1101
+  },
+  {
+   "n": 8,
+   "de": "Kgl. Hauptzollamt",
+   "pl": "Królewski Główny Urząd Celny",
+   "u": 724,
+   "v": 1061
+  },
+  {
+   "n": 9,
+   "de": "Magistrat-Bureaus-Stadthaus",
+   "pl": "Biura magistratu",
+   "u": 1114,
+   "v": 968
+  },
+  {
+   "n": 10,
+   "de": "Stadtgefängnis",
+   "pl": "Więzienie miejskie",
+   "u": 1221,
+   "v": 997
+  },
+  {
+   "n": 11,
+   "de": "Spritzenschuppen",
+   "pl": "Szopa sikawek strażackich",
+   "u": 1053,
+   "v": 903
+  },
+  {
+   "n": 12,
+   "de": "Zeughaus",
+   "pl": "Zbrojownia"
+  },
+  {
+   "n": 13,
+   "de": "Schloßhofturm",
+   "pl": "Wieża zamkowa (Wieża Woka)",
+   "u": 977,
+   "v": 905
+  },
+  {
+   "n": 14,
+   "de": "Evang. Kirche",
+   "pl": "Kościół ewangelicki",
+   "u": 905,
+   "v": 1074
+  },
+  {
+   "n": 15,
+   "de": "Kreisverwaltung",
+   "pl": "Starostwo powiatowe",
+   "u": 830,
+   "v": 1072
+  },
+  {
+   "n": 16,
+   "de": "Kreisgefängnis",
+   "pl": "Więzienie powiatowe (dziś areszt)",
+   "u": 780,
+   "v": 1106
+  },
+  {
+   "n": 17,
+   "de": "Reitbahn",
+   "pl": "Ujeżdżalnia",
+   "u": 687,
+   "v": 996
+  },
+  {
+   "n": 18,
+   "de": "Turnhalle",
+   "pl": "Sala gimnastyczna",
+   "u": 785,
+   "v": 1012
+  },
+  {
+   "n": 19,
+   "de": "Kaiserl. Post",
+   "pl": "Poczta cesarska",
+   "u": 845,
+   "v": 1024
+  },
+  {
+   "n": 20,
+   "de": "Synagoge",
+   "pl": "Synagoga",
+   "u": 920,
+   "v": 1039
+  },
+  {
+   "n": 21,
+   "de": "Gasanstalt",
+   "pl": "Gazownia",
+   "u": 698,
+   "v": 559
+  },
+  {
+   "n": 22,
+   "de": "Convent d. barmh. Brüder (Kloster)",
+   "pl": "Konwent bonifratrów (klasztor)",
+   "u": 921,
+   "v": 926
+  },
+  {
+   "n": 23,
+   "de": "Garnison-Lazaret",
+   "pl": "Lazaret garnizonowy",
+   "u": 893,
+   "v": 1287
+  },
+  {
+   "n": 24,
+   "de": "Evgl. Schulgebäude (Simultan)",
+   "pl": "Szkoła ewangelicka (symultanna)",
+   "u": 961,
+   "v": 1223
+  },
+  {
+   "n": 25,
+   "de": "Städtisches Krankenhaus",
+   "pl": "Szpital miejski",
+   "u": 1203,
+   "v": 1233
+  },
+  {
+   "n": 26,
+   "de": "Waisenhaus St. Anna-Stift",
+   "pl": "Sierociniec Fundacji św. Anny",
+   "u": 1224,
+   "v": 1192
+  },
+  {
+   "n": 27,
+   "de": "Wasserhebewerk",
+   "pl": "Stacja pomp wodociągowych (poza ramką planu, na południu)"
+  },
+  {
+   "n": 28,
+   "de": "Proviantamt",
+   "pl": "Wojskowy urząd prowiantowy (magazyny)",
+   "u": 440,
+   "v": 1601
+  },
+  {
+   "n": 29,
+   "de": "Garnison-Kaserne",
+   "pl": "Koszary garnizonu",
+   "u": 518,
+   "v": 1383
+  },
+  {
+   "n": 30,
+   "de": "Artillerie-Nebendepot",
+   "pl": "Pomocniczy skład artylerii",
+   "u": 528,
+   "v": 1283
+  },
+  {
+   "n": 31,
+   "de": "Offizier-Kasino",
+   "pl": "Kasyno oficerskie",
+   "u": 699,
+   "v": 1149
+  },
+  {
+   "n": 32,
+   "de": "Städt. Badeanstalt",
+   "pl": "Łaźnia miejska",
+   "u": 762,
+   "v": 1149
+  },
+  {
+   "n": 33,
+   "de": "Kath. Gesellenhaus",
+   "pl": "Katolicki dom czeladzi",
+   "u": 787,
+   "v": 1067
+  },
+  {
+   "n": 34,
+   "de": "Kgl. Kath. Gymnasium",
+   "pl": "Królewskie Gimnazjum Katolickie",
+   "u": 932,
+   "v": 1196
+  },
+  {
+   "n": 35,
+   "de": "Neue Evangel. Kirche",
+   "pl": "Nowy kościół ewangelicki",
+   "u": 940,
+   "v": 1139
+  },
+  {
+   "n": 36,
+   "de": "Krankenhaus (Max u. Hedwig Pinkus-Stiftung)",
+   "pl": "Szpital Fundacji Maxa i Hedwig Pinkusów",
+   "u": 450,
+   "v": 872
+  },
+  {
+   "n": 37,
+   "de": "Niedertorturm",
+   "pl": "Wieża Bramy Dolnej",
+   "u": 1221,
+   "v": 1062
+  },
+  {
+   "n": 38,
+   "de": "Schlachthaus mit Kühlanlage",
+   "pl": "Rzeźnia z chłodnią",
+   "u": 1492,
+   "v": 1469
+  },
+  {
+   "n": 39,
+   "de": "Kläranlage",
+   "pl": "Oczyszczalnia ścieków",
+   "u": 924,
+   "v": 1702
+  }
+ ]
+}
