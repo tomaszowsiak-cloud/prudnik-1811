@@ -48,60 +48,609 @@
  ],
  "labels": [
   {
-   "n": 1,
-   "de": "Garnison-Verwaltung (nr 1–46)",
-   "pl": "Zarząd garnizonu: koszary baterii, stajnie, ujeżdżalnie, warsztaty (kolor niebieski)",
-   "u": 260,
+   "n": "1",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Garnison-Verwaltungs-Gebäude",
+   "pl": "Budynek zarządu garnizonu",
+   "u": 285,
+   "v": 1206
+  },
+  {
+   "n": "2",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Garnison-Waschanstalt",
+   "pl": "Pralnia garnizonowa",
+   "u": 271,
+   "v": 1212
+  },
+  {
+   "n": "3",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Krankenstall",
+   "pl": "Stajnia dla chorych koni",
+   "u": 262,
+   "v": 1205
+  },
+  {
+   "n": "4",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Waffenmeister-Werkstatt",
+   "pl": "Warsztat rusznikarza",
+   "u": 281,
+   "v": 1186
+  },
+  {
+   "n": "5",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte",
+   "pl": "Gnojownia",
+   "u": 256,
+   "v": 1174
+  },
+  {
+   "n": "6",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Geschützschuppen",
+   "pl": "Szopa na działa",
+   "u": 229,
+   "v": 1154
+  },
+  {
+   "n": "7",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Asch- und Müllgrube",
+   "pl": "Dół na popiół i śmieci",
+   "u": 314,
+   "v": 1171
+  },
+  {
+   "n": "8",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Stabsgebäude",
+   "pl": "Budynek sztabu",
+   "u": 345,
+   "v": 1182
+  },
+  {
+   "n": "9",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Kammergebäude",
+   "pl": "Budynek magazynu mundurowego (kwatermistrzowski)",
+   "u": 342,
+   "v": 1145
+  },
+  {
+   "n": "10",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 6",
+   "pl": "Koszary 6. baterii",
+   "u": 305,
+   "v": 1145
+  },
+  {
+   "n": "11",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Latrine 4 mit Asch- und Müllgrube",
+   "pl": "Latryna nr 4 z dołem na popiół i śmieci",
+   "u": 335,
+   "v": 1114
+  },
+  {
+   "n": "12",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 5",
+   "pl": "Koszary 5. baterii",
+   "u": 262,
+   "v": 1097
+  },
+  {
+   "n": "13",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Wirthschaftsgebäude",
+   "pl": "Budynek gospodarczy",
+   "u": 284,
+   "v": 1087
+  },
+  {
+   "n": "14",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 4",
+   "pl": "Koszary 4. baterii",
+   "u": 255,
+   "v": 1067
+  },
+  {
+   "n": "14a",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Geschützschuppen (dopisek odręczny)",
+   "pl": "Szopa na działa (dopisek odręczny)"
+  },
+  {
+   "n": "15",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Latrine 3 mit Asch- und Müllgrube",
+   "pl": "Latryna nr 3 z dołem na popiół i śmieci",
+   "u": 196,
+   "v": 1042
+  },
+  {
+   "n": "16",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 3",
+   "pl": "Koszary 3. baterii",
+   "u": 227,
+   "v": 1032
+  },
+  {
+   "n": "17",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Latrine 2 mit Asch- und Müllgrube",
+   "pl": "Latryna nr 2 z dołem na popiół i śmieci",
+   "u": 256,
+   "v": 1004
+  },
+  {
+   "n": "18",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 2",
+   "pl": "Koszary 2. baterii",
+   "u": 180,
+   "v": 985
+  },
+  {
+   "n": "19",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Wirthschaftsgebäude",
+   "pl": "Budynek gospodarczy",
+   "u": 204,
+   "v": 977
+  },
+  {
+   "n": "20",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Richtübungsplatz",
+   "pl": "Plac ćwiczeń w celowaniu",
+   "u": 56,
+   "v": 1047
+  },
+  {
+   "n": "21",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Geschützschuppen",
+   "pl": "Szopa na działa",
+   "u": 105,
    "v": 980
   },
   {
-   "n": 2,
-   "de": "Artillerie-Depot (nr 53–59d)",
-   "pl": "Skład artylerii: wozownie, magazyny pocisków i prochu, warsztaty amunicyjne (kolor czerwony kreskowany)",
-   "u": 455,
-   "v": 920
+   "n": "22",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Latrine 1 mit Asch- und Müllgrube",
+   "pl": "Latryna nr 1 z dołem na popiół i śmieci",
+   "u": 130,
+   "v": 967
   },
   {
-   "n": 3,
-   "de": "Proviant-Amt (nr 47–52)",
-   "pl": "Urząd prowiantowy: magazyn zboża, budynek mieszkalny, waga, stodoła (kolor żółty)",
+   "n": "23",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Kaserne 1",
+   "pl": "Koszary 1. baterii",
+   "u": 160,
+   "v": 939
+  },
+  {
+   "n": "24",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Vorführbahn",
+   "pl": "Tor do prezentacji koni",
+   "u": 169,
+   "v": 913
+  },
+  {
+   "n": "25",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Beschlagschmiede",
+   "pl": "Kuźnia podkuwacza",
+   "u": 182,
+   "v": 890
+  },
+  {
+   "n": "26",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Waffenmeister-Werkstatt",
+   "pl": "Warsztat rusznikarza"
+  },
+  {
+   "n": "27",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Sprunggarten",
+   "pl": "Ogród skokowy (do ćwiczeń jazdy)",
+   "u": 240,
+   "v": 852
+  },
+  {
+   "n": "28",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 1",
+   "pl": "Stajnia 1. baterii",
+   "u": 250,
+   "v": 895
+  },
+  {
+   "n": "29",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 6",
+   "pl": "Gnojownia nr 6",
+   "u": 281,
+   "v": 857
+  },
+  {
+   "n": "30",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Reitbahn 1",
+   "pl": "Ujeżdżalnia nr 1",
+   "u": 267,
+   "v": 930
+  },
+  {
+   "n": "31",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 2",
+   "pl": "Stajnia 2. baterii",
+   "u": 307,
+   "v": 905
+  },
+  {
+   "n": "32",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 3",
+   "pl": "Stajnia 3. baterii",
+   "u": 314,
+   "v": 984
+  },
+  {
+   "n": "33",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 4",
+   "pl": "Stajnia 4. baterii",
+   "u": 330,
+   "v": 1006
+  },
+  {
+   "n": "34",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 5 mit Stalllatrine",
+   "pl": "Gnojownia nr 5 z latryną stajenną"
+  },
+  {
+   "n": "35",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 4",
+   "pl": "Gnojownia nr 4",
+   "u": 355,
+   "v": 954
+  },
+  {
+   "n": "36",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 3",
+   "pl": "Gnojownia nr 3",
+   "u": 364,
+   "v": 962
+  },
+  {
+   "n": "37",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 2",
+   "pl": "Gnojownia nr 2",
+   "u": 370,
+   "v": 971
+  },
+  {
+   "n": "38",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Reitbahn 2",
+   "pl": "Ujeżdżalnia nr 2",
+   "u": 345,
+   "v": 1037
+  },
+  {
+   "n": "39",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 5",
+   "pl": "Stajnia 5. baterii",
+   "u": 386,
+   "v": 1014
+  },
+  {
+   "n": "40",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Batterie-Stall 6",
+   "pl": "Stajnia 6. baterii",
+   "u": 376,
+   "v": 1054
+  },
+  {
+   "n": "41",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Beschlagschmiede",
+   "pl": "Kuźnia podkuwacza",
+   "u": 406,
+   "v": 1040
+  },
+  {
+   "n": "42",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Vorführbahn",
+   "pl": "Tor do prezentacji koni",
+   "u": 437,
+   "v": 1056
+  },
+  {
+   "n": "43",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Düngerstätte 1 mit Stalllatrine",
+   "pl": "Gnojownia nr 1 z latryną stajenną",
+   "u": 422,
+   "v": 1066
+  },
+  {
+   "n": "44",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Familien-Wohnhaus",
+   "pl": "Dom mieszkalny dla rodzin",
+   "u": 397,
+   "v": 1076
+  },
+  {
+   "n": "45",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Asch- und Müllgrube",
+   "pl": "Dół na popiół i śmieci",
+   "u": 381,
+   "v": 1094
+  },
+  {
+   "n": "46",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Familien-Wohnhaus",
+   "pl": "Dom mieszkalny dla rodzin",
+   "u": 371,
+   "v": 1114
+  },
+  {
+   "n": "60",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Offizier-Speise-Anstalt",
+   "pl": "Kasyno (stołówka) oficerska",
+   "u": 827,
+   "v": 877
+  },
+  {
+   "n": "61",
+   "grp": "Zarząd garnizonu (niebieski)",
+   "de": "Asch- und Müllgrube",
+   "pl": "Dół na popiół i śmieci przy kasynie",
+   "u": 800,
+   "v": 880
+  },
+  {
+   "n": "47",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Körner-Magazin",
+   "pl": "Magazyn zboża",
+   "u": 212,
+   "v": 1256
+  },
+  {
+   "n": "48",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Dienstwohngebäude",
+   "pl": "Budynek mieszkań służbowych",
+   "u": 244,
+   "v": 1245
+  },
+  {
+   "n": "49",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Asch- und Müllgrube",
+   "pl": "Dół na popiół i śmieci",
+   "u": 230,
+   "v": 1206
+  },
+  {
+   "n": "50",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Waage",
+   "pl": "Waga",
+   "u": 216,
+   "v": 1197
+  },
+  {
+   "n": "51",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Latrine",
+   "pl": "Latryna",
+   "u": 177,
+   "v": 1234
+  },
+  {
+   "n": "51a",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Wohlfahrtsgebäude (dopisek odręczny)",
+   "pl": "Budynek socjalny (dopisek odręczny)",
+   "u": 210,
+   "v": 1234
+  },
+  {
+   "n": "52",
+   "grp": "Urząd prowiantowy (żółty)",
+   "de": "Scheune",
+   "pl": "Stodoła",
    "u": 195,
-   "v": 1230
+   "v": 1195
   },
   {
-   "n": 4,
-   "de": "Lazareth (nr 62–66)",
-   "pl": "Lazaret wojskowy: budynek główny, kostnica, kotłownia (kolor czerwony)",
-   "u": 935,
-   "v": 1225
+   "n": "53",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Wagenhaus 1",
+   "pl": "Wozownia nr 1",
+   "u": 452,
+   "v": 985
   },
   {
-   "n": 5,
-   "de": "Gasanstalt",
-   "pl": "Gazownia",
-   "u": 1277,
-   "v": 322
+   "n": "54",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Wagenhaus 2",
+   "pl": "Wozownia nr 2",
+   "u": 435,
+   "v": 975
   },
   {
-   "n": 6,
-   "de": "Ring",
-   "pl": "Rynek",
-   "u": 1320,
-   "v": 1063
+   "n": "55",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Geschoss- und Zündungen-Magazin",
+   "pl": "Magazyn pocisków i zapalników",
+   "u": 389,
+   "v": 822
   },
   {
-   "n": 7,
-   "de": "Kirchhof",
-   "pl": "Cmentarz",
-   "u": 600,
-   "v": 700
+   "n": "56",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Wagenhaus 3",
+   "pl": "Wozownia nr 3",
+   "u": 412,
+   "v": 922
   },
   {
-   "n": 8,
-   "de": "Bahnhof",
-   "pl": "Dworzec kolejowy",
-   "u": 1578,
-   "v": 222
+   "n": "56a",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Wagenhaus 4 (dopisek odręczny)",
+   "pl": "Wozownia nr 4 (dopisek odręczny)",
+   "u": 460,
+   "v": 935
+  },
+  {
+   "n": "57",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Patronenhaus",
+   "pl": "Magazyn amunicji (nabojów)",
+   "u": 354,
+   "v": 894
+  },
+  {
+   "n": "58",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Friedenspulvermagazin 1",
+   "pl": "Magazyn prochu na czas pokoju nr 1",
+   "u": 396,
+   "v": 890
+  },
+  {
+   "n": "59",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Friedenspulvermagazin 2",
+   "pl": "Magazyn prochu na czas pokoju nr 2",
+   "u": 420,
+   "v": 876
+  },
+  {
+   "n": "59a",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Munitions-Arbeitsschuppen",
+   "pl": "Szopa do prac z amunicją",
+   "u": 345,
+   "v": 867
+  },
+  {
+   "n": "59b",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Latrine mit Öllagerraum",
+   "pl": "Latryna z magazynem oleju",
+   "u": 447,
+   "v": 892
+  },
+  {
+   "n": "59c",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Dienstwohngebäude",
+   "pl": "Budynek mieszkań służbowych",
+   "u": 510,
+   "v": 967
+  },
+  {
+   "n": "59d",
+   "grp": "Skład artylerii (czerwony kreskowany)",
+   "de": "Stallgebäude",
+   "pl": "Budynek stajni",
+   "u": 506,
+   "v": 954
+  },
+  {
+   "n": "62",
+   "grp": "Lazaret (czerwony)",
+   "de": "Latrine und Nebengebäude",
+   "pl": "Latryna i budynek pomocniczy",
+   "u": 901,
+   "v": 1226
+  },
+  {
+   "n": "63",
+   "grp": "Lazaret (czerwony)",
+   "de": "Lazarett-Hauptgebäude",
+   "pl": "Budynek główny lazaretu",
+   "u": 906,
+   "v": 1216
+  },
+  {
+   "n": "64",
+   "grp": "Lazaret (czerwony)",
+   "de": "Asch- und Müllgrube",
+   "pl": "Dół na popiół i śmieci",
+   "u": 910,
+   "v": 1228
+  },
+  {
+   "n": "65",
+   "grp": "Lazaret (czerwony)",
+   "de": "Leichenhaus",
+   "pl": "Kostnica",
+   "u": 932,
+   "v": 1247
+  },
+  {
+   "n": "66",
+   "grp": "Lazaret (czerwony)",
+   "de": "Kohlenschuppen",
+   "pl": "Szopa na węgiel",
+   "u": 940,
+   "v": 1269
+  },
+  {
+   "n": "67",
+   "grp": "Inne obiekty",
+   "de": "Schiessstand (Schützengilde)",
+   "pl": "Strzelnica (bractwo kurkowe)",
+   "u": 95,
+   "v": 1245
+  },
+  {
+   "n": "68",
+   "grp": "Inne obiekty",
+   "de": "Grosser Exerzierplatz (Städtisch), 794 947 m² (dopisek)",
+   "pl": "Duży plac ćwiczeń (miejski), na wstawce przy Buchelsdorf (Dębowcu)"
+  },
+  {
+   "n": "69",
+   "grp": "Inne obiekty",
+   "de": "Brunnen (dopisek; pierwotnie: Badeanstalt)",
+   "pl": "Studnia (dopisek odręczny w miejsce skreślonej łaźni), na wstawce"
+  },
+  {
+   "n": "70",
+   "grp": "Inne obiekty",
+   "de": "Kleiner Exerzierplatz, 326… m² (dopisek; pierwotnie: Pulverhaus)",
+   "pl": "Mały plac ćwiczeń (dopisek odręczny w miejsce skreślonej prochowni)"
   }
- ]
+ ],
+ "legendNote": "Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w innej skali, więc nie da się do nich przejść na mapie."
 }

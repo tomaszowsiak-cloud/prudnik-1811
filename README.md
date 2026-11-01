@@ -228,6 +228,95 @@ Numeracja w tej tabeli jest robocza: plan 1913 ma własne numery działek i budy
 
 Część wpisów poprawiono odręcznie, m.in. dopisano budynek socjalny (*Wohlfahrtsgebäude*) i powierzchnię placu ćwiczeń.
 
+### Legenda planu garnizonu
+
+| Nr | Obiekt | Oryginał |
+|---|---|---|
+| | **Zarząd garnizonu (niebieski)** | |
+| 1 | Budynek zarządu garnizonu | Garnison-Verwaltungs-Gebäude |
+| 2 | Pralnia garnizonowa | Garnison-Waschanstalt |
+| 3 | Stajnia dla chorych koni | Krankenstall |
+| 4 | Warsztat rusznikarza | Waffenmeister-Werkstatt |
+| 5 | Gnojownia | Düngerstätte |
+| 6 | Szopa na działa | Geschützschuppen |
+| 7 | Dół na popiół i śmieci | Asch- und Müllgrube |
+| 8 | Budynek sztabu | Stabsgebäude |
+| 9 | Budynek magazynu mundurowego (kwatermistrzowski) | Kammergebäude |
+| 10 | Koszary 6. baterii | Batterie-Kaserne 6 |
+| 11 | Latryna nr 4 z dołem na popiół i śmieci | Latrine 4 mit Asch- und Müllgrube |
+| 12 | Koszary 5. baterii | Batterie-Kaserne 5 |
+| 13 | Budynek gospodarczy | Wirthschaftsgebäude |
+| 14 | Koszary 4. baterii | Batterie-Kaserne 4 |
+| 14a | Szopa na działa (dopisek odręczny) | Geschützschuppen (dopisek odręczny) |
+| 15 | Latryna nr 3 z dołem na popiół i śmieci | Latrine 3 mit Asch- und Müllgrube |
+| 16 | Koszary 3. baterii | Batterie-Kaserne 3 |
+| 17 | Latryna nr 2 z dołem na popiół i śmieci | Latrine 2 mit Asch- und Müllgrube |
+| 18 | Koszary 2. baterii | Batterie-Kaserne 2 |
+| 19 | Budynek gospodarczy | Wirthschaftsgebäude |
+| 20 | Plac ćwiczeń w celowaniu | Richtübungsplatz |
+| 21 | Szopa na działa | Geschützschuppen |
+| 22 | Latryna nr 1 z dołem na popiół i śmieci | Latrine 1 mit Asch- und Müllgrube |
+| 23 | Koszary 1. baterii | Batterie-Kaserne 1 |
+| 24 | Tor do prezentacji koni | Vorführbahn |
+| 25 | Kuźnia podkuwacza | Beschlagschmiede |
+| 26 | Warsztat rusznikarza | Waffenmeister-Werkstatt |
+| 27 | Ogród skokowy (do ćwiczeń jazdy) | Sprunggarten |
+| 28 | Stajnia 1. baterii | Batterie-Stall 1 |
+| 29 | Gnojownia nr 6 | Düngerstätte 6 |
+| 30 | Ujeżdżalnia nr 1 | Reitbahn 1 |
+| 31 | Stajnia 2. baterii | Batterie-Stall 2 |
+| 32 | Stajnia 3. baterii | Batterie-Stall 3 |
+| 33 | Stajnia 4. baterii | Batterie-Stall 4 |
+| 34 | Gnojownia nr 5 z latryną stajenną | Düngerstätte 5 mit Stalllatrine |
+| 35 | Gnojownia nr 4 | Düngerstätte 4 |
+| 36 | Gnojownia nr 3 | Düngerstätte 3 |
+| 37 | Gnojownia nr 2 | Düngerstätte 2 |
+| 38 | Ujeżdżalnia nr 2 | Reitbahn 2 |
+| 39 | Stajnia 5. baterii | Batterie-Stall 5 |
+| 40 | Stajnia 6. baterii | Batterie-Stall 6 |
+| 41 | Kuźnia podkuwacza | Beschlagschmiede |
+| 42 | Tor do prezentacji koni | Vorführbahn |
+| 43 | Gnojownia nr 1 z latryną stajenną | Düngerstätte 1 mit Stalllatrine |
+| 44 | Dom mieszkalny dla rodzin | Familien-Wohnhaus |
+| 45 | Dół na popiół i śmieci | Asch- und Müllgrube |
+| 46 | Dom mieszkalny dla rodzin | Familien-Wohnhaus |
+| 60 | Kasyno (stołówka) oficerska | Offizier-Speise-Anstalt |
+| 61 | Dół na popiół i śmieci przy kasynie | Asch- und Müllgrube |
+| | **Urząd prowiantowy (żółty)** | |
+| 47 | Magazyn zboża | Körner-Magazin |
+| 48 | Budynek mieszkań służbowych | Dienstwohngebäude |
+| 49 | Dół na popiół i śmieci | Asch- und Müllgrube |
+| 50 | Waga | Waage |
+| 51 | Latryna | Latrine |
+| 51a | Budynek socjalny (dopisek odręczny) | Wohlfahrtsgebäude (dopisek odręczny) |
+| 52 | Stodoła | Scheune |
+| | **Skład artylerii (czerwony kreskowany)** | |
+| 53 | Wozownia nr 1 | Wagenhaus 1 |
+| 54 | Wozownia nr 2 | Wagenhaus 2 |
+| 55 | Magazyn pocisków i zapalników | Geschoss- und Zündungen-Magazin |
+| 56 | Wozownia nr 3 | Wagenhaus 3 |
+| 56a | Wozownia nr 4 (dopisek odręczny) | Wagenhaus 4 (dopisek odręczny) |
+| 57 | Magazyn amunicji (nabojów) | Patronenhaus |
+| 58 | Magazyn prochu na czas pokoju nr 1 | Friedenspulvermagazin 1 |
+| 59 | Magazyn prochu na czas pokoju nr 2 | Friedenspulvermagazin 2 |
+| 59a | Szopa do prac z amunicją | Munitions-Arbeitsschuppen |
+| 59b | Latryna z magazynem oleju | Latrine mit Öllagerraum |
+| 59c | Budynek mieszkań służbowych | Dienstwohngebäude |
+| 59d | Budynek stajni | Stallgebäude |
+| | **Lazaret (czerwony)** | |
+| 62 | Latryna i budynek pomocniczy | Latrine und Nebengebäude |
+| 63 | Budynek główny lazaretu | Lazarett-Hauptgebäude |
+| 64 | Dół na popiół i śmieci | Asch- und Müllgrube |
+| 65 | Kostnica | Leichenhaus |
+| 66 | Szopa na węgiel | Kohlenschuppen |
+| | **Inne obiekty** | |
+| 67 | Strzelnica (bractwo kurkowe) | Schiessstand (Schützengilde) |
+| 68 | Duży plac ćwiczeń (miejski), na wstawce przy Buchelsdorf (Dębowcu) | Grosser Exerzierplatz (Städtisch), 794 947 m² (dopisek) |
+| 69 | Studnia (dopisek odręczny w miejsce skreślonej łaźni), na wstawce | Brunnen (dopisek; pierwotnie: Badeanstalt) |
+| 70 | Mały plac ćwiczeń (dopisek odręczny w miejsce skreślonej prochowni) | Kleiner Exerzierplatz, 326… m² (dopisek; pierwotnie: Pulverhaus) |
+
+Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w innej skali, więc nie da się do nich przejść na mapie.
+
 **Datowanie.** Plan nie ma daty. Na planie z 1890 r. koszary są jeszcze w mieście przy Wiesener Straße, a duży kompleks koszarowy na południowym zachodzie pojawia się dopiero na planach z 1908 i 1913 r. Plan garnizonu powstał więc najpewniej po 1890 r., a przed I wojną światową. To oszacowanie z zawartości planu, a nie z dokumentu.
 
 **Dopasowanie.** Plan jest obrócony o ok. 33° względem północy. Dopasowano go przez ratusz, kościół św. Michała i trzy punkty wspólne z planem 1890 (zbiornik gazowni, most przy Bramie Dolnej, studnia na Rynku). Średni błąd ok. 12 m, ale sumuje się z błędem planu 1890.

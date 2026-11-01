@@ -28,7 +28,7 @@ plans=[
   meta="Plan miasta z zaznaczonymi obiektami wojskowymi: zarząd garnizonu, skład artylerii, urząd prowiantowy, lazaret. Skala 1:5000, wstawka okolic 1:25 000. Plan z teki planów miast garnizonowych VI Korpusu Armii (Wrocław). Data nieznana; zawartość wskazuje na okres po 1890 r., a przed I wojną światową.",
   source="Archiwum Państwowe we Wrocławiu, sygn. 82/329/0/-/10: „Situations-Pläne der größeren Garnison-Städte im Bezirk des VI. Armee-Corps”, wyd. Brehmer & Minuth. Skan: polska-org.pl/11454549,foto.html?idEntity=521918",
   scaleNote="Skala oryginału 1:5000. Dopasowanie przez punkty wspólne z planem 1890 (gazownia, most przy Bramie Dolnej, studnia na Rynku), więc błąd sumuje się z błędem planu 1890.",
-  points=dg['points'],labels=dg['labels'])]
+  points=dg['points'],labels=dg['labels'],legendNote=dg.get('legendNote',''))]
 data={"plans":[{k:v for k,v in p.items() if k!='src_file'} for p in plans],"water":d11['water']}
 html=open('template.html').read().replace('__DATA__',json.dumps(data,ensure_ascii=False))
 open(f'{OUT}/index.html','w').write(html)

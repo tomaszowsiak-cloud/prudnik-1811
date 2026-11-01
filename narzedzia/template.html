@@ -56,13 +56,19 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 .tabs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
 .tabs button{font:600 .95rem var(--mono);padding:6px 14px}
 .tabs button[aria-selected="true"]{background:var(--carmine);border-color:var(--carmine);color:#fff}
-.leg{list-style:none;margin:0;padding:0;font-size:.86rem;max-height:260px;overflow-y:auto;border-top:1px solid var(--rule)}
-.leg li{display:flex;gap:8px;padding:5px 2px;border-bottom:1px solid var(--rule);align-items:baseline}
-.leg li b{font:600 .8rem var(--mono);min-width:2.2ch;text-align:right;color:var(--carmine)}
-.leg li span{flex:1;min-width:0}
-.leg li small{color:var(--muted)}
-.leg li button{border:none;background:none;color:var(--carmine);padding:0 4px;font-size:.8rem}
-.leg li.none b{color:var(--muted)}
+.leg{list-style:none;margin:0;padding:0;font-size:.86rem;max-height:340px;overflow-y:auto;border-top:1px solid var(--rule)}
+.leg li{border-bottom:1px solid var(--rule)}
+.leg li.grp{font:600 .7rem/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:12px 2px 6px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--panel)}
+.leg li > button{display:flex;gap:8px;width:100%;align-items:baseline;text-align:left;border:none;border-radius:0;background:none;padding:6px 4px;color:var(--ink);font:inherit;cursor:pointer}
+.leg li > button:hover,.leg li > button.on{background:var(--carmine-soft)}
+.leg li > button:disabled{cursor:default;color:var(--muted)}
+.leg li > button:disabled:hover{background:none}
+.leg b{font:600 .8rem var(--mono);min-width:3ch;text-align:right;color:var(--carmine);flex:none}
+.leg li > button:disabled b{color:var(--muted)}
+.leg span{flex:1;min-width:0}
+.leg small{color:var(--muted)}
+#legSearch{width:100%;box-sizing:border-box;margin-bottom:8px}
+.lbl.hl{background:#0b4fc4;transform:scale(1.35);box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(11,79,196,.35)}
 .cp{width:14px;height:14px;border-radius:50%;background:#1d6fd6;border:2px solid #fff;box-shadow:0 0 0 1px #0006}
 .cp.off{background:#888}
 #toggle{display:none}
@@ -98,6 +104,7 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 
   <section>
     <h2>Legenda planu</h2>
+    <input id="legSearch" type="search" placeholder="Szukaj: numer albo nazwa, np. stajnia, 59" aria-label="Szukaj w legendzie">
     <ul class="leg" id="legList"></ul>
     <p class="src" id="legNote" style="margin-top:8px"></p>
   </section>
@@ -260,7 +267,7 @@ function drawLabels(){
   labelLayer.clearLayers();
   PL.labels.forEach(l => {
     if (l.u == null) return;
-    L.marker(fwd(l.u,l.v), {icon: L.divIcon({className:"", html:`<span class="lbl">${l.n}</span>`, iconSize:[22,16], iconAnchor:[11,8]})})
+    l._m = L.marker(fwd(l.u,l.v), {icon: L.divIcon({className:"", html:`<span class="lbl" data-n="${l.n}">${l.n}</span>`, iconSize:[22,16], iconAnchor:[11,8]})})
       .bindPopup(`<b>${l.n}. ${l.pl}</b><br><span style="color:#666">${l.de}${l.house ? " · dom nr " + l.house : ""}</span>`).addTo(labelLayer);
   });
 }
@@ -358,18 +365,38 @@ document.getElementById("expQgis").onclick = () => {
 };
 document.getElementById("expJson").onclick = () => download("prudnik" + PL.id + "-punkty.json", JSON.stringify(points, null, 2), "application/json");
 
-function legend(){
-  const ul = document.getElementById("legList"); ul.innerHTML = "";
-  PL.labels.forEach(l => {
-    const li = document.createElement("li"); if (l.u == null) li.className = "none";
-    li.innerHTML = `<b>${l.n}</b><span>${l.pl}<br><small>${l.de}${l.house ? " · dom nr " + l.house : ""}</small></span>`;
-    if (l.u != null){ const b = document.createElement("button"); b.type = "button"; b.textContent = "pokaż"; b.setAttribute("aria-label", "Pokaż na mapie: " + l.pl);
-      b.onclick = () => { if (T) map.setView(fwd(l.u,l.v), 18); }; li.appendChild(b); }
-    ul.appendChild(li);
-  });
-  const miss = PL.labels.filter(l => l.u == null).length;
-  document.getElementById("legNote").textContent = miss ? `Pozycje wyszarzone (${miss}) nie są jeszcze zlokalizowane na planie.` : "";
+let legHL = null;
+function goTo(l, btn){
+  if (!T || l.u == null) return;
+  const z = Math.max(map.getZoom(), 18);
+  map.setView(fwd(l.u,l.v), z);
+  if (!document.getElementById("showLabels").checked){ document.getElementById("showLabels").checked = true; drawLabels(); labelLayer.addTo(map); }
+  setTimeout(() => {
+    document.querySelectorAll(".lbl.hl").forEach(x => x.classList.remove("hl"));
+    document.querySelectorAll(`.lbl[data-n="${l.n}"]`).forEach(x => x.classList.add("hl"));
+    if (l._m) l._m.openPopup();
+  }, 350);
+  document.querySelectorAll("#legList button.on").forEach(x => x.classList.remove("on"));
+  if (btn) btn.classList.add("on");
+  if (window.innerWidth <= 760){ const pn = document.getElementById("panel"); if (!pn.classList.contains("min")) document.getElementById("toggle").click(); }
 }
+function legend(){
+  const ul = document.getElementById("legList"), q = document.getElementById("legSearch").value.trim().toLowerCase();
+  ul.innerHTML = ""; let grp = null, shown = 0;
+  PL.labels.forEach(l => {
+    const hay = (l.n + " " + l.pl + " " + l.de + " " + (l.grp || "")).toLowerCase();
+    if (q && !(String(l.n).toLowerCase() === q || hay.includes(q))) return;
+    if (l.grp && l.grp !== grp){ grp = l.grp; const h = document.createElement("li"); h.className = "grp"; h.textContent = grp; ul.appendChild(h); }
+    const li = document.createElement("li"), b = document.createElement("button"); b.type = "button";
+    b.innerHTML = `<b>${l.n}</b><span>${l.pl}<br><small>${l.de}${l.house ? " · dom nr " + l.house : ""}${l.u == null ? " · nie zlokalizowano na planie" : ""}</small></span>`;
+    if (l.u == null) b.disabled = true; else { b.title = "Przejdź do obiektu na mapie"; b.onclick = () => goTo(l, b); }
+    li.appendChild(b); ul.appendChild(li); shown++;
+  });
+  if (!shown){ const li = document.createElement("li"); li.style.padding = "8px 4px"; li.style.color = "var(--muted)"; li.textContent = "Nic nie pasuje do wyszukiwania."; ul.appendChild(li); }
+  const miss = PL.labels.filter(l => l.u == null).length;
+  document.getElementById("legNote").textContent = [PL.legendNote || "", miss ? `Pozycje wyszarzone (${miss}) nie są zlokalizowane na planie.` : ""].filter(Boolean).join(" ");
+}
+document.getElementById("legSearch").addEventListener("input", legend);
 function selectPlan(id){
   PL = PLANS.find(p => p.id === id) || PLANS[0]; IMG_W = PL.w; IMG_H = PL.h;
   points = load(PL) || fresh(PL);
@@ -381,7 +408,8 @@ function selectPlan(id){
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.id === PL.id));
   document.getElementById("showWater").checked = PL.id === "1811";
   if (PL.id === "1811") waterLayer.addTo(map); else map.removeLayer(waterLayer);
-  legend(); refresh(); op.oninput();
+  document.getElementById("legSearch").value = "";
+  refresh(); legend(); op.oninput();
   try { localStorage.setItem("prudnik-plany-wybor", PL.id); } catch(e){}
 }
 const tabs = document.getElementById("tabs");
