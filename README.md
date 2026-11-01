@@ -116,7 +116,7 @@ W legendzie planu 1890 pod nr 27 (domy nr 515 i 516) jest *Wasserhebewerk*. Nie 
 | 24 | Szkoła symultanna (międzywyznaniowa) | Schulgebäude (simultan) | 395 |
 | 25 | Szpital (położenie przeniesione z planu 1908, przybliżone) | Krankenhaus | 451 |
 | 26 | Sierociniec Fundacji św. Anny | Waisenhaus „St. Anna Stift” | 457 |
-| 27 | Stacja pomp wodociągowych (przy jazie na Prudniku) | Wasserhebewerk | 515, 516 |
+| 27 | Kunszt wodny przy jazie na Prudniku, w miejscu czerpadła z 1811 r. | Wasserhebewerk | 515, 516 |
 
 Położenie obiektów nr 2, 7, 8 i 25 przeniesiono z planu 1908, więc jest przybliżone. Nr 9 i 14 po przeniesieniu sprawdzono na planie: trafiają w dom nr 168 i w budynek kościoła. Zbrojowni (nr 12) nie zlokalizowano.
 
@@ -165,7 +165,7 @@ Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27) leży poza ramką planu. Nu
 | 24 | Szkoła ewangelicka (symultanna) | Evgl. Schulgebäude (Simultan) |
 | 25 | Szpital miejski | Städtisches Krankenhaus |
 | 26 | Sierociniec Fundacji św. Anny | Waisenhaus St. Anna-Stift |
-| 27 | Stacja pomp wodociągowych (poza ramką planu, na południu) | Wasserhebewerk |
+| 27 | Stacja pomp wodociągowych z 1894 r. (poza ramką planu, na południu) | Wasserhebewerk |
 | 28 | Wojskowy urząd prowiantowy (magazyny) | Proviantamt |
 | 29 | Koszary garnizonu | Garnison-Kaserne |
 | 30 | Pomocniczy skład artylerii | Artillerie-Nebendepot |
