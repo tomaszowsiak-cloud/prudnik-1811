@@ -1,6 +1,6 @@
 # Dawne plany Prudnika na dzisiejszej mapie
 
-Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na współczesną mapę. Na stronie można przełączać plany, zmieniać przezroczystość, porównywać je z mapą OpenStreetMap, ortofotomapą Geoportalu i zdjęciami satelitarnymi oraz poprawiać punkty kontrolne.
+Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na współczesną mapę. Na stronie można przełączać plany, zmieniać przezroczystość, porównywać je z mapą OpenStreetMap, zdjęciami satelitarnymi Esri i ortofotomapą Geoportalu oraz poprawiać punkty kontrolne.
 
 **Strona:** https://tomaszowsiak-cloud.github.io/prudnik-1811/
 

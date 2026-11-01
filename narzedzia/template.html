@@ -238,7 +238,7 @@ const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZo
 const orto = L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {layers:"Raster", format:"image/jpeg", maxZoom:20, attribution:"Ortofotomapa © GUGiK"});
 const esri = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {maxZoom:20, maxNativeZoom:19, attribution:"Zdjęcia © Esri"});
 osm.addTo(map);
-L.control.layers({"Mapa (OpenStreetMap)":osm, "Ortofotomapa (Geoportal)":orto, "Zdjęcia satelitarne (Esri)":esri}, null, {position:"topleft"}).addTo(map);
+L.control.layers({"Mapa (OpenStreetMap)":osm, "Zdjęcia satelitarne (Esri)":esri, "Ortofotomapa Geoportalu (wolniej)":orto}, null, {position:"topleft"}).addTo(map);
 L.control.scale({imperial:false}).addTo(map);
 
 // warstwa obrazu przekształcanego macierzą afiniczną

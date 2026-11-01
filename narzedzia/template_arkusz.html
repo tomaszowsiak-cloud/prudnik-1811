@@ -147,7 +147,7 @@ input[type=range]{flex:1;accent-color:var(--carmine);min-width:0}
 
   <section>
     <h2>Dopasowanie</h2>
-    <p class="src">Arkusze dopasowano po narożnikach ramki: 17°30′–17°40′ E i 50°18′–50°24′ N w dawnym niemieckim układzie odniesienia (elipsoida Bessela), przeliczonych na dzisiejszy układ WGS 84. Na arkuszu z 1884 te same długości są opisane od południka Ferro (35°10′–35°20′). Kontrola na ratuszu, kościele św. Michała, Wieży Bramy Dolnej, Wieży Woka, areszcie i dworcu: odchyłki rzędu 5–15 m na wszystkich wydaniach. Tło: OpenStreetMap, ortofotomapa Geoportalu.</p>
+    <p class="src">Arkusze dopasowano po narożnikach ramki: 17°30′–17°40′ E i 50°18′–50°24′ N w dawnym niemieckim układzie odniesienia (elipsoida Bessela), przeliczonych na dzisiejszy układ WGS 84. Na arkuszu z 1884 te same długości są opisane od południka Ferro (35°10′–35°20′). Kontrola na ratuszu, kościele św. Michała, Wieży Bramy Dolnej, Wieży Woka, areszcie i dworcu: odchyłki rzędu 5–15 m na wszystkich wydaniach. Tło: OpenStreetMap, zdjęcia satelitarne Esri, ortofotomapa Geoportalu.</p>
   </section>
 </aside>
 
@@ -155,8 +155,8 @@ input[type=range]{flex:1;accent-color:var(--carmine);min-width:0}
 <script>
 const D = __DATA__;
 const SHEETS = D.sheets, B = D.bounds;
-const OPTS = [...SHEETS.map(s => ({id:s.id, name:s.label})), {id:"orto", name:"dziś (ortofotomapa)"}, {id:"osm", name:"dziś (mapa)"}];
-const short = id => id === "orto" || id === "osm" ? "dziś" : (SHEETS.find(s => s.id === id) || {}).tag || id;
+const OPTS = [...SHEETS.map(s => ({id:s.id, name:s.label})), {id:"esri", name:"dziś (zdjęcia satelitarne Esri)"}, {id:"orto", name:"dziś (ortofotomapa Geoportalu, wolniej)"}, {id:"osm", name:"dziś (mapa)"}];
+const short = id => id === "orto" || id === "osm" || id === "esri" ? "dziś" : (SHEETS.find(s => s.id === id) || {}).tag || id;
 
 const map = L.map("map", {zoomSnap:0.25, maxZoom:19, minZoom:12, maxBounds:L.latLngBounds(B).pad(0.6)}).setView([50.3200, 17.5790], 15);
 L.control.scale({imperial:false, position:"bottomright"}).addTo(map);
@@ -167,6 +167,7 @@ map.createPane("over").style.zIndex = 450;
 
 function makeLayer(id, pane){
   if (id === "osm") return L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {pane, maxZoom:19, attribution:"© OpenStreetMap"});
+  if (id === "esri") return L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {pane, maxZoom:19, attribution:"Zdjęcia © Esri, Maxar, Earthstar Geographics"});
   if (id === "orto") return L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {pane, layers:"Raster", format:"image/jpeg", maxZoom:19, attribution:"Ortofotomapa © GUGiK"});
   const s = SHEETS.find(x => x.id === id);
   return L.imageOverlay(s.img, B, {pane, alt:"Arkusz " + s.label, interactive:false});
