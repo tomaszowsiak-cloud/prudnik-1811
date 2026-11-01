@@ -334,10 +334,14 @@ Ten sam arkusz mapy topograficznej 1:25 000 (Messtischblatt 3301, później 5671
 
 | Wydanie | Opis | Źródło |
 |---|---|---|
-| 1884 | pierwsze wydanie, pomiar Królewskiej Pruskiej Służby Topograficznej z 1883; długości od południka Ferro | do uzupełnienia |
-| 1930 | wydanie z 1884 z dopiskami aktualizacyjnymi z 1930 | do uzupełnienia |
-| 1943 | *Topographische Karte 1:25 000*, wydanie 1943, „Nur für den Dienstgebrauch” | do uzupełnienia |
-| 1953 | kopia Army Map Service (USA), seria M841, skopiowana w 1951 z arkusza z 1943 i wydrukowana w 1953; treść jak w 1943, dodana siatka UTM | do uzupełnienia |
+| 1884 | pierwsze wydanie, pomiar Królewskiej Pruskiej Służby Topograficznej z 1883; długości od południka Ferro | [Instytut Geografii UP w Krakowie](http://igrek.amzp.pl/details.php?id=16506), 400 dpi |
+| 1930 | stopka: „Herausgegeben … 1884, Einzelne Nachträge 1930”, czyli wydanie z 1884 z pojedynczymi uzupełnieniami, bez nowego pomiaru | egzemplarz z pieczęcią TH Danzig, Geographisches Seminar; ten sam stan mają [AMZP](http://igrek.amzp.pl/details.php?id=5272) i [BUWr, sygn. 6541-III.C./3301](http://igrek.amzp.pl/details.php?id=11772860) (datowany „1935?”) |
+| 1943 | „Ausgabe 1943”; stopka: pomiar 1883 (Borchmann), sprostowanie Reichsamt für Landesaufnahme 1937 (Wirth), nazwy wg stanu z 1.04.1938, ostatnie uzupełnienia H.V.A. II 1939 | [Wydział Geografii i Studiów Regionalnych UW](http://igrek.amzp.pl/details.php?id=11780596) |
+| 1953 | kopia Army Map Service (USA), seria M841, skopiowana w 1951 z arkusza z 1943, wydruk 1953; dodana siatka UTM | Brigham Young University Library, Map Collection (pieczęć i sygnatura „Map File G6080 s25 .G4” na skanie), [kolekcja Germany Maps](https://contentdm.lib.byu.edu/digital/collection/GermanyMaps/search) |
+
+Pełna lista skanów arkusza: [Mapster, arkusz 5671](http://igrek.amzp.pl/result.php?cmd=id&god=5671&cat=TK25).
+
+**Historia wydań.** Prudnik nie dostał nowego pomiaru terenu: wszystkie wydania wychodzą z pomiaru z 1883. Wydanie z 1930 to arkusz z 1884 z punktowymi uzupełnieniami, wśród nich oczyszczalnia (*Kläranl.*), stacja pomp (*Wasserhebew.*) i koszary. Wydanie z 1943 ma już prawdziwe sprostowanie treści z 1937 i uzupełnienia z 1939.
 
 **Dopasowanie.** Każdy arkusz dopasowano po czterech narożnikach ramki (17°30′–17°40′ E, 50°18′–50°24′ N w dawnym układzie niemieckim, elipsoida Bessela), przeliczonych na WGS 84. Kontrola na ratuszu, kościele św. Michała, Wieży Bramy Dolnej, Wieży Woka, areszcie i dworcu daje odchyłki rzędu 5–15 m na wszystkich wydaniach. Przeliczenie układu zgadza się z wartościami narożników podanymi na arkuszu amerykańskim (ED50) z dokładnością ok. 5 m.
 
