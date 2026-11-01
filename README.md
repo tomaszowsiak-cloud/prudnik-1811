@@ -21,7 +21,8 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | `plan1890.jpg` | Skan planu z 1890 r., pomniejszony do 4000 × 3450 pikseli |
 | `plan1908.jpg` | Plan z 1908 r., przycięty do ramki mapy |
 | `plan1913.jpg` | Plan z 1913 r. |
-| `plangarnizon.jpg` | Plan garnizonu, data nieznana |
+| `plangarnizon.jpg` | Plan garnizonu (bez wstawki), data nieznana |
+| `plangarnizon-okolice.jpg` | Wstawka okolic z planu garnizonu (1:25 000) |
 | `prudnik-plany.kmz` | Wszystkie plany i wodociąg 1811 do Google Earth |
 | `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points`, `plan1913.jpg.points`, `plangarnizon.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
 | `dane/` | Punkty kontrolne, położenia numerów z legend i wodociąg 1811 (JSON) |
@@ -315,8 +316,10 @@ Część wpisów poprawiono odręcznie, m.in. dopisano budynek socjalny (*Wohlfa
 | 69 | Studnia (dopisek odręczny w miejsce skreślonej łaźni), na wstawce | Brunnen (dopisek; pierwotnie: Badeanstalt) |
 | 70 | Mały plac ćwiczeń (dopisek odręczny w miejsce skreślonej prochowni) | Kleiner Exerzierplatz, 326… m² (dopisek; pierwotnie: Pulverhaus) |
 
-Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w innej skali, więc nie da się do nich przejść na mapie.
+Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w skali 1:25 000; wstawkę dopasowano osobno.
 
 **Datowanie.** Plan nie ma daty. Na planie z 1890 r. koszary są jeszcze w mieście przy Wiesener Straße, a duży kompleks koszarowy na południowym zachodzie pojawia się dopiero na planach z 1908 i 1913 r. Plan garnizonu powstał więc najpewniej po 1890 r., a przed I wojną światową. To oszacowanie z zawartości planu, a nie z dokumentu.
+
+**Wstawka okolic i plac ćwiczeń.** Wstawkę w skali 1:25 000 dopasowano osobno (jest zorientowana na północ), przez lazaret, urząd prowiantowy, cmentarz, Rynek i most przy Bramie Dolnej. Błąd wynosi ok. 20–60 m. Duży plac ćwiczeń (nr 68) leży na północ od miasta, w stronę Prężynki. Jego obrys odrysowano z wstawki i naniesiono na mapę jako wielokąt. Po przeniesieniu ma ok. 72.9 ha, a na planie dopisano ręcznie 794 947 m² (79,5 ha). Zgodność ok. 92% niezależnie potwierdza dopasowanie. Studnię (nr 69) naniesiono jako punkt. Plik `plangarnizon-okolice.jpg` to wycięta wstawka.
 
 **Dopasowanie.** Plan jest obrócony o ok. 33° względem północy. Dopasowano go przez ratusz, kościół św. Michała i trzy punkty wspólne z planem 1890 (zbiornik gazowni, most przy Bramie Dolnej, studnia na Rynku). Średni błąd ok. 12 m, ale sumuje się z błędem planu 1890.

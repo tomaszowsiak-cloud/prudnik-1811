@@ -24,11 +24,11 @@ plans=[
   source="do uzupełnienia",
   scaleNote="Skala oryginału 1:2500; skan jest pomniejszony. Skala z dopasowania: ok. 0,79 m/piksel.",
   points=d13['points'],labels=d13['labels']),
- dict(id="garnizon",tab="ok. 1905",img="plangarnizon.jpg",src_file='../plangarnizon.jpg',w=2576,h=1609,head="Neustadt mit Umgebung – plan garnizonu VI Korpusu, ok. 1900–1914",
+ dict(id="garnizon",tab="ok. 1905",img="plangarnizon.jpg",src_file='../plangarnizon.jpg',w=1900,h=1609,head="Neustadt mit Umgebung – plan garnizonu VI Korpusu, ok. 1900–1914",
   meta="Plan miasta z zaznaczonymi obiektami wojskowymi: zarząd garnizonu, skład artylerii, urząd prowiantowy, lazaret. Skala 1:5000, wstawka okolic 1:25 000. Plan z teki planów miast garnizonowych VI Korpusu Armii (Wrocław). Data nieznana; zawartość wskazuje na okres po 1890 r., a przed I wojną światową.",
   source="Archiwum Państwowe we Wrocławiu, sygn. 82/329/0/-/10: „Situations-Pläne der größeren Garnison-Städte im Bezirk des VI. Armee-Corps”, wyd. Brehmer & Minuth. Skan: polska-org.pl/11454549,foto.html?idEntity=521918",
   scaleNote="Skala oryginału 1:5000. Dopasowanie przez punkty wspólne z planem 1890 (gazownia, most przy Bramie Dolnej, studnia na Rynku), więc błąd sumuje się z błędem planu 1890.",
-  points=dg['points'],labels=dg['labels'],legendNote=dg.get('legendNote',''))]
+  points=dg['points'],labels=dg['labels'],legendNote=dg.get('legendNote',''),extra=dg.get('extra'))]
 data={"plans":[{k:v for k,v in p.items() if k!='src_file'} for p in plans],"water":d11['water']}
 html=open('template.html').read().replace('__DATA__',json.dumps(data,ensure_ascii=False))
 open(f'{OUT}/index.html','w').write(html)
@@ -53,16 +53,23 @@ for p in plans:
     kml+='</Folder>'
     open(f'{OUT}/{p["img"]}.points','w').write(crs+'\nmapX,mapY,sourceX,sourceY,enable,dX,dY,residual\n'+''.join(f"{q['lon']},{q['lat']},{q['u']},{-q['v']},1,0,0,0\n" for q in p['points']))
     os.system(f'cp {p["src_file"]} {OUT}/{p["img"]}')
+os.system(f'true')
 f=F['1811']; Wt=d11['water']
 kml+='<Style id="rura"><LineStyle><color>ffc44f0b</color><width>4</width></LineStyle></Style><Folder><name>Wodociąg 1811</name>'
 for r in Wt['rury']:
     kml+='<Placemark><name>%s</name><styleUrl>#rura</styleUrl><LineString><coordinates>%s</coordinates></LineString></Placemark>'%(r['pl'],' '.join('%.7f,%.7f,0'%(f(u,v)[1],f(u,v)[0]) for u,v in r['pts']))
 for z in Wt['zdroje']+[Wt['czerpadlo'],Wt['wieza']]:
     la,lo=f(z['u'],z['v']); kml+='<Placemark><name>%s</name><Point><coordinates>%.7f,%.7f,0</coordinates></Point></Placemark>'%(z['pl'],lo,la)
+kml+='</Folder>'
+ex=dg['extra']; (s_,w_),(n_,e_)=ex['bounds']
+kml+=f'<Folder><name>Plan garnizonu – okolice</name><GroundOverlay><name>Wstawka 1:25 000</name><visibility>0</visibility><color>b3ffffff</color><Icon><href>plangarnizon-okolice.jpg</href></Icon><LatLonBox><north>{n_}</north><south>{s_}</south><east>{e_}</east><west>{w_}</west></LatLonBox></GroundOverlay>'
+for pg_ in ex['polys']:
+    kml+='<Placemark><name>%s</name><Style><LineStyle><color>ffc44f0b</color><width>3</width></LineStyle><PolyStyle><color>33c44f0b</color></PolyStyle></Style><Polygon><outerBoundaryIs><LinearRing><coordinates>%s</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>'%(pg_['pl'],' '.join(f'{lo},{la},0' for la,lo in pg_['pts']+[pg_['pts'][0]]))
 kml+='</Folder></Document></kml>'
 with zipfile.ZipFile(f'{OUT}/prudnik-plany.kmz','w',zipfile.ZIP_DEFLATED) as z:
     z.writestr('doc.kml',kml)
     for p in plans: z.write(p['src_file'],p['img'])
+    z.write('../plangarnizon-okolice.jpg','plangarnizon-okolice.jpg')
 w=[l for l in d90['labels'] if l['n']==27][0]; la,lo=F['1890'](w['u'],w['v'])
 print('Wasserhebewerk 1890:',round(la,5),round(lo,5)); c=Wt['czerpadlo']; la2,lo2=f(c['u'],c['v'])
 print('czerpadlo 1811:',round(la2,5),round(lo2,5),'odl. m',round(np.hypot((lo-lo2)*KX,(la-la2)*KY)))

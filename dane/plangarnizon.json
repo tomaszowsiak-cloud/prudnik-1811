@@ -637,13 +637,17 @@
    "n": "68",
    "grp": "Inne obiekty",
    "de": "Grosser Exerzierplatz (Städtisch), 794 947 m² (dopisek)",
-   "pl": "Duży plac ćwiczeń (miejski), na wstawce przy Buchelsdorf (Dębowcu)"
+   "pl": "Duży plac ćwiczeń (miejski), na północ od miasta, w stronę Prężynki",
+   "lat": 50.341142,
+   "lon": 17.577976
   },
   {
    "n": "69",
    "grp": "Inne obiekty",
    "de": "Brunnen (dopisek; pierwotnie: Badeanstalt)",
-   "pl": "Studnia (dopisek odręczny w miejsce skreślonej łaźni), na wstawce"
+   "pl": "Studnia przy placu ćwiczeń (dopisek odręczny w miejsce skreślonej łaźni)",
+   "lat": 50.335684,
+   "lon": 17.580754
   },
   {
    "n": "70",
@@ -652,5 +656,64 @@
    "pl": "Mały plac ćwiczeń (dopisek odręczny w miejsce skreślonej prochowni)"
   }
  ],
- "legendNote": "Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w innej skali, więc nie da się do nich przejść na mapie."
+ "legendNote": "Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)” przy większości pozycji oznacza najpewniej, że budynki należały do miasta, a wojsko z nich korzystało. Numery 68 i 69 są na wstawce okolic w skali 1:25 000; wstawkę dopasowano osobno.",
+ "extra": {
+  "img": "plangarnizon-okolice.jpg",
+  "bounds": [
+   [
+    50.3128504,
+    17.5531558
+   ],
+   [
+    50.346503,
+    17.6011462
+   ]
+  ],
+  "name": "Wstawka okolic (1:25 000)",
+  "note": "Wstawka dopasowana osobno, przez lazaret, urząd prowiantowy, cmentarz, Rynek i most przy Bramie Dolnej; błąd ok. 20–60 m. Obrys dużego placu ćwiczeń (nr 68) ma po przeniesieniu ok. 72.9 ha, a na planie dopisano ręcznie 794 947 m² (79,5 ha), czyli zgodność ok. 92%.",
+  "polys": [
+   {
+    "pl": "68. Duży plac ćwiczeń (Grosser Exerzierplatz)",
+    "opis": "Obrys odrysowany z wstawki 1:25 000. Pole po przeniesieniu ok. 72.9 ha; dopisek na planie: 794 947 m².",
+    "pts": [
+     [
+      50.344892,
+      17.57153
+     ],
+     [
+      50.34572,
+      17.581474
+     ],
+     [
+      50.34305,
+      17.583276
+     ],
+     [
+      50.341577,
+      17.580754
+     ],
+     [
+      50.341347,
+      17.582555
+     ],
+     [
+      50.334902,
+      17.582051
+     ],
+     [
+      50.335684,
+      17.573476
+     ],
+     [
+      50.340979,
+      17.573692
+     ],
+     [
+      50.34213,
+      17.572972
+     ]
+    ]
+   }
+  ]
+ }
 }

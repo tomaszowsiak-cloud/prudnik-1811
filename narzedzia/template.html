@@ -100,6 +100,11 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
       <label><input id="showLabels" type="checkbox" checked> Numery obiektów z legendy</label>
       <label><input id="showCp" type="checkbox" checked> Punkty kontrolne</label>
     </div>
+    <div id="extraBox" hidden style="margin-top:8px">
+      <label><input id="showExtra" type="checkbox" checked> <span id="extraName"></span></label>
+      <p class="src" id="extraNote" style="margin-top:6px"></p>
+      <button id="goExtra" type="button" style="margin-top:6px">Pokaż na mapie</button>
+    </div>
   </section>
 
   <section>
@@ -263,11 +268,22 @@ function drawWater(){
 }
 
 
+const has = l => l.u != null || l.lat != null;
+const lpos = l => l.lat != null ? [l.lat, l.lon] : fwd(l.u, l.v);
+const extraLayer = L.layerGroup();
+let extraImg = null;
+function drawExtra(){
+  extraLayer.clearLayers(); extraImg = null;
+  const X = PL.extra; if (!X) return;
+  if (!map.getPane("lower")){ map.createPane("lower"); map.getPane("lower").style.zIndex = 390; }
+  extraImg = L.imageOverlay(X.img, X.bounds, {opacity: op.value/100, alt: X.name, pane: "lower"}).addTo(extraLayer);
+  (X.polys || []).forEach(p => L.polygon(p.pts, {color:"#0b4fc4", weight:3, fillColor:"#0b4fc4", fillOpacity:.12}).bindPopup(`<b>${p.pl}</b><br>${p.opis || ""}`).addTo(extraLayer));
+}
 function drawLabels(){
   labelLayer.clearLayers();
   PL.labels.forEach(l => {
-    if (l.u == null) return;
-    l._m = L.marker(fwd(l.u,l.v), {icon: L.divIcon({className:"", html:`<span class="lbl" data-n="${l.n}">${l.n}</span>`, iconSize:[22,16], iconAnchor:[11,8]})})
+    if (!has(l)) return;
+    l._m = L.marker(lpos(l), {icon: L.divIcon({className:"", html:`<span class="lbl" data-n="${l.n}">${l.n}</span>`, iconSize:[22,16], iconAnchor:[11,8]})})
       .bindPopup(`<b>${l.n}. ${l.pl}</b><br><span style="color:#666">${l.de}${l.house ? " · dom nr " + l.house : ""}</span>`).addTo(labelLayer);
   });
 }
@@ -319,10 +335,12 @@ function refresh(){
 
 // --- sterowanie ---
 const op = document.getElementById("op");
-op.oninput = () => { plan.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
+op.oninput = () => { plan.setOpacity(op.value/100); if (extraImg) extraImg.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
 document.getElementById("showLabels").onchange = e => { if (e.target.checked){ drawLabels(); labelLayer.addTo(map); } else map.removeLayer(labelLayer); };
 document.getElementById("showWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
 document.getElementById("goWater").onclick = () => { if (!TW) return; map.setView(fwdW(2300,1540), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
+document.getElementById("showExtra").onchange = e => e.target.checked ? extraLayer.addTo(map) : map.removeLayer(extraLayer);
+document.getElementById("goExtra").onclick = () => { if (PL.extra){ map.fitBounds(PL.extra.bounds); document.getElementById("showExtra").checked = true; extraLayer.addTo(map); } };
 document.getElementById("showCp").onchange = e => e.target.checked ? cpLayer.addTo(map) : map.removeLayer(cpLayer);
 document.getElementById("model").onchange = e => { model = e.target.value; refresh(); };
 document.getElementById("resetBtn").onclick = () => { points = fresh(PL); refresh(); };
@@ -367,9 +385,10 @@ document.getElementById("expJson").onclick = () => download("prudnik" + PL.id + 
 
 let legHL = null;
 function goTo(l, btn){
-  if (!T || l.u == null) return;
+  if (!T || !has(l)) return;
   const z = Math.max(map.getZoom(), 18);
-  map.setView(fwd(l.u,l.v), z);
+  map.setView(lpos(l), l.lat != null ? 16 : z);
+  if (l.lat != null && PL.extra){ const cb = document.getElementById("showExtra"); if (!cb.checked){ cb.checked = true; extraLayer.addTo(map); } }
   if (!document.getElementById("showLabels").checked){ document.getElementById("showLabels").checked = true; drawLabels(); labelLayer.addTo(map); }
   setTimeout(() => {
     document.querySelectorAll(".lbl.hl").forEach(x => x.classList.remove("hl"));
@@ -388,12 +407,12 @@ function legend(){
     if (q && !(String(l.n).toLowerCase() === q || hay.includes(q))) return;
     if (l.grp && l.grp !== grp){ grp = l.grp; const h = document.createElement("li"); h.className = "grp"; h.textContent = grp; ul.appendChild(h); }
     const li = document.createElement("li"), b = document.createElement("button"); b.type = "button";
-    b.innerHTML = `<b>${l.n}</b><span>${l.pl}<br><small>${l.de}${l.house ? " · dom nr " + l.house : ""}${l.u == null ? " · nie zlokalizowano na planie" : ""}</small></span>`;
-    if (l.u == null) b.disabled = true; else { b.title = "Przejdź do obiektu na mapie"; b.onclick = () => goTo(l, b); }
+    b.innerHTML = `<b>${l.n}</b><span>${l.pl}<br><small>${l.de}${l.house ? " · dom nr " + l.house : ""}${!has(l) ? " · nie zlokalizowano na planie" : ""}</small></span>`;
+    if (!has(l)) b.disabled = true; else { b.title = "Przejdź do obiektu na mapie"; b.onclick = () => goTo(l, b); }
     li.appendChild(b); ul.appendChild(li); shown++;
   });
   if (!shown){ const li = document.createElement("li"); li.style.padding = "8px 4px"; li.style.color = "var(--muted)"; li.textContent = "Nic nie pasuje do wyszukiwania."; ul.appendChild(li); }
-  const miss = PL.labels.filter(l => l.u == null).length;
+  const miss = PL.labels.filter(l => !has(l)).length;
   document.getElementById("legNote").textContent = [PL.legendNote || "", miss ? `Pozycje wyszarzone (${miss}) nie są zlokalizowane na planie.` : ""].filter(Boolean).join(" ");
 }
 document.getElementById("legSearch").addEventListener("input", legend);
@@ -401,6 +420,8 @@ function selectPlan(id){
   PL = PLANS.find(p => p.id === id) || PLANS[0]; IMG_W = PL.w; IMG_H = PL.h;
   points = load(PL) || fresh(PL);
   if (map.hasLayer(plan)) map.removeLayer(plan);
+  drawExtra(); document.getElementById("extraBox").hidden = !PL.extra;
+  if (PL.extra){ document.getElementById("extraName").textContent = PL.extra.name; document.getElementById("extraNote").textContent = PL.extra.note; document.getElementById("showExtra").checked = true; extraLayer.addTo(map); } else map.removeLayer(extraLayer);
   document.getElementById("planTitle").textContent = PL.head;
   document.getElementById("planMeta").textContent = PL.meta;
   document.getElementById("planSource").textContent = "Źródło: " + PL.source;
