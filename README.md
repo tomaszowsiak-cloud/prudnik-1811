@@ -10,6 +10,7 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | 1890 | geometra Weymann | 1:8000 | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/9b189dde-cd14-41d8-885f-6ac1b62f0c5c?page=0) | ok. 9 m |
 | 1908 | Woerl's Reisebücherverlag, Lipsk (plan z przewodnika) | bez podziałki | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/52c71138-9151-42d5-ab13-cb1dde0e522a?page=3) | ok. 7 m (na 5 punktach) |
 | 1913 | Miejski Urząd Budowlany (Stadtbauamt), 3 grudnia 1913 | 1:2500 | do uzupełnienia | ok. 4 m (na 5 punktach) |
+| ok. 1900–1914 (data nieznana) | plan garnizonu *Neustadt mit Umgebung* | 1:5000, wstawka 1:25 000 | nieznane (skan z polska-org.pl) | ok. 12 m (przez plan 1890) |
 
 ## Co jest w repozytorium
 
@@ -20,8 +21,9 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | `plan1890.jpg` | Skan planu z 1890 r., pomniejszony do 4000 × 3450 pikseli |
 | `plan1908.jpg` | Plan z 1908 r., przycięty do ramki mapy |
 | `plan1913.jpg` | Plan z 1913 r. |
+| `plangarnizon.jpg` | Plan garnizonu, data nieznana |
 | `prudnik-plany.kmz` | Wszystkie plany i wodociąg 1811 do Google Earth |
-| `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points`, `plan1913.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
+| `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points`, `plan1913.jpg.points`, `plangarnizon.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
 | `dane/` | Punkty kontrolne, położenia numerów z legend i wodociąg 1811 (JSON) |
 | `narzedzia/` | Szablon strony i skrypt, który buduje z niego `index.html`, plik KMZ i pliki punktów |
 
@@ -211,3 +213,19 @@ Na planie 1908 oczyszczalnia wypada ok. 80 m dalej. Oba plany dopasowano na punk
 | 10 | Rynek z ratuszem | Ring |
 
 Numeracja w tej tabeli jest robocza: plan 1913 ma własne numery działek i budynków, ale bez legendy.
+
+## Plan garnizonu (data nieznana, ok. 1900–1914)
+
+*Neustadt mit Umgebung* – plan miasta w skali 1:5000 z wstawką okolic w skali 1:25 000. Kolorami zaznaczono obiekty wojskowe, a legendy w rogach je wymieniają:
+
+- **zarząd garnizonu** (*Garnison-Verwaltung*, nr 1–46, niebieski): koszary baterii, stajnie, ujeżdżalnie, kuźnie, warsztat rusznikarza, latryny i doły na popiół i śmieci,
+- **urząd prowiantowy** (*Proviant-Amt*, nr 47–52, żółty): magazyn zboża, budynek mieszkalny, waga, stodoła,
+- **skład artylerii** (*Artillerie-Depot*, nr 53–59d, czerwony kreskowany): wozownie, magazyny pocisków i zapalników, magazyny prochu, warsztat amunicyjny,
+- **lazaret** (*Lazareth*, nr 62–66, czerwony): budynek główny, kostnica, kotłownia,
+- na wstawce: **duży plac ćwiczeń** (*Großer Exerzierplatz*, nr 68) przy Buchelsdorf (Dębowcu).
+
+Część wpisów poprawiono odręcznie, m.in. dopisano budynek socjalny (*Wohlfahrtsgebäude*) i powierzchnię placu ćwiczeń.
+
+**Datowanie.** Plan nie ma daty. Na planie z 1890 r. koszary są jeszcze w mieście przy Wiesener Straße, a duży kompleks koszarowy na południowym zachodzie pojawia się dopiero na planach z 1908 i 1913 r. Plan garnizonu powstał więc najpewniej po 1890 r., a przed I wojną światową. To oszacowanie z zawartości planu, a nie z dokumentu.
+
+**Dopasowanie.** Plan jest obrócony o ok. 33° względem północy. Dopasowano go przez ratusz, kościół św. Michała i trzy punkty wspólne z planem 1890 (zbiornik gazowni, most przy Bramie Dolnej, studnia na Rynku). Średni błąd ok. 12 m, ale sumuje się z błędem planu 1890.

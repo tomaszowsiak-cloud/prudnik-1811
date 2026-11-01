@@ -385,7 +385,7 @@ function selectPlan(id){
   try { localStorage.setItem("prudnik-plany-wybor", PL.id); } catch(e){}
 }
 const tabs = document.getElementById("tabs");
-PLANS.forEach(p => { const b = document.createElement("button"); b.type = "button"; b.role = "tab"; b.dataset.id = p.id; b.textContent = p.id; b.onclick = () => selectPlan(p.id); tabs.appendChild(b); });
+PLANS.forEach(p => { const b = document.createElement("button"); b.type = "button"; b.role = "tab"; b.dataset.id = p.id; b.textContent = p.tab || p.id; b.onclick = () => selectPlan(p.id); tabs.appendChild(b); });
 let start = PLANS[0].id; try { start = localStorage.getItem("prudnik-plany-wybor") || start; } catch(e){}
 if (location.hash && PLANS.some(p => "#p" + p.id === location.hash)) start = location.hash.slice(2);
 labelLayer.addTo(map); cpLayer.addTo(map);

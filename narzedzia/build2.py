@@ -2,7 +2,7 @@ import json, zipfile, numpy as np, os, sys
 OUT=sys.argv[1] if len(sys.argv)>1 else '..'
 os.makedirs(OUT,exist_ok=True)
 LAT0,LON0=50.3215,17.5806; KY=111250; KX=111320*np.cos(np.radians(LAT0))
-d11=json.load(open('../dane/plan1811.json')); d90=json.load(open('../dane/plan1890.json')); d08=json.load(open('../dane/plan1908.json')); d13=json.load(open('../dane/plan1913.json'))
+d11=json.load(open('../dane/plan1811.json')); d90=json.load(open('../dane/plan1890.json')); d08=json.load(open('../dane/plan1908.json')); d13=json.load(open('../dane/plan1913.json')); dg=json.load(open('../dane/plangarnizon.json'))
 plans=[
  dict(id="1811",img="plan1811.jpg",src_file='../plan1811.jpg',w=4476,h=3304,head="Plan von der Stadt Neustadt, 1811",
   meta="Pomiar: maj–sierpień 1811, konduktor Scheuerwasser młodszy; kopia: marzec 1835 (kopista Treeger lub Freeger). Podziałka: 150 prętów reńskich ≈ 565 m.",
@@ -23,7 +23,12 @@ plans=[
   meta="Plan Miejskiego Urzędu Budowlanego (Stadtbauamt), podpisany przez miejskiego budowniczego, Prudnik, 3 grudnia 1913. Skala oryginału 1:2500. Na planie zaznaczono działki (kolorem czerwonym i zielonym) oraz oczyszczalnię ścieków.",
   source="do uzupełnienia",
   scaleNote="Skala oryginału 1:2500; skan jest pomniejszony. Skala z dopasowania: ok. 0,79 m/piksel.",
-  points=d13['points'],labels=d13['labels'])]
+  points=d13['points'],labels=d13['labels']),
+ dict(id="garnizon",tab="ok. 1905",img="plangarnizon.jpg",src_file='../plangarnizon.jpg',w=2576,h=1609,head="Neustadt mit Umgebung (plan garnizonu, ok. 1900–1914?)",
+  meta="Plan miasta z zaznaczonymi obiektami wojskowymi: zarząd garnizonu, skład artylerii, urząd prowiantowy, lazaret. Skala 1:5000, wstawka okolic 1:25 000. Data nieznana; zawartość wskazuje na okres po 1890 r., a przed I wojną światową.",
+  source="nieznane (skan z polska-org.pl)",
+  scaleNote="Skala oryginału 1:5000. Dopasowanie przez punkty wspólne z planem 1890 (gazownia, most przy Bramie Dolnej, studnia na Rynku), więc błąd sumuje się z błędem planu 1890.",
+  points=dg['points'],labels=dg['labels'])]
 data={"plans":[{k:v for k,v in p.items() if k!='src_file'} for p in plans],"water":d11['water']}
 html=open('template.html').read().replace('__DATA__',json.dumps(data,ensure_ascii=False))
 open(f'{OUT}/index.html','w').write(html)

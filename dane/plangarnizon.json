@@ -1,0 +1,107 @@
+{
+ "points": [
+  {
+   "id": "p0",
+   "name": "Ratusz",
+   "u": 1320,
+   "v": 1063,
+   "lat": 50.321514,
+   "lon": 17.580574,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p1",
+   "name": "Kościół św. Michała",
+   "u": 1210,
+   "v": 1163,
+   "lat": 50.320313,
+   "lon": 17.579909,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "t0",
+   "name": "Gazownia – zbiornik gazu",
+   "u": 1277,
+   "v": 322,
+   "lat": 50.3270417,
+   "lon": 17.573992,
+   "src": "przez plan 1890"
+  },
+  {
+   "id": "t1",
+   "name": "Most przy Bramie Dolnej",
+   "u": 1626,
+   "v": 1293,
+   "lat": 50.3211804,
+   "lon": 17.586287,
+   "src": "przez plan 1890"
+  },
+  {
+   "id": "t2",
+   "name": "Studnia na Rynku",
+   "u": 1348,
+   "v": 1070,
+   "lat": 50.3217031,
+   "lon": 17.5810407,
+   "src": "przez plan 1890"
+  }
+ ],
+ "labels": [
+  {
+   "n": 1,
+   "de": "Garnison-Verwaltung (nr 1–46)",
+   "pl": "Zarząd garnizonu: koszary baterii, stajnie, ujeżdżalnie, warsztaty (kolor niebieski)",
+   "u": 260,
+   "v": 980
+  },
+  {
+   "n": 2,
+   "de": "Artillerie-Depot (nr 53–59d)",
+   "pl": "Skład artylerii: wozownie, magazyny pocisków i prochu, warsztaty amunicyjne (kolor czerwony kreskowany)",
+   "u": 455,
+   "v": 920
+  },
+  {
+   "n": 3,
+   "de": "Proviant-Amt (nr 47–52)",
+   "pl": "Urząd prowiantowy: magazyn zboża, budynek mieszkalny, waga, stodoła (kolor żółty)",
+   "u": 195,
+   "v": 1230
+  },
+  {
+   "n": 4,
+   "de": "Lazareth (nr 62–66)",
+   "pl": "Lazaret wojskowy: budynek główny, kostnica, kotłownia (kolor czerwony)",
+   "u": 935,
+   "v": 1225
+  },
+  {
+   "n": 5,
+   "de": "Gasanstalt",
+   "pl": "Gazownia",
+   "u": 1277,
+   "v": 322
+  },
+  {
+   "n": 6,
+   "de": "Ring",
+   "pl": "Rynek",
+   "u": 1320,
+   "v": 1063
+  },
+  {
+   "n": 7,
+   "de": "Kirchhof",
+   "pl": "Cmentarz",
+   "u": 600,
+   "v": 700
+  },
+  {
+   "n": 8,
+   "de": "Bahnhof",
+   "pl": "Dworzec kolejowy",
+   "u": 1578,
+   "v": 222
+  }
+ ]
+}
