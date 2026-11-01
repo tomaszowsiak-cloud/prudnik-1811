@@ -2,7 +2,7 @@
 
 Plan miasta Prudnika (*Plan von der Stadt Neustadt und deren Vorstaedte*) pomierzony w maju–sierpniu 1811 r. przez konduktora Scheuerwassera, skopiowany w marcu 1835 r. przez Treegera, nałożony na współczesną mapę.
 
-**Strona:** otwórz `index.html` w przeglądarce albo przez GitHub Pages tego repozytorium.
+**Strona:** https://tomaszowsiak-cloud.github.io/prudnik-1811/
 
 ## Co jest w repozytorium
 
