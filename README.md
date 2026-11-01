@@ -26,13 +26,14 @@ Punkty kontrolne: ratusz, kościół św. Michała, Wieża Woka, kościół boni
 
 ## Wodociąg 1811
 
-Osobna warstwa na stronie i w pliku KMZ pokazuje miejski wodociąg zaznaczony na planie:
+Osobna warstwa na stronie i w pliku KMZ pokazuje miejski wodociąg zaznaczony na planie. Przebieg odczytał Tomasz Owsiak:
 
-- **kunszt wodny** (nr 6, *Die Wasser-Kunst*) w północnej części starego miasta, ok. 85 m na północ od ratusza; współrzędne ok. 50,32225° N, 17,58100° E (±20–30 m),
-- **rurociąg** (nr 21) z kunsztu na południe do rynku, z rozgałęzieniem na zachodnią i wschodnią stronę,
-- **zbiorniki wody** (nr 20) wokół rynku i w sąsiednich kwartałach.
+- **czerpadło** (nr 6, początek kunsztu wodnego) w północno-wschodnim narożniku miasta, przy jazie na rzece; ok. 50,32221° N, 17,58355° E,
+- **wieża wodna** przy arsenale (nr 19), w miejscu dzisiejszej Wieży Katowskiej; ok. 50,32181° N, 17,58287° E,
+- **rurociąg** (nr 21) z wieży wzdłuż północnej części miasta, z odgałęzieniami do rynku i dalej na południe, łącznie ok. 940 m,
+- **osiem zdrojów miejskich** (nr 20) w zachodniej części miasta, wokół rynku i przy jatkach.
 
-Przebieg rur odczytano z bladych niebieskich linii na planie, więc jest przybliżony.
+Położenie obiektów ma dokładność ok. ±20–30 m, wynikającą z dopasowania planu.
 
 ## Legenda planu
 
@@ -43,7 +44,7 @@ Przebieg rur odczytano z bladych niebieskich linii na planie, więc jest przybli
 | 3 | Szopa sikawek strażackich | Das Spritzen-Häusel |
 | 4 | Słodownia | Das Maltz-Haus |
 | 5 | Browary | Brau-Häuser |
-| 6 | Urządzenie wodociągowe | Die Wasser-Kunst |
+| 6 | Kunszt wodny – czerpadło | Die Wasser-Kunst |
 | 7 | Ratusz | Das Rathhaus |
 | 8 | Szkoła, seminarium | Schulen, Seminarium |
 | 9 | Jatki mięsne | Die Fleischbänke |
@@ -57,7 +58,7 @@ Przebieg rur odczytano z bladych niebieskich linii na planie, więc jest przybli
 | 17 | Rynek | Der Ring |
 | 18 | Targ bydła | Der Schwarz-Vieh-Markt |
 | 19 | Arsenał | Das Zeug-Haus |
-| 20 | Zbiorniki wody | Die Wasser-Reservoirs |
-| 21 | Rurociąg z urządzenia wodociągowego | Die Röhrleitung aus der Kunst |
+| 20 | Zdroje miejskie | Die Wasser-Reservoirs |
+| 21 | Rurociąg z kunsztu | Die Röhrleitung aus der Kunst |
 
 Odczyt legendy z odręcznego pisma jest roboczy i wymaga weryfikacji.

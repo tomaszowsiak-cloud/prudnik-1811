@@ -20,7 +20,7 @@ def water_kml():
     s='<Style id="rura"><LineStyle><color>ffc44f0b</color><width>4</width></LineStyle></Style><Folder><name>Wodociąg 1811</name>'
     for r in WAT['rury']:
         s+='<Placemark><name>%s</name><styleUrl>#rura</styleUrl><LineString><coordinates>%s</coordinates></LineString></Placemark>'%(r['pl'],' '.join('%.7f,%.7f,0'%(f(u,v)[1],f(u,v)[0]) for u,v in r['pts']))
-    for z in WAT['zbiorniki']+[WAT['kunszt']]:
+    for z in WAT['zdroje']+[WAT['czerpadlo'],WAT['wieza']]:
         la,lo=f(z['u'],z['v']); s+='<Placemark><name>%s</name><Point><coordinates>%.7f,%.7f,0</coordinates></Point></Placemark>'%(z['pl'],lo,la)
     return s+'</Folder>'
 # KML LatLonQuad: corners counter-clockwise starting lower-left

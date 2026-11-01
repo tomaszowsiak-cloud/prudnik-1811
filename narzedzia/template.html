@@ -86,8 +86,8 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 
   <section>
     <h2>Wodociąg 1811</h2>
-    <label><input id="showWater" type="checkbox" checked> Kunszt wodny, rurociąg i zbiorniki</label>
-    <p class="src" style="margin-top:8px">Według legendy: kunszt wodny (nr 6), rurociąg z kunsztu (nr 21) i zbiorniki wody (nr 20). Przebieg rur odczytany z bladych niebieskich linii na planie, więc jest przybliżony.</p>
+    <label><input id="showWater" type="checkbox" checked> Czerpadło, wieża wodna, rurociąg i zdroje</label>
+    <p class="src" style="margin-top:8px">Woda pobierana z rzeki w czerpadle przy jazie (nr 6) szła do wieży wodnej przy arsenale, a z niej rurociągiem (nr 21) do ośmiu zdrojów miejskich (nr 20). Kółko: czerpadło, romb: wieża wodna, białe kółka: zdroje.</p>
     <button id="goWater" type="button" style="margin-top:8px">Pokaż na mapie</button>
   </section>
 
@@ -228,12 +228,14 @@ const W = DATA.water;
 function drawWater(){
   waterLayer.clearLayers(); if (!T) return;
   W.rury.forEach(r => L.polyline(r.pts.map(p => fwd(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
-  W.zbiorniki.forEach(z => L.circleMarker(fwd(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
-  const k = W.kunszt, q = fwd(k.u,k.v);
-  L.marker(q, {icon:L.divIcon({className:"", html:'<div class="kunszt"></div>', iconSize:[20,20], iconAnchor:[10,10]})})
-    .bindPopup(`<b>${k.pl}</b><br>${k.opis}<br><span style="font-family:monospace">${q[0].toFixed(5)}° N, ${q[1].toFixed(5)}° E</span><br><small>dokładność ok. ±20–30 m</small>`).addTo(waterLayer);
-  const u = W.ujecie; L.circleMarker(fwd(u.u,u.v), {radius:4, color:"#0b4fc4", weight:2, fill:false}).bindPopup(`<b>${u.pl}</b><br>${u.opis}`).addTo(waterLayer);
+  W.zdroje.forEach(z => L.circleMarker(fwd(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
+  const pop = (o, q) => `<b>${o.pl}</b><br>${o.opis}<br><span style="font-family:monospace">${q[0].toFixed(5)}° N, ${q[1].toFixed(5)}° E</span><br><small>dokładność ok. ±20–30 m</small>`;
+  const c = W.czerpadlo, qc = fwd(c.u,c.v);
+  L.marker(qc, {icon:L.divIcon({className:"", html:'<div class="kunszt" style="border-radius:50%;transform:none"></div>', iconSize:[20,20], iconAnchor:[10,10]})}).bindPopup(pop(c, qc)).addTo(waterLayer);
+  const w = W.wieza, qw = fwd(w.u,w.v);
+  L.marker(qw, {icon:L.divIcon({className:"", html:'<div class="kunszt"></div>', iconSize:[20,20], iconAnchor:[10,10]})}).bindPopup(pop(w, qw)).addTo(waterLayer);
 }
+
 
 function drawLabels(){
   labelLayer.clearLayers();
@@ -291,7 +293,7 @@ const op = document.getElementById("op");
 op.oninput = () => { plan.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
 document.getElementById("showLabels").onchange = e => { if (e.target.checked){ drawLabels(); labelLayer.addTo(map); } else map.removeLayer(labelLayer); };
 document.getElementById("showWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
-document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(1112,790), 18); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
+document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(1150,770), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
 document.getElementById("showCp").onchange = e => e.target.checked ? cpLayer.addTo(map) : map.removeLayer(cpLayer);
 document.getElementById("model").onchange = e => { model = e.target.value; refresh(); };
 document.getElementById("resetBtn").onclick = () => { points = DATA.points.map(p => ({...p, on:true})); refresh(); };

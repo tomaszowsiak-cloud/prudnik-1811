@@ -93,9 +93,9 @@
   },
   {
    "n": 6,
-   "u": 1113,
-   "v": 734,
-   "pl": "Urządzenie wodociągowe (Wasserkunst)",
+   "u": 1227.6,
+   "v": 698.4,
+   "pl": "Czerpadło – początek kunsztu wodnego",
    "de": "Die Wasser-Kunst"
   },
   {
@@ -191,164 +191,286 @@
   },
   {
    "n": 20,
-   "u": 1083,
-   "v": 782,
-   "pl": "Zbiorniki wody",
+   "u": 1077.4,
+   "v": 785.7,
+   "pl": "Zdroje miejskie (studnie z wodą z rurociągu)",
    "de": "Die Wasser-Reservoirs"
   },
   {
    "n": 21,
-   "u": 1082,
-   "v": 720,
-   "pl": "Rurociąg z urządzenia wodociągowego",
+   "u": 1068.8,
+   "v": 719.0,
+   "pl": "Rurociąg z kunsztu",
    "de": "Die Röhrleitung aus der Kunst"
   }
  ],
  "water": {
-  "kunszt": {
-   "u": 1112,
-   "v": 735,
-   "pl": "Kunszt wodny (nr 6)",
-   "opis": "Urządzenie wodociągowe (Die Wasser-Kunst). Budynek publiczny przy browarach, w północnej części miasta."
+  "czerpadlo": {
+   "u": 1227.6,
+   "v": 698.4,
+   "pl": "Czerpadło (nr 6)",
+   "opis": "Początek kunsztu wodnego: miejsce poboru wody z rzeki przy jazie (Wehr), w północno-wschodnim narożniku miasta."
   },
-  "ujecie": {
-   "u": 1120,
-   "v": 702,
-   "pl": "Doprowadzenie wody od strony rzeki",
-   "opis": "Niebieskie kreski między rzeką (Die Bache) a kunsztem. Odczyt przybliżony."
+  "wieza": {
+   "u": 1206.9,
+   "v": 737.5,
+   "pl": "Wieża wodna przy arsenale",
+   "opis": "Wieża, do której czerpadło podawało wodę. Stoi w miejscu arsenału (nr 19), czyli dzisiejszej Wieży Katowskiej, opisywanej w rejestrze zabytków jako dawna wieża wodna miasta."
   },
   "rury": [
    {
-    "pl": "Rurociąg z kunsztu do rynku (nr 21)",
+    "pl": "Przewód z czerpadła do wieży wodnej",
     "pts": [
      [
-      1120,
-      702
+      1226.7,
+      700.5
      ],
      [
-      1114,
-      722
+      1219.3,
+      718.4
      ],
      [
-      1112,
-      735
-     ],
-     [
-      1105,
-      742
-     ],
-     [
-      1104,
-      765
+      1212.2,
+      735.4
      ]
     ]
    },
    {
-    "pl": "Rurociąg – zachodnia strona rynku",
+    "pl": "Rurociąg z wieży wodnej (nr 21)",
     "pts": [
      [
-      1104,
-      765
+      1203.9,
+      735.7
      ],
      [
-      1093,
-      770
+      1179.8,
+      733.2
      ],
      [
-      1079,
-      782
+      1155.1,
+      729.2
      ],
      [
-      1072,
-      800
+      1136.6,
+      718.4
      ],
      [
-      1078,
-      822
+      1118.1,
+      707.6
+     ],
+     [
+      1119.0,
+      720.0
+     ],
+     [
+      1105.8,
+      721.5
      ]
     ]
    },
    {
-    "pl": "Rurociąg – wschodnia strona rynku",
+    "pl": "Rurociąg – północna nitka na zachód (nr 21)",
     "pts": [
      [
-      1104,
-      765
+      1105.8,
+      721.5
      ],
      [
-      1124,
-      772
+      1068.8,
+      719.0
      ],
      [
-      1135,
-      776
+      1034.8,
+      716.9
      ],
      [
-      1125,
-      790
-     ],
-     [
-      1121,
-      808
-     ],
-     [
-      1129,
-      822
-     ],
-     [
-      1131,
-      840
-     ],
-     [
-      1131,
-      860
+      1030.8,
+      714.1
      ]
     ]
    },
    {
-    "pl": "Odgałęzienie na wschód",
+    "pl": "Rurociąg – zachodnia część miasta (nr 21)",
     "pts": [
      [
-      1129,
-      822
+      1031.7,
+      718.4
      ],
      [
-      1150,
-      823
+      1031.1,
+      727.7
+     ],
+     [
+      1028.7,
+      743.1
+     ],
+     [
+      1020.9,
+      747.7
+     ],
+     [
+      1010.1,
+      754.8
+     ],
+     [
+      1037.9,
+      760.1
+     ],
+     [
+      1064.1,
+      764.7
+     ],
+     [
+      1071.8,
+      775.5
+     ],
+     [
+      1077.4,
+      785.7
+     ],
+     [
+      1070.3,
+      789.4
+     ],
+     [
+      1068.1,
+      817.1
+     ],
+     [
+      1080.2,
+      823.3
+     ]
+    ]
+   },
+   {
+    "pl": "Rurociąg – do rynku od północy (nr 21)",
+    "pts": [
+     [
+      1104.8,
+      723.0
+     ],
+     [
+      1103.3,
+      761.6
+     ],
+     [
+      1118.1,
+      769.3
+     ],
+     [
+      1131.1,
+      777.0
+     ]
+    ]
+   },
+   {
+    "pl": "Rurociąg – odgałęzienie na wschód (nr 21)",
+    "pts": [
+     [
+      1131.1,
+      777.0
+     ],
+     [
+      1142.8,
+      761.6
+     ],
+     [
+      1161.3,
+      764.1
+     ],
+     [
+      1169.0,
+      766.2
+     ]
+    ]
+   },
+   {
+    "pl": "Rurociąg – wschodnia strona rynku (nr 21)",
+    "pts": [
+     [
+      1131.1,
+      777.0
+     ],
+     [
+      1125.8,
+      787.8
+     ],
+     [
+      1119.0,
+      801.7
+     ],
+     [
+      1120.6,
+      815.6
+     ],
+     [
+      1135.1,
+      821.8
+     ],
+     [
+      1152.0,
+      822.7
+     ]
+    ]
+   },
+   {
+    "pl": "Rurociąg – na południe, do jatek (nr 21)",
+    "pts": [
+     [
+      1135.1,
+      821.8
+     ],
+     [
+      1131.1,
+      829.5
+     ],
+     [
+      1130.4,
+      858.8
      ]
     ]
    }
   ],
-  "zbiorniki": [
+  "zdroje": [
    {
-    "u": 1079,
-    "v": 782,
-    "pl": "Zbiornik wody (nr 20) – zachodnia pierzeja rynku"
+    "u": 1030.8,
+    "v": 714.1,
+    "pl": "Zdrój miejski (nr 20) – przy szopie sikawek (nr 3)"
    },
    {
-    "u": 1078,
-    "v": 822,
-    "pl": "Zbiornik wody (nr 20) – południowo-zachodni narożnik rynku"
+    "u": 1010.1,
+    "v": 754.8,
+    "pl": "Zdrój miejski (nr 20) – w zachodniej części miasta"
    },
    {
-    "u": 1135,
-    "v": 776,
-    "pl": "Zbiornik wody (nr 20) – północno-wschodni narożnik rynku"
+    "u": 1077.4,
+    "v": 785.7,
+    "pl": "Zdrój miejski (nr 20) – w zachodniej pierzei rynku"
    },
    {
-    "u": 1150,
-    "v": 823,
-    "pl": "Zbiornik wody (nr 20) – wschodnia strona"
+    "u": 1080.2,
+    "v": 823.3,
+    "pl": "Zdrój miejski (nr 20) – w południowo-zachodnim narożniku rynku"
    },
    {
-    "u": 1131,
-    "v": 860,
-    "pl": "Zbiornik wody (nr 20) – na południe od rynku"
+    "u": 1131.1,
+    "v": 777.0,
+    "pl": "Zdrój miejski (nr 20) – w północno-wschodnim narożniku rynku"
    },
    {
-    "u": 1168,
-    "v": 765,
-    "pl": "Zbiornik wody (nr 20) – kwartał na wschód od rynku"
+    "u": 1169.0,
+    "v": 766.2,
+    "pl": "Zdrój miejski (nr 20) – w kwartale na wschód od rynku"
+   },
+   {
+    "u": 1152.0,
+    "v": 822.7,
+    "pl": "Zdrój miejski (nr 20) – na wschód od rynku"
+   },
+   {
+    "u": 1130.4,
+    "v": 858.8,
+    "pl": "Zdrój miejski (nr 20) – przy jatkach (nr 9)"
    }
   ]
  }
