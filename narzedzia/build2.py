@@ -2,7 +2,7 @@ import json, zipfile, numpy as np, os, sys
 OUT=sys.argv[1] if len(sys.argv)>1 else '..'
 os.makedirs(OUT,exist_ok=True)
 LAT0,LON0=50.3215,17.5806; KY=111250; KX=111320*np.cos(np.radians(LAT0))
-d11=json.load(open('../dane/plan1811.json')); d90=json.load(open('../dane/plan1890.json')); d08=json.load(open('../dane/plan1908.json'))
+d11=json.load(open('../dane/plan1811.json')); d90=json.load(open('../dane/plan1890.json')); d08=json.load(open('../dane/plan1908.json')); d13=json.load(open('../dane/plan1913.json'))
 plans=[
  dict(id="1811",img="plan1811.jpg",src_file='../plan1811.jpg',w=4476,h=3304,head="Plan von der Stadt Neustadt, 1811",
   meta="Pomiar: maj–sierpień 1811, konduktor Scheuerwasser młodszy; kopia: marzec 1835 (kopista Treeger lub Freeger). Podziałka: 150 prętów reńskich ≈ 565 m.",
@@ -18,7 +18,12 @@ plans=[
   meta="Plan turystyczny z przewodnika wydawnictwa Woerl's Reisebücherverlag (Lipsk). Bez podziałki; plan uproszczony, ale z dokładnie rozmieszczonymi obiektami.",
   source="Polona (Biblioteka Narodowa), polona.pl/item-view/52c71138-9151-42d5-ab13-cb1dde0e522a",
   scaleNote="Plan nie ma podziałki. Skala z dopasowania: ok. 1,30 m/piksel.",
-  points=d08['points'],labels=d08['labels'])]
+  points=d08['points'],labels=d08['labels']),
+ dict(id="1913",img="plan1913.jpg",src_file='../plan1913.jpg',w=2576,h=2434,head="Plan von Neustadt in Oberschlesien, 1913",
+  meta="Plan Miejskiego Urzędu Budowlanego (Stadtbauamt), podpisany przez miejskiego budowniczego, Prudnik, 3 grudnia 1913. Skala oryginału 1:2500. Na planie zaznaczono działki (kolorem czerwonym i zielonym) oraz oczyszczalnię ścieków.",
+  source="do uzupełnienia",
+  scaleNote="Skala oryginału 1:2500; skan jest pomniejszony. Skala z dopasowania: ok. 0,79 m/piksel.",
+  points=d13['points'],labels=d13['labels'])]
 data={"plans":[{k:v for k,v in p.items() if k!='src_file'} for p in plans],"water":d11['water']}
 html=open('template.html').read().replace('__DATA__',json.dumps(data,ensure_ascii=False))
 open(f'{OUT}/index.html','w').write(html)

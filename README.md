@@ -9,6 +9,7 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | 1811 | konduktor Scheuerwasser młodszy, kopia z 1835 r. | 150 prętów reńskich ≈ 565 m | Archiwum Państwowe w Opolu, zespół Rejencja Opolska (nr 1191), seria Mapy i plany IX, sygn. 81 | ok. 20 m |
 | 1890 | geometra Weymann | 1:8000 | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/9b189dde-cd14-41d8-885f-6ac1b62f0c5c?page=0) | ok. 9 m |
 | 1908 | Woerl's Reisebücherverlag, Lipsk (plan z przewodnika) | bez podziałki | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/52c71138-9151-42d5-ab13-cb1dde0e522a?page=3) | ok. 7 m (na 5 punktach) |
+| 1913 | Miejski Urząd Budowlany (Stadtbauamt), 3 grudnia 1913 | 1:2500 | do uzupełnienia | ok. 4 m (na 5 punktach) |
 
 ## Co jest w repozytorium
 
@@ -18,8 +19,9 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | `plan1811.jpg` | Skan planu z 1811 r., pomniejszony do 4476 × 3304 pikseli i przycięty do ramki |
 | `plan1890.jpg` | Skan planu z 1890 r., pomniejszony do 4000 × 3450 pikseli |
 | `plan1908.jpg` | Plan z 1908 r., przycięty do ramki mapy |
+| `plan1913.jpg` | Plan z 1913 r. |
 | `prudnik-plany.kmz` | Wszystkie plany i wodociąg 1811 do Google Earth |
-| `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
+| `plan1811.jpg.points`, `plan1890.jpg.points`, `plan1908.jpg.points`, `plan1913.jpg.points` | Punkty kontrolne do wtyczki Georeferencer w QGIS |
 | `dane/` | Punkty kontrolne, położenia numerów z legend i wodociąg 1811 (JSON) |
 | `narzedzia/` | Szablon strony i skrypt, który buduje z niego `index.html`, plik KMZ i pliki punktów |
 
@@ -178,3 +180,34 @@ Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27) leży poza ramką planu. Nu
 | 37 | Wieża Bramy Dolnej | Niedertorturm |
 | 38 | Rzeźnia z chłodnią | Schlachthaus mit Kühlanlage |
 | 39 | Oczyszczalnia ścieków | Kläranlage |
+
+## Plan z 1913 roku
+
+*Plan von Neustadt in Oberschlesien*, sporządzony przez Miejski Urząd Budowlany (*Stadtbauamt*) i podpisany przez miejskiego budowniczego, Prudnik, 3 grudnia 1913. Skala oryginału 1:2500. Plan obejmuje głównie południowo-zachodnią część miasta. Kolorem czerwonym i zielonym zaznaczono na nim działki.
+
+- Dopasowanie przez podobieństwo na 5 punktach kontrolnych, średni błąd ok. 4 m.
+- Góra planu jest obrócona o ok. 17° względem północy.
+- Punkty kontrolne: ratusz, Wieża Woka, kościół św. Michała, Wieża Bramy Dolnej, areszt przy ul. Kościuszki 7.
+
+### Oczyszczalnia ścieków na planie 1913
+
+Oczyszczalnia (*Kläranlage*) jest narysowana szczegółowo: dwa okrągłe zbiorniki, element w kształcie wachlarza i podłużny basen. Dalej na południowy zachód są rowy osadowe (*Schlammgräben*). Według dopasowania oczyszczalnia leży ok. 50,3129° N, 17,5765° E, a rowy osadowe ok. 50,3112° N, 17,5739° E.
+
+Na planie 1908 oczyszczalnia wypada ok. 80 m dalej. Oba plany dopasowano na punktach w centrum miasta, a oczyszczalnia leży ok. 1 km na południe od nich, więc błąd na obrzeżu jest dużo większy niż średni. Dokładniejszy jest plan 1913.
+
+### Obiekty opisane na planie 1913
+
+| Nr | Obiekt | Oryginał |
+|---|---|---|
+| 1 | Oczyszczalnia ścieków | Kläranlage |
+| 2 | Rowy (poletka) osadowe oczyszczalni | Schlammgräben |
+| 3 | Cmentarz symultanny (międzywyznaniowy) | Simultan-Friedhof |
+| 4 | Park miejski | Stadtpark |
+| 5 | Pomnik wojenny | Kriegerdenkmal |
+| 6 | Szpital miejski | Städtisches Krankenhaus |
+| 7 | Fabryki S. Fränkla | S. Fränkel'sche Fabriken |
+| 8 | Koszary | Kaserne |
+| 9 | Wielka Łąka | Die große Wiese |
+| 10 | Rynek z ratuszem | Ring |
+
+Numeracja w tej tabeli jest robocza: plan 1913 ma własne numery działek i budynków, ale bez legendy.

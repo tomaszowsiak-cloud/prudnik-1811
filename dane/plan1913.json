@@ -1,0 +1,121 @@
+{
+ "points": [
+  {
+   "id": "p0",
+   "name": "Ratusz",
+   "u": 1855,
+   "v": 575,
+   "lat": 50.321514,
+   "lon": 17.580574,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p1",
+   "name": "Wieża Woka",
+   "u": 1607,
+   "v": 436,
+   "lat": 50.322914,
+   "lon": 17.578288,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p2",
+   "name": "Kościół św. Michała",
+   "u": 1847,
+   "v": 750,
+   "lat": 50.320313,
+   "lon": 17.579909,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p3",
+   "name": "Wieża Bramy Dolnej",
+   "u": 2077,
+   "v": 597,
+   "lat": 50.320925,
+   "lon": 17.582839,
+   "src": "odtur.pl"
+  },
+  {
+   "id": "p4",
+   "name": "Areszt, Kościuszki 7 (nr 22 na planie)",
+   "u": 1400,
+   "v": 843,
+   "lat": 50.320645,
+   "lon": 17.574791,
+   "src": "zabytek.pl"
+  }
+ ],
+ "labels": [
+  {
+   "n": 1,
+   "de": "Kläranlage",
+   "pl": "Oczyszczalnia ścieków",
+   "u": 1851,
+   "v": 1838
+  },
+  {
+   "n": 2,
+   "de": "Schlammgräben",
+   "pl": "Rowy (poletka) osadowe oczyszczalni",
+   "u": 1696,
+   "v": 2138
+  },
+  {
+   "n": 3,
+   "de": "Simultan-Friedhof",
+   "pl": "Cmentarz symultanny (międzywyznaniowy)",
+   "u": 883,
+   "v": 941
+  },
+  {
+   "n": 4,
+   "de": "Stadtpark",
+   "pl": "Park miejski",
+   "u": 1363,
+   "v": 1142
+  },
+  {
+   "n": 5,
+   "de": "Kriegerdenkmal",
+   "pl": "Pomnik wojenny",
+   "u": 1532,
+   "v": 1071
+  },
+  {
+   "n": 6,
+   "de": "Städtisches Krankenhaus",
+   "pl": "Szpital miejski",
+   "u": 688,
+   "v": 610
+  },
+  {
+   "n": 7,
+   "de": "S. Fränkel'sche Fabriken",
+   "pl": "Fabryki S. Fränkla",
+   "u": 896,
+   "v": 286
+  },
+  {
+   "n": 8,
+   "de": "Kaserne",
+   "pl": "Koszary",
+   "u": 974,
+   "v": 1532
+  },
+  {
+   "n": 9,
+   "de": "Die große Wiese",
+   "pl": "Wielka Łąka",
+   "u": 2057,
+   "v": 1356
+  },
+  {
+   "n": 10,
+   "de": "Ring",
+   "pl": "Rynek z ratuszem",
+   "u": 1855,
+   "v": 575
+  }
+ ]
+}
