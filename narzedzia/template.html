@@ -72,7 +72,8 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
   <button id="toggle" type="button">Zwiń</button>
   <header>
     <h1><span>Plan von der Stadt Neustadt, 1811</span>Prudnik 1811 na dzisiejszej mapie</h1>
-    <p class="src" style="margin-top:6px">Pomiar: maj–sierpień 1811, konduktor Scheuerwasser; kopia: marzec 1835, Treeger. Podziałka: 150 prętów reńskich ≈ 565 m.</p>
+    <p class="src" style="margin-top:6px">Pomiar: maj–sierpień 1811, konduktor Scheuerwasser młodszy; kopia: marzec 1835 (kopista Treeger lub Freeger). Podziałka: 150 prętów reńskich ≈ 565 m.</p>
+    <p class="src" style="margin-top:6px">Źródło: Archiwum Państwowe w Opolu, zespół Rejencja Opolska (nr 1191), seria Mapy i plany IX, sygn. 81.</p>
   </header>
 
   <section>
@@ -104,7 +105,7 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
       <div><b id="scale">–</b><small>skala, m/piksel</small></div>
       <div><b id="rot">–</b><small>góra planu wzgl. północy</small></div>
     </div>
-    <p class="src" style="margin-top:8px">Skala wynikająca z podziałki na planie: ok. 1,50 m/piksel. Zgodność z dopasowaniem świadczy, że punkty są dobrze rozpoznane.</p>
+    <p class="src" style="margin-top:8px">Skala wynikająca z podziałki na planie: ok. 0,75 m/piksel. Zgodność z dopasowaniem świadczy, że punkty są dobrze rozpoznane.</p>
   </section>
 
   <section>
@@ -133,8 +134,8 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
   </section>
 
   <section>
-    <h2>Źródła współrzędnych</h2>
-    <p class="src">Rejestr zabytków (zabytek.pl), odtur.pl, Wikimedia Commons. Tło: OpenStreetMap, ortofotomapa Geoportalu, zdjęcia satelitarne Esri.</p>
+    <h2>Źródła</h2>
+    <p class="src">Plan: Archiwum Państwowe w Opolu, Rejencja Opolska (nr 1191), Mapy i plany IX, sygn. 81. Odczyt wodociągu: Tomek Owsiak. Współrzędne punktów kontrolnych: rejestr zabytków (zabytek.pl), odtur.pl, Wikimedia Commons. Tło: OpenStreetMap, ortofotomapa Geoportalu, zdjęcia satelitarne Esri.</p>
   </section>
 </aside>
 
@@ -147,7 +148,7 @@ const LAT0 = 50.3215, LON0 = 17.5806;
 const KY = 111250, KX = 111320 * Math.cos(LAT0 * Math.PI / 180);
 const en = (lat, lon) => [(lon - LON0) * KX, (lat - LAT0) * KY];
 const ll = (E, N) => [LAT0 + N / KY, LON0 + E / KX];
-const STORE = "prudnik1811-points-v1";
+const STORE = "prudnik1811-points-v2";
 
 let points = load() || DATA.points.map(p => ({...p, on: true}));
 let model = "sim", T = null;
@@ -293,7 +294,7 @@ const op = document.getElementById("op");
 op.oninput = () => { plan.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
 document.getElementById("showLabels").onchange = e => { if (e.target.checked){ drawLabels(); labelLayer.addTo(map); } else map.removeLayer(labelLayer); };
 document.getElementById("showWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
-document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(1150,770), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
+document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(2300,1540), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
 document.getElementById("showCp").onchange = e => e.target.checked ? cpLayer.addTo(map) : map.removeLayer(cpLayer);
 document.getElementById("model").onchange = e => { model = e.target.value; refresh(); };
 document.getElementById("resetBtn").onclick = () => { points = DATA.points.map(p => ({...p, on:true})); refresh(); };

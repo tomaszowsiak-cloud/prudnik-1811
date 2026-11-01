@@ -1,8 +1,8 @@
 import json, base64, zipfile, numpy as np
-D=json.load(open('data.json')); W,H=2238,1652
+D=json.load(open('data.json')); W,H=4476,3304
 LAT0,LON0=50.3215,17.5806; KY=111250; KX=111320*np.cos(np.radians(LAT0))
-img=open('../plan1811.jpg','rb').read()
-html=open('template.html').read().replace('__IMG__','data:image/jpeg;base64,'+base64.b64encode(img).decode()).replace('__W__',str(W)).replace('__H__',str(H)).replace('__DATA__',json.dumps(D,ensure_ascii=False))
+img=None
+html=open('template.html').read().replace('__IMG__','plan1811.jpg').replace('__W__',str(W)).replace('__H__',str(H)).replace('__DATA__',json.dumps(D,ensure_ascii=False))
 open('../prudnik-1811-nakladka.html','w').write(html)
 # affine fit
 P=D['points']; A=np.array([[p['u'],p['v'],1] for p in P],float)
@@ -32,7 +32,7 @@ kml=f'''<?xml version="1.0" encoding="UTF-8"?>
 <gx:LatLonQuad><coordinates>{coords}</coordinates></gx:LatLonQuad></GroundOverlay>
 ''' + ''.join(f'<Placemark><name>{p["name"]}</name><Point><coordinates>{p["lon"]},{p["lat"]},0</coordinates></Point></Placemark>\n' for p in P) + water_kml() + '</Document></kml>'
 with zipfile.ZipFile('../prudnik-1811.kmz','w',zipfile.ZIP_DEFLATED) as z:
-    z.writestr('doc.kml',kml); z.write('../plan1811.jpg','plan1811.jpg')
+    z.writestr('doc.kml',kml); z.write('../plan1811_hd.jpg','plan1811.jpg')
 crs='#CRS: GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563]],CS[ellipsoidal,2],AXIS["latitude",north],AXIS["longitude",east],ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",4326]]'
 open('../plan1811.jpg.points','w').write(crs+'\nmapX,mapY,sourceX,sourceY,enable,dX,dY,residual\n'+''.join(f"{p['lon']},{p['lat']},{p['u']},{-p['v']},1,0,0,0\n" for p in P))
 # podgląd: plan po przekształceniu + punkty

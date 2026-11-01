@@ -3,8 +3,8 @@
   {
    "id": "ratusz",
    "name": "Ratusz (nr 7)",
-   "u": 1110,
-   "v": 800,
+   "u": 2220,
+   "v": 1600,
    "lat": 50.321514,
    "lon": 17.580574,
    "src": "zabytek.pl"
@@ -12,8 +12,8 @@
   {
    "id": "michal",
    "name": "Kościół św. Michała (nr 10)",
-   "u": 1117,
-   "v": 903,
+   "u": 2234,
+   "v": 1806,
    "lat": 50.320313,
    "lon": 17.579909,
    "src": "zabytek.pl"
@@ -21,8 +21,8 @@
   {
    "id": "woka",
    "name": "Wieża Woka – ruina zamku (nr 1)",
-   "u": 963,
-   "v": 715,
+   "u": 1926,
+   "v": 1430,
    "lat": 50.322914,
    "lon": 17.578288,
    "src": "zabytek.pl"
@@ -30,8 +30,8 @@
   {
    "id": "pip",
    "name": "Kościół bonifratrów (nr 14)",
-   "u": 935,
-   "v": 776,
+   "u": 1870,
+   "v": 1552,
    "lat": 50.322662,
    "lon": 17.577028,
    "src": "zabytek.pl"
@@ -39,8 +39,8 @@
   {
    "id": "brama",
    "name": "Wieża Bramy Dolnej",
-   "u": 1220,
-   "v": 790,
+   "u": 2440,
+   "v": 1580,
    "lat": 50.320925,
    "lon": 17.582839,
    "src": "odtur.pl"
@@ -48,8 +48,8 @@
   {
    "id": "arsenal",
    "name": "Arsenał / Wieża Katowska (nr 19)",
-   "u": 1215,
-   "v": 738,
+   "u": 2430,
+   "v": 1476,
    "lat": 50.321833,
    "lon": 17.583139,
    "src": "Wikimedia Commons"
@@ -58,162 +58,162 @@
  "labels": [
   {
    "n": 1,
-   "u": 963,
-   "v": 715,
-   "pl": "Ruina zamku",
-   "de": "Die Ruine des Schlosses"
+   "u": 1926,
+   "v": 1430,
+   "pl": "Ruina zamku i wozownia",
+   "de": "Die Ruine des Schlosses u. Wagenremise"
   },
   {
    "n": 2,
-   "u": 1020,
-   "v": 737,
+   "u": 2040,
+   "v": 1474,
    "pl": "Skład soli",
    "de": "Die Salz-Niederlage"
   },
   {
    "n": 3,
-   "u": 1039,
-   "v": 706,
-   "pl": "Szopa sikawek strażackich",
+   "u": 2078,
+   "v": 1412,
+   "pl": "Szopa sikawek strażackich (odczyt niepewny)",
    "de": "Das Spritzen-Häusel"
   },
   {
    "n": 4,
-   "u": 1060,
-   "v": 707,
+   "u": 2120,
+   "v": 1414,
    "pl": "Słodownia",
    "de": "Das Maltz-Haus"
   },
   {
    "n": 5,
-   "u": 1100,
-   "v": 734,
+   "u": 2200,
+   "v": 1468,
    "pl": "Browary",
    "de": "Brau-Häuser"
   },
   {
    "n": 6,
-   "u": 1227.6,
-   "v": 698.4,
+   "u": 2455.2,
+   "v": 1396.8,
    "pl": "Czerpadło – początek kunsztu wodnego",
    "de": "Die Wasser-Kunst"
   },
   {
    "n": 7,
-   "u": 1110,
-   "v": 800,
+   "u": 2220,
+   "v": 1600,
    "pl": "Ratusz",
    "de": "Das Rathhaus"
   },
   {
    "n": 8,
-   "u": 1114,
-   "v": 870,
+   "u": 2228,
+   "v": 1740,
    "pl": "Szkoła, seminarium",
    "de": "Schulen, Seminarium"
   },
   {
    "n": 9,
-   "u": 1142,
-   "v": 866,
+   "u": 2284,
+   "v": 1732,
    "pl": "Jatki mięsne",
    "de": "Die Fleischbänke"
   },
   {
    "n": 10,
-   "u": 1117,
-   "v": 903,
+   "u": 2234,
+   "v": 1806,
    "pl": "Kościół parafialny",
    "de": "Die Pfarr-Kirche"
   },
   {
    "n": 11,
-   "u": 1252,
-   "v": 835,
+   "u": 2504,
+   "v": 1670,
    "pl": "Ujeżdżalnia",
    "de": "Die Reitbahn"
   },
   {
    "n": 12,
-   "u": 1140,
-   "v": 881,
+   "u": 2280,
+   "v": 1762,
    "pl": "Budynki parafialne",
    "de": "Die zur Pfarre gehörigen Gebäude"
   },
   {
    "n": 13,
-   "u": 977,
-   "v": 920,
+   "u": 1954,
+   "v": 1840,
    "pl": "Dawny klasztor i kościół kapucynów",
    "de": "Ehemaliges Kapuziner-Kloster u. Kirche"
   },
   {
    "n": 14,
-   "u": 935,
-   "v": 776,
+   "u": 1870,
+   "v": 1552,
    "pl": "Kościół bonifratrów (Braci Miłosierdzia)",
    "de": "Barmherzigen-Kirche"
   },
   {
    "n": 15,
-   "u": 1430,
-   "v": 315,
+   "u": 2860,
+   "v": 630,
    "pl": "Cegielnia miejska",
    "de": "Die Stadt-Ziegeley"
   },
   {
    "n": 16,
-   "u": 935,
-   "v": 680,
+   "u": 1870,
+   "v": 1360,
    "pl": "Dom strzelecki (bractwo kurkowe)",
    "de": "Das Schützen-Haus"
   },
   {
    "n": 17,
-   "u": 1096,
-   "v": 780,
+   "u": 2192,
+   "v": 1560,
    "pl": "Rynek",
    "de": "Der Ring"
   },
   {
    "n": 18,
-   "u": 1405,
-   "v": 665,
-   "pl": "Targ bydła",
+   "u": 2810,
+   "v": 1330,
+   "pl": "Targ świński (Schwarzvieh – trzoda chlewna)",
    "de": "Der Schwarz-Vieh-Markt"
   },
   {
    "n": 19,
-   "u": 1215,
-   "v": 738,
-   "pl": "Arsenał (zbrojownia)",
+   "u": 2430,
+   "v": 1476,
+   "pl": "Arsenał (zbrojownia), przy nim wieża wodna",
    "de": "Das Zeug-Haus"
   },
   {
    "n": 20,
-   "u": 1077.4,
-   "v": 785.7,
+   "u": 2154.8,
+   "v": 1571.4,
    "pl": "Zdroje miejskie (studnie z wodą z rurociągu)",
    "de": "Die Wasser-Reservoirs"
   },
   {
    "n": 21,
-   "u": 1068.8,
-   "v": 719.0,
+   "u": 2137.6,
+   "v": 1438.0,
    "pl": "Rurociąg z kunsztu",
    "de": "Die Röhrleitung aus der Kunst"
   }
  ],
  "water": {
   "czerpadlo": {
-   "u": 1227.6,
-   "v": 698.4,
+   "u": 2455.2,
+   "v": 1396.8,
    "pl": "Czerpadło (nr 6)",
    "opis": "Początek kunsztu wodnego: miejsce poboru wody z rzeki przy jazie (Wehr), w północno-wschodnim narożniku miasta."
   },
   "wieza": {
-   "u": 1206.9,
-   "v": 737.5,
+   "u": 2413.8,
+   "v": 1475.0,
    "pl": "Wieża wodna przy arsenale",
    "opis": "Wieża, do której czerpadło podawało wodę. Stoi w miejscu arsenału (nr 19), czyli dzisiejszej Wieży Katowskiej, opisywanej w rejestrze zabytków jako dawna wieża wodna miasta."
   },
@@ -222,16 +222,16 @@
     "pl": "Przewód z czerpadła do wieży wodnej",
     "pts": [
      [
-      1226.7,
-      700.5
+      2453.4,
+      1401.0
      ],
      [
-      1219.3,
-      718.4
+      2438.6,
+      1436.8
      ],
      [
-      1212.2,
-      735.4
+      2424.4,
+      1470.8
      ]
     ]
    },
@@ -239,32 +239,32 @@
     "pl": "Rurociąg z wieży wodnej (nr 21)",
     "pts": [
      [
-      1203.9,
-      735.7
+      2407.8,
+      1471.4
      ],
      [
-      1179.8,
-      733.2
+      2359.6,
+      1466.4
      ],
      [
-      1155.1,
-      729.2
+      2310.2,
+      1458.4
      ],
      [
-      1136.6,
-      718.4
+      2273.2,
+      1436.8
      ],
      [
-      1118.1,
-      707.6
+      2236.2,
+      1415.2
      ],
      [
-      1119.0,
-      720.0
+      2238.0,
+      1440.0
      ],
      [
-      1105.8,
-      721.5
+      2211.6,
+      1443.0
      ]
     ]
    },
@@ -272,20 +272,20 @@
     "pl": "Rurociąg – północna nitka na zachód (nr 21)",
     "pts": [
      [
-      1105.8,
-      721.5
+      2211.6,
+      1443.0
      ],
      [
-      1068.8,
-      719.0
+      2137.6,
+      1438.0
      ],
      [
-      1034.8,
-      716.9
+      2069.6,
+      1433.8
      ],
      [
-      1030.8,
-      714.1
+      2061.6,
+      1428.2
      ]
     ]
    },
@@ -293,52 +293,52 @@
     "pl": "Rurociąg – zachodnia część miasta (nr 21)",
     "pts": [
      [
-      1031.7,
-      718.4
+      2063.4,
+      1436.8
      ],
      [
-      1031.1,
-      727.7
+      2062.2,
+      1455.4
      ],
      [
-      1028.7,
-      743.1
+      2057.4,
+      1486.2
      ],
      [
-      1020.9,
-      747.7
+      2041.8,
+      1495.4
      ],
      [
-      1010.1,
-      754.8
+      2020.2,
+      1509.6
      ],
      [
-      1037.9,
-      760.1
+      2075.8,
+      1520.2
      ],
      [
-      1064.1,
-      764.7
+      2128.2,
+      1529.4
      ],
      [
-      1071.8,
-      775.5
+      2143.6,
+      1551.0
      ],
      [
-      1077.4,
-      785.7
+      2154.8,
+      1571.4
      ],
      [
-      1070.3,
-      789.4
+      2140.6,
+      1578.8
      ],
      [
-      1068.1,
-      817.1
+      2136.2,
+      1634.2
      ],
      [
-      1080.2,
-      823.3
+      2160.4,
+      1646.6
      ]
     ]
    },
@@ -346,20 +346,20 @@
     "pl": "Rurociąg – do rynku od północy (nr 21)",
     "pts": [
      [
-      1104.8,
-      723.0
+      2209.6,
+      1446.0
      ],
      [
-      1103.3,
-      761.6
+      2206.6,
+      1523.2
      ],
      [
-      1118.1,
-      769.3
+      2236.2,
+      1538.6
      ],
      [
-      1131.1,
-      777.0
+      2262.2,
+      1554.0
      ]
     ]
    },
@@ -367,20 +367,20 @@
     "pl": "Rurociąg – odgałęzienie na wschód (nr 21)",
     "pts": [
      [
-      1131.1,
-      777.0
+      2262.2,
+      1554.0
      ],
      [
-      1142.8,
-      761.6
+      2285.6,
+      1523.2
      ],
      [
-      1161.3,
-      764.1
+      2322.6,
+      1528.2
      ],
      [
-      1169.0,
-      766.2
+      2338.0,
+      1532.4
      ]
     ]
    },
@@ -388,28 +388,28 @@
     "pl": "Rurociąg – wschodnia strona rynku (nr 21)",
     "pts": [
      [
-      1131.1,
-      777.0
+      2262.2,
+      1554.0
      ],
      [
-      1125.8,
-      787.8
+      2251.6,
+      1575.6
      ],
      [
-      1119.0,
-      801.7
+      2238.0,
+      1603.4
      ],
      [
-      1120.6,
-      815.6
+      2241.2,
+      1631.2
      ],
      [
-      1135.1,
-      821.8
+      2270.2,
+      1643.6
      ],
      [
-      1152.0,
-      822.7
+      2304.0,
+      1645.4
      ]
     ]
    },
@@ -417,59 +417,59 @@
     "pl": "Rurociąg – na południe, do jatek (nr 21)",
     "pts": [
      [
-      1135.1,
-      821.8
+      2270.2,
+      1643.6
      ],
      [
-      1131.1,
-      829.5
+      2262.2,
+      1659.0
      ],
      [
-      1130.4,
-      858.8
+      2260.8,
+      1717.6
      ]
     ]
    }
   ],
   "zdroje": [
    {
-    "u": 1030.8,
-    "v": 714.1,
+    "u": 2061.6,
+    "v": 1428.2,
     "pl": "Zdrój miejski (nr 20) – przy szopie sikawek (nr 3)"
    },
    {
-    "u": 1010.1,
-    "v": 754.8,
+    "u": 2020.2,
+    "v": 1509.6,
     "pl": "Zdrój miejski (nr 20) – w zachodniej części miasta"
    },
    {
-    "u": 1077.4,
-    "v": 785.7,
+    "u": 2154.8,
+    "v": 1571.4,
     "pl": "Zdrój miejski (nr 20) – w zachodniej pierzei rynku"
    },
    {
-    "u": 1080.2,
-    "v": 823.3,
+    "u": 2160.4,
+    "v": 1646.6,
     "pl": "Zdrój miejski (nr 20) – w południowo-zachodnim narożniku rynku"
    },
    {
-    "u": 1131.1,
-    "v": 777.0,
+    "u": 2262.2,
+    "v": 1554.0,
     "pl": "Zdrój miejski (nr 20) – w północno-wschodnim narożniku rynku"
    },
    {
-    "u": 1169.0,
-    "v": 766.2,
+    "u": 2338.0,
+    "v": 1532.4,
     "pl": "Zdrój miejski (nr 20) – w kwartale na wschód od rynku"
    },
    {
-    "u": 1152.0,
-    "v": 822.7,
+    "u": 2304.0,
+    "v": 1645.4,
     "pl": "Zdrój miejski (nr 20) – na wschód od rynku"
    },
    {
-    "u": 1130.4,
-    "v": 858.8,
+    "u": 2260.8,
+    "v": 1717.6,
     "pl": "Zdrój miejski (nr 20) – przy jatkach (nr 9)"
    }
   ]
