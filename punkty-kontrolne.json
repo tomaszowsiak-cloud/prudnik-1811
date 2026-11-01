@@ -1,0 +1,33 @@
+{
+  "points": [
+    {"id":"ratusz","name":"Ratusz (nr 7)","u":1110,"v":800,"lat":50.321514,"lon":17.580574,"src":"zabytek.pl"},
+    {"id":"michal","name":"Kościół św. Michała (nr 10)","u":1117,"v":903,"lat":50.320313,"lon":17.579909,"src":"zabytek.pl"},
+    {"id":"woka","name":"Wieża Woka – ruina zamku (nr 1)","u":963,"v":715,"lat":50.322914,"lon":17.578288,"src":"zabytek.pl"},
+    {"id":"pip","name":"Kościół bonifratrów (nr 14)","u":935,"v":776,"lat":50.322662,"lon":17.577028,"src":"zabytek.pl"},
+    {"id":"brama","name":"Wieża Bramy Dolnej","u":1220,"v":790,"lat":50.320925,"lon":17.582839,"src":"odtur.pl"},
+    {"id":"arsenal","name":"Arsenał / Wieża Katowska (nr 19)","u":1215,"v":738,"lat":50.321833,"lon":17.583139,"src":"Wikimedia Commons"}
+  ],
+  "labels": [
+    {"n":1,"u":963,"v":715,"pl":"Ruina zamku","de":"Die Ruine des Schlosses"},
+    {"n":2,"u":1020,"v":737,"pl":"Skład soli","de":"Die Salz-Niederlage"},
+    {"n":3,"u":1039,"v":706,"pl":"Szopa sikawek strażackich","de":"Das Spritzen-Häusel"},
+    {"n":4,"u":1060,"v":707,"pl":"Słodownia","de":"Das Maltz-Haus"},
+    {"n":5,"u":1100,"v":734,"pl":"Browary","de":"Brau-Häuser"},
+    {"n":6,"u":1113,"v":734,"pl":"Urządzenie wodociągowe (Wasserkunst)","de":"Die Wasser-Kunst"},
+    {"n":7,"u":1110,"v":800,"pl":"Ratusz","de":"Das Rathhaus"},
+    {"n":8,"u":1114,"v":870,"pl":"Szkoła, seminarium","de":"Schulen, Seminarium"},
+    {"n":9,"u":1142,"v":866,"pl":"Jatki mięsne","de":"Die Fleischbänke"},
+    {"n":10,"u":1117,"v":903,"pl":"Kościół parafialny","de":"Die Pfarr-Kirche"},
+    {"n":11,"u":1252,"v":835,"pl":"Ujeżdżalnia","de":"Die Reitbahn"},
+    {"n":12,"u":1140,"v":881,"pl":"Budynki parafialne","de":"Die zur Pfarre gehörigen Gebäude"},
+    {"n":13,"u":977,"v":920,"pl":"Dawny klasztor i kościół kapucynów","de":"Ehemaliges Kapuziner-Kloster u. Kirche"},
+    {"n":14,"u":935,"v":776,"pl":"Kościół bonifratrów (Braci Miłosierdzia)","de":"Barmherzigen-Kirche"},
+    {"n":15,"u":1430,"v":315,"pl":"Cegielnia miejska","de":"Die Stadt-Ziegeley"},
+    {"n":16,"u":935,"v":680,"pl":"Dom strzelecki (bractwo kurkowe)","de":"Das Schützen-Haus"},
+    {"n":17,"u":1096,"v":780,"pl":"Rynek","de":"Der Ring"},
+    {"n":18,"u":1405,"v":665,"pl":"Targ bydła","de":"Der Schwarz-Vieh-Markt"},
+    {"n":19,"u":1215,"v":738,"pl":"Arsenał (zbrojownia)","de":"Das Zeug-Haus"},
+    {"n":20,"u":1083,"v":782,"pl":"Zbiorniki wody","de":"Die Wasser-Reservoirs"},
+    {"n":21,"u":1082,"v":720,"pl":"Rurociąg z urządzenia wodociągowego","de":"Die Röhrleitung aus der Kunst"}
+  ]
+}
