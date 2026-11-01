@@ -53,6 +53,9 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 .del{border:none;background:none;color:var(--muted);padding:2px 6px}
 .lbl{font:600 11px var(--mono);color:#fff;background:var(--carmine);border-radius:9px;padding:1px 5px;white-space:nowrap;box-shadow:0 0 0 1.5px #fff}
 .kunszt{width:16px;height:16px;background:#0b4fc4;border:2px solid #fff;box-shadow:0 0 0 1px #0007;transform:rotate(45deg)}
+.modes{display:flex;border:1px solid var(--rule);border-radius:7px;overflow:hidden;margin-top:12px}
+.modes a{flex:1;text-align:center;padding:7px 8px;font:600 .82rem var(--body);color:var(--ink);text-decoration:none}
+.modes a[aria-current="page"]{background:var(--carmine);color:#fff}
 .tabs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
 .tabs button{font:600 .95rem var(--mono);padding:6px 14px}
 .tabs button[aria-selected="true"]{background:var(--carmine);border-color:var(--carmine);color:#fff}
@@ -88,6 +91,10 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
   <button id="toggle" type="button">Zwiń</button>
   <header>
     <h1><span id="planTitle">Plan</span>Dawne plany Prudnika</h1>
+    <nav class="modes" aria-label="Tryb">
+      <a href="index.html" aria-current="page">Plany miasta</a>
+      <a href="arkusz.html">Arkusz 5671</a>
+    </nav>
     <div class="tabs" role="tablist" id="tabs"></div>
     <p class="src" id="planMeta" style="margin-top:8px"></p>
     <p class="src" id="planSource" style="margin-top:6px"></p>
@@ -170,6 +177,7 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
+if (location.hash === "#arkusz") location.replace("arkusz.html");
 const DATA = __DATA__;
 const PLANS = DATA.plans;
 let PL = PLANS[0], IMG_W = PL.w, IMG_H = PL.h;

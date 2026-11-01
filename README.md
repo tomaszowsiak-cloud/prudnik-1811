@@ -4,6 +4,8 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 
 **Strona:** https://tomaszowsiak-cloud.github.io/prudnik-1811/
 
+**Arkusz 5671 (1884–1953):** https://tomaszowsiak-cloud.github.io/prudnik-1811/arkusz.html
+
 | Plan | Autor | Skala | Źródło | Średni błąd dopasowania |
 |---|---|---|---|---|
 | 1811 | konduktor Scheuerwasser młodszy, kopia z 1835 r. | 150 prętów reńskich ≈ 565 m | Archiwum Państwowe w Opolu, zespół Rejencja Opolska (nr 1191), seria Mapy i plany IX, sygn. 81 | ok. 20 m |
@@ -17,6 +19,8 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | Plik | Zawartość |
 |---|---|
 | `index.html` | Strona z nakładkami i przełącznikiem planów |
+| `arkusz.html` | Porównanie czterech wydań arkusza 5671 (kurtyna, przenikanie, pokaz) |
+| `arkusz1884.jpg` … `arkusz1953.jpg` | Arkusze przeliczone do odwzorowania mapy internetowej (Web Mercator), przycięte do ramki |
 | `plan1811.jpg` | Skan planu z 1811 r., pomniejszony do 4476 × 3304 pikseli i przycięty do ramki |
 | `plan1890.jpg` | Skan planu z 1890 r., pomniejszony do 4000 × 3450 pikseli |
 | `plan1908.jpg` | Plan z 1908 r., przycięty do ramki mapy |
@@ -323,3 +327,24 @@ Legenda planu dotyczy wyłącznie obiektów wojskowych. Dopisek „(Städtisch)�
 **Wstawka okolic i plac ćwiczeń.** Wstawkę w skali 1:25 000 dopasowano osobno (jest zorientowana na północ), przez lazaret, urząd prowiantowy, cmentarz, Rynek i most przy Bramie Dolnej. Błąd wynosi ok. 20–60 m. Duży plac ćwiczeń (nr 68) leży na północ od miasta, w stronę Prężynki. Jego obrys odrysowano z wstawki i naniesiono na mapę jako wielokąt. Po przeniesieniu ma ok. 72.9 ha, a na planie dopisano ręcznie 794 947 m² (79,5 ha). Zgodność ok. 92% niezależnie potwierdza dopasowanie. Studnię (nr 69) naniesiono jako punkt. Plik `plangarnizon-okolice.jpg` to wycięta wstawka.
 
 **Dopasowanie.** Plan jest obrócony o ok. 33° względem północy. Dopasowano go przez ratusz, kościół św. Michała i trzy punkty wspólne z planem 1890 (zbiornik gazowni, most przy Bramie Dolnej, studnia na Rynku). Średni błąd ok. 12 m, ale sumuje się z błędem planu 1890.
+
+## Arkusz 5671 Neustadt O.S. (1884–1953)
+
+Ten sam arkusz mapy topograficznej 1:25 000 (Messtischblatt 3301, później 5671) w czterech wydaniach:
+
+| Wydanie | Opis | Źródło |
+|---|---|---|
+| 1884 | pierwsze wydanie, pomiar Królewskiej Pruskiej Służby Topograficznej z 1883; długości od południka Ferro | do uzupełnienia |
+| 1930 | wydanie z 1884 z dopiskami aktualizacyjnymi z 1930 | do uzupełnienia |
+| 1943 | *Topographische Karte 1:25 000*, wydanie 1943, „Nur für den Dienstgebrauch” | do uzupełnienia |
+| 1953 | kopia Army Map Service (USA), seria M841, skopiowana w 1951 z arkusza z 1943 i wydrukowana w 1953; treść jak w 1943, dodana siatka UTM | do uzupełnienia |
+
+**Dopasowanie.** Każdy arkusz dopasowano po czterech narożnikach ramki (17°30′–17°40′ E, 50°18′–50°24′ N w dawnym układzie niemieckim, elipsoida Bessela), przeliczonych na WGS 84. Kontrola na ratuszu, kościele św. Michała, Wieży Bramy Dolnej, Wieży Woka, areszcie i dworcu daje odchyłki rzędu 5–15 m na wszystkich wydaniach. Przeliczenie układu zgadza się z wartościami narożników podanymi na arkuszu amerykańskim (ED50) z dokładnością ok. 5 m.
+
+**Strona** pozwala porównać dowolne dwa wydania albo wydanie z dzisiejszą ortofotomapą: kurtyną (przeciągana linia), przenikaniem albo w pokazie 1884 → 1930 → 1943 → dziś. Lista „Na co zwrócić uwagę” przenosi do miejsc, gdzie zmiana jest dobrze widoczna.
+
+**Potwierdzenia z planów miasta:**
+- napis *Kläranl.* (oczyszczalnia) na arkuszach z 1930 i 1943 leży dokładnie w miejscu oczyszczalni z planu z 1913,
+- napis *Exerzier-Platz* na arkuszu z 1930 pokrywa się z obrysem placu ćwiczeń nr 68 z planu garnizonu; w 1943 obok są strzelnice,
+- na arkuszu z 1930 jest stacja pomp (*Wasserhebew.*) na południe od miasta, za Heiligbrunnen, ok. 50,3112° N, 17,5685° E; na arkuszu z 1884 jej jeszcze nie ma,
+- rzeźnia (*Schlachth.*) na arkuszu z 1930 zgadza się z planem z 1908 (nr 38).

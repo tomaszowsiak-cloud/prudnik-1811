@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arkusz 5671 – Dawne plany Prudnika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Układ: mapa z kurtyną na całym ekranie, panel z prawej (na telefonie od dołu) */
+:root{
+  --paper:#f3f2ee; --panel:#fbfbf9; --ink:#1d2330; --muted:#5d6472; --rule:#d9d8d2;
+  --carmine:#a3243b; --carmine-soft:#f3dde1; --water:#0b4fc4;
+  --display:"Literata",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15181e; --panel:#1b1f27; --ink:#e7e5df; --muted:#9aa0ab; --rule:#2e333d;
+  --carmine:#e0697d; --carmine-soft:#3a1f26; --water:#7aa7ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15181e; --panel:#1b1f27; --ink:#e7e5df; --muted:#9aa0ab; --rule:#2e333d;
+  --carmine:#e0697d; --carmine-soft:#3a1f26; --water:#7aa7ff; color-scheme:dark}
+html,body{height:100%;margin:0}
+body{background:var(--paper);color:var(--ink);font:14px/1.45 var(--body);display:flex;overflow:hidden}
+#mapwrap{flex:1;min-width:0;height:100%;position:relative}
+#map{position:absolute;inset:0;background:var(--paper)}
+#panel{width:360px;max-width:100%;height:100%;overflow-y:auto;background:var(--panel);border-left:1px solid var(--rule);
+  padding-block:18px 24px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
+  box-sizing:border-box;display:flex;flex-direction:column;gap:18px;position:relative}
+h1{font:700 1.45rem/1.15 var(--display);margin:0;text-wrap:balance}
+h1 span{display:block;font:500 .78rem/1.3 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+h2{font:600 .72rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+p{margin:0}
+.src{font-size:.82rem;color:var(--muted)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:500 .86rem var(--body);border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:6px;padding:7px 11px;cursor:pointer}
+button:hover{border-color:var(--carmine)}
+button.primary{background:var(--carmine);border-color:var(--carmine);color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--carmine);outline-offset:2px}
+select{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:6px 8px;min-width:0}
+input[type=range]{flex:1;accent-color:var(--carmine);min-width:0}
+.modes{display:flex;border:1px solid var(--rule);border-radius:7px;overflow:hidden;margin-top:12px}
+.modes a{flex:1;text-align:center;padding:7px 8px;font:600 .82rem var(--body);color:var(--ink);text-decoration:none}
+.modes a[aria-current="page"]{background:var(--carmine);color:#fff}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end}
+.pair label{display:flex;flex-direction:column;gap:4px;font-size:.78rem;color:var(--muted);min-width:0}
+.pair .vs{font:600 .8rem var(--mono);color:var(--muted);padding-bottom:9px}
+.seg{display:flex;gap:0;margin-top:10px}
+.seg button{flex:1;border-radius:0}
+.seg button:first-child{border-radius:6px 0 0 6px}
+.seg button:last-child{border-radius:0 6px 6px 0;border-left:none}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+#fadeRow{margin-top:10px}
+#playBtn{width:100%;margin-top:10px}
+.poi{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.poi li{border-bottom:1px solid var(--rule)}
+.poi button{display:flex;gap:10px;width:100%;text-align:left;border:none;border-radius:0;background:none;padding:8px 4px;font:inherit;color:var(--ink)}
+.poi button:hover,.poi button.on{background:var(--carmine-soft)}
+.poi b{font:600 .8rem var(--mono);color:var(--carmine);min-width:1.4ch;flex:none}
+.poi span{flex:1;min-width:0}
+.poi strong{font-weight:600}
+.poi small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+.poi em{font:500 .72rem var(--mono);font-style:normal;color:var(--muted)}
+.chk{display:flex;flex-direction:column;gap:6px}
+.ed{border-top:1px solid var(--rule);padding:8px 0}
+.ed b{font:600 .85rem var(--mono)}
+/* kurtyna */
+#swipe{position:absolute;top:0;bottom:0;width:0;z-index:650;pointer-events:none}
+#swipe .line{position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+#swipe .knob{position:absolute;top:50%;left:-21px;width:42px;height:42px;margin-top:-21px;border-radius:50%;background:#fff;border:2px solid #1d2330;
+  box-shadow:0 2px 8px rgba(0,0,0,.3);pointer-events:auto;cursor:ew-resize;touch-action:none;display:flex;align-items:center;justify-content:center;font:700 15px var(--mono);color:#1d2330}
+.tag{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));z-index:640;font:600 1.05rem var(--mono);background:rgba(29,35,48,.82);color:#fff;padding:4px 10px;border-radius:6px;pointer-events:none;white-space:nowrap}
+#tagL{left:calc(56px + env(safe-area-inset-left,0px))}
+#tagR{right:calc(12px + env(safe-area-inset-right,0px))}
+#bigYear{position:absolute;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px));z-index:640;font:700 clamp(2.6rem,7vw,4.6rem)/1 var(--display);color:#fff;
+  text-shadow:0 2px 14px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.8);pointer-events:none}
+.lbl{font:600 11px var(--mono);color:#fff;background:var(--carmine);border-radius:9px;padding:1px 6px;white-space:nowrap;box-shadow:0 0 0 1.5px #fff}
+.lbl.hl{background:var(--water);transform:scale(1.3)}
+[hidden]{display:none!important}
+#toggle{display:none}
+@media (max-width:760px){
+  body{flex-direction:column}
+  #mapwrap{height:56%;flex:none}
+  #panel{width:100%;height:44%;border-left:none;border-top:1px solid var(--rule);padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}
+  #panel.min{height:auto;max-height:64px;overflow:hidden}
+  body.pmin #mapwrap{height:calc(100% - 64px)}
+  #toggle{display:inline-block;position:absolute;right:12px;top:12px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="mapwrap">
+  <div id="map"></div>
+  <div id="swipe"><div class="line"></div><div class="knob" id="knob" role="slider" tabindex="0" aria-label="Położenie kurtyny" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">⇔</div></div>
+  <div class="tag" id="tagL"></div><div class="tag" id="tagR"></div>
+  <div id="bigYear" hidden></div>
+</div>
+<aside id="panel">
+  <button id="toggle" type="button">Zwiń</button>
+  <header>
+    <h1><span>Messtischblatt 3301 / 5671 · 1:25 000</span>Dawne plany Prudnika</h1>
+    <nav class="modes" aria-label="Tryb">
+      <a href="index.html">Plany miasta</a>
+      <a href="arkusz.html" aria-current="page">Arkusz 5671</a>
+    </nav>
+    <p class="src" style="margin-top:10px">Ten sam arkusz mapy topograficznej w czterech wydaniach z lat 1884–1953. Wszystkie mają tę samą ramkę i skalę, więc pokazują ten sam teren w tym samym kadrze.</p>
+  </header>
+
+  <section>
+    <h2>Porównanie</h2>
+    <div class="pair">
+      <label for="selL">Z lewej<select id="selL"></select></label>
+      <span class="vs">vs</span>
+      <label for="selR">Z prawej<select id="selR"></select></label>
+    </div>
+    <div class="seg" role="group" aria-label="Sposób porównania">
+      <button type="button" id="mSwipe" aria-pressed="true">Kurtyna</button>
+      <button type="button" id="mFade" aria-pressed="false">Przenikanie</button>
+    </div>
+    <div class="row" id="fadeRow" hidden><span class="src" id="fadeL"></span><input id="fade" type="range" min="0" max="100" value="50" aria-label="Przenikanie"><span class="src" id="fadeR"></span></div>
+    <button type="button" id="playBtn" class="primary">▶ Pokaz: 1884 → 1930 → 1943 → dziś</button>
+    <p class="src" style="margin-top:8px">Przeciągnij białe kółko na mapie w lewo albo w prawo. Pokaz odtwarza zmiany w obecnym kadrze.</p>
+  </section>
+
+  <section>
+    <h2>Na co zwrócić uwagę</h2>
+    <ul class="poi" id="poiList"></ul>
+  </section>
+
+  <section>
+    <h2>Warstwy z planów miasta</h2>
+    <div class="chk">
+      <label><input type="checkbox" id="lPoi" checked> Numery miejsc z listy</label>
+      <label><input type="checkbox" id="lPlac"> Obrys placu ćwiczeń (plan garnizonu, nr 68)</label>
+      <label><input type="checkbox" id="lWater"> Wodociąg z 1811 roku</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wydania arkusza</h2>
+    <div id="edList"></div>
+  </section>
+
+  <section>
+    <h2>Dopasowanie</h2>
+    <p class="src">Arkusze dopasowano po narożnikach ramki: 17°30′–17°40′ E i 50°18′–50°24′ N w dawnym niemieckim układzie odniesienia (elipsoida Bessela), przeliczonych na dzisiejszy układ WGS 84. Na arkuszu z 1884 te same długości są opisane od południka Ferro (35°10′–35°20′). Kontrola na ratuszu, kościele św. Michała, Wieży Bramy Dolnej, Wieży Woka, areszcie i dworcu: odchyłki rzędu 5–15 m na wszystkich wydaniach. Tło: OpenStreetMap, ortofotomapa Geoportalu.</p>
+  </section>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const D = __DATA__;
+const SHEETS = D.sheets, B = D.bounds;
+const OPTS = [...SHEETS.map(s => ({id:s.id, name:s.label})), {id:"orto", name:"dziś (ortofotomapa)"}, {id:"osm", name:"dziś (mapa)"}];
+const short = id => id === "orto" || id === "osm" ? "dziś" : (SHEETS.find(s => s.id === id) || {}).tag || id;
+
+const map = L.map("map", {zoomSnap:0.25, maxZoom:19, minZoom:12, maxBounds:L.latLngBounds(B).pad(0.6)}).setView([50.3200, 17.5790], 15);
+L.control.scale({imperial:false, position:"bottomright"}).addTo(map);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:19, attribution:"© OpenStreetMap"}).addTo(map);
+map.createPane("paneR").style.zIndex = 300;
+map.createPane("paneL").style.zIndex = 310;
+map.createPane("over").style.zIndex = 450;
+
+function makeLayer(id, pane){
+  if (id === "osm") return L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {pane, maxZoom:19, attribution:"© OpenStreetMap"});
+  if (id === "orto") return L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {pane, layers:"Raster", format:"image/jpeg", maxZoom:19, attribution:"Ortofotomapa © GUGiK"});
+  const s = SHEETS.find(x => x.id === id);
+  return L.imageOverlay(s.img, B, {pane, alt:"Arkusz " + s.label, interactive:false});
+}
+const side = {L:{id:null, layer:null}, R:{id:null, layer:null}};
+function setSide(k, id){
+  const S = side[k]; if (S.id === id && S.layer) return;
+  if (S.layer) map.removeLayer(S.layer);
+  S.id = id; S.layer = makeLayer(id, "pane" + k).addTo(map);
+  document.getElementById("sel" + k).value = id;
+  labels();
+}
+const selL = document.getElementById("selL"), selR = document.getElementById("selR");
+OPTS.forEach(o => { selL.add(new Option(o.name, o.id)); selR.add(new Option(o.name, o.id)); });
+selL.onchange = () => { stopShow(); setSide("L", selL.value); };
+selR.onchange = () => { stopShow(); setSide("R", selR.value); };
+
+// --- kurtyna ---
+let mode = "swipe", frac = 0.5;
+const wrap = document.getElementById("mapwrap"), swipe = document.getElementById("swipe"), knob = document.getElementById("knob");
+const paneL = map.getPane("paneL");
+function clip(){
+  if (mode !== "swipe"){ paneL.style.clip = ""; return; }
+  const size = map.getSize(), nw = map.containerPointToLayerPoint([0,0]), se = map.containerPointToLayerPoint(size);
+  const x = nw.x + size.x * frac;
+  paneL.style.clip = `rect(${nw.y}px, ${x}px, ${se.y}px, ${nw.x}px)`;
+  swipe.style.left = (size.x * frac) + "px";
+  knob.setAttribute("aria-valuenow", Math.round(frac * 100));
+}
+map.on("move zoom resize zoomend viewreset", clip);
+let dragging = false;
+knob.addEventListener("pointerdown", e => { dragging = true; knob.setPointerCapture(e.pointerId); e.preventDefault(); e.stopPropagation(); });
+knob.addEventListener("pointermove", e => { if (!dragging) return; const r = wrap.getBoundingClientRect(); frac = Math.min(0.98, Math.max(0.02, (e.clientX - r.left) / r.width)); clip(); });
+knob.addEventListener("pointerup", () => dragging = false);
+knob.addEventListener("keydown", e => { if (e.key === "ArrowLeft" || e.key === "ArrowRight"){ frac = Math.min(0.98, Math.max(0.02, frac + (e.key === "ArrowLeft" ? -0.03 : 0.03))); clip(); e.preventDefault(); } });
+L.DomEvent.disableClickPropagation(swipe);
+
+const fade = document.getElementById("fade");
+function setMode(m){
+  mode = m;
+  document.getElementById("mSwipe").setAttribute("aria-pressed", m === "swipe");
+  document.getElementById("mFade").setAttribute("aria-pressed", m === "fade");
+  swipe.hidden = m !== "swipe"; document.getElementById("fadeRow").hidden = m !== "fade";
+  paneL.style.opacity = m === "fade" ? (1 - fade.value / 100) : 1;
+  clip(); labels();
+}
+document.getElementById("mSwipe").onclick = () => { stopShow(); setMode("swipe"); };
+document.getElementById("mFade").onclick = () => { stopShow(); setMode("fade"); };
+fade.oninput = () => { paneL.style.opacity = 1 - fade.value / 100; };
+function labels(){
+  const tL = document.getElementById("tagL"), tR = document.getElementById("tagR");
+  document.getElementById("fadeL").textContent = short(side.L.id);
+  document.getElementById("fadeR").textContent = short(side.R.id);
+  if (showing){ tL.hidden = tR.hidden = true; return; }
+  tL.hidden = tR.hidden = false;
+  if (mode === "swipe"){ tL.textContent = "◀ " + short(side.L.id); tR.textContent = short(side.R.id) + " ▶"; }
+  else { tL.textContent = short(side.L.id) + " ⇄ " + short(side.R.id); tR.hidden = true; }
+}
+
+// --- pokaz ---
+let showing = false, timer = null;
+const playBtn = document.getElementById("playBtn"), big = document.getElementById("bigYear");
+const SEQ = D.show;
+const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function preload(){ return Promise.all(SHEETS.filter(s => SEQ.includes(s.id)).map(s => new Promise(r => { const i = new Image(); i.onload = i.onerror = r; i.src = s.img; }))); }
+function stopShow(){
+  if (!showing) return; showing = false; clearTimeout(timer); cancelAnimationFrame(timer);
+  big.hidden = true; playBtn.textContent = "▶ Pokaz: 1884 → 1930 → 1943 → dziś"; paneL.style.opacity = 1; setMode(mode); labels();
+}
+playBtn.onclick = async () => {
+  if (showing){ stopShow(); return; }
+  playBtn.textContent = "Wczytuję arkusze…"; await preload();
+  showing = true; playBtn.textContent = "■ Zatrzymaj pokaz"; swipe.hidden = true; document.getElementById("fadeRow").hidden = true; paneL.style.clip = ""; labels();
+  let i = 0;
+  const step = () => {
+    if (!showing) return;
+    const a = SEQ[i], b = SEQ[(i + 1) % SEQ.length];
+    setSide("L", a); setSide("R", b); paneL.style.opacity = 1; big.hidden = false; big.textContent = short(a);
+    timer = setTimeout(() => {
+      if (!showing) return;
+      const t0 = performance.now(), dur = reduce ? 1 : 1800;
+      const anim = now => {
+        if (!showing) return;
+        const p = Math.min(1, (now - t0) / dur); paneL.style.opacity = 1 - p;
+        big.textContent = short(p < 0.5 ? a : b);
+        if (p < 1) timer = requestAnimationFrame(anim); else { i = (i + 1) % SEQ.length; timer = setTimeout(step, 50); }
+      };
+      timer = requestAnimationFrame(anim);
+    }, 1600);
+  };
+  step();
+};
+
+// --- miejsca ---
+const poiLayer = L.layerGroup().addTo(map);
+D.poi.forEach((p, i) => {
+  p._m = L.marker([p.lat, p.lon], {pane:"over", icon:L.divIcon({className:"", html:`<span class="lbl" data-i="${i}">${i + 1}</span>`, iconSize:[20,16], iconAnchor:[10,8]})})
+    .bindPopup(`<b>${i + 1}. ${p.name}</b><br>${p.text}`).addTo(poiLayer);
+  const li = document.createElement("li"), b = document.createElement("button"); b.type = "button";
+  b.innerHTML = `<b>${i + 1}</b><span><strong>${p.name}</strong> <em>${short(p.pair[0])} / ${short(p.pair[1])}</em><small>${p.text}</small></span>`;
+  b.onclick = () => {
+    stopShow(); setSide("L", p.pair[0]); setSide("R", p.pair[1]); setMode("swipe"); frac = 0.3;
+    if (p.plac){ document.getElementById("lPlac").checked = true; placLayer.addTo(map); }
+    map.setView([p.lat, p.lon], p.zoom); clip();
+    document.querySelectorAll(".poi button.on").forEach(x => x.classList.remove("on")); b.classList.add("on");
+    document.querySelectorAll(".lbl.hl").forEach(x => x.classList.remove("hl"));
+    setTimeout(() => { const el = document.querySelector(`.lbl[data-i="${i}"]`); if (el) el.classList.add("hl"); }, 300);
+    if (window.innerWidth <= 760 && !document.getElementById("panel").classList.contains("min")) document.getElementById("toggle").click();
+  };
+  li.appendChild(b); document.getElementById("poiList").appendChild(li);
+});
+const placLayer = L.layerGroup();
+D.plac.forEach(pg => L.polygon(pg.pts, {pane:"over", color:"#0b4fc4", weight:3, fillOpacity:.08}).bindPopup(`<b>${pg.pl}</b><br>${pg.opis}`).addTo(placLayer));
+const waterLayer = L.layerGroup();
+D.water.lines.forEach(l => L.polyline(l.pts, {pane:"over", color:"#0b4fc4", weight:3}).bindPopup(`<b>${l.pl}</b>`).addTo(waterLayer));
+D.water.points.forEach(p => L.circleMarker([p.lat, p.lon], {pane:"over", radius:p.big ? 7 : 5, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${p.pl}</b>`).addTo(waterLayer));
+document.getElementById("lPoi").onchange = e => e.target.checked ? poiLayer.addTo(map) : map.removeLayer(poiLayer);
+document.getElementById("lPlac").onchange = e => e.target.checked ? placLayer.addTo(map) : map.removeLayer(placLayer);
+document.getElementById("lWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
+
+// --- wydania ---
+const ed = document.getElementById("edList");
+SHEETS.forEach(s => { const d = document.createElement("div"); d.className = "ed"; d.innerHTML = `<b>${s.label}</b><p class="src" style="margin-top:3px">${s.meta}</p><p class="src" style="margin-top:3px">Źródło: ${s.source}</p>`; ed.appendChild(d); });
+
+// --- telefon ---
+document.getElementById("toggle").onclick = e => { const pn = document.getElementById("panel"); pn.classList.toggle("min"); document.body.classList.toggle("pmin", pn.classList.contains("min")); e.target.textContent = pn.classList.contains("min") ? "Rozwiń" : "Zwiń"; setTimeout(() => { map.invalidateSize(); clip(); }, 60); };
+
+setSide("L", D.start[0]); setSide("R", D.start[1]); setMode("swipe");
+setTimeout(() => { map.invalidateSize(); clip(); }, 100);
+</script>
+</body>
+</html>
