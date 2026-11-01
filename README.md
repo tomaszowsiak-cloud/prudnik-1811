@@ -10,7 +10,7 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 | 1890 | geometra Weymann | 1:8000 | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/9b189dde-cd14-41d8-885f-6ac1b62f0c5c?page=0) | ok. 9 m |
 | 1908 | Woerl's Reisebücherverlag, Lipsk (plan z przewodnika) | bez podziałki | [Polona (Biblioteka Narodowa)](https://polona.pl/item-view/52c71138-9151-42d5-ab13-cb1dde0e522a?page=3) | ok. 7 m (na 5 punktach) |
 | 1913 | Miejski Urząd Budowlany (Stadtbauamt), 3 grudnia 1913 | 1:2500 | do uzupełnienia | ok. 4 m (na 5 punktach) |
-| ok. 1900–1914 (data nieznana) | plan garnizonu *Neustadt mit Umgebung* | 1:5000, wstawka 1:25 000 | nieznane (skan z polska-org.pl) | ok. 12 m (przez plan 1890) |
+| ok. 1900–1914 (data nieznana) | plan garnizonu *Neustadt mit Umgebung* | 1:5000, wstawka 1:25 000 | [Archiwum Państwowe we Wrocławiu, sygn. 82/329/0/-/10](https://polska-org.pl/11454549,foto.html?idEntity=521918) | ok. 12 m (przez plan 1890) |
 
 ## Co jest w repozytorium
 
@@ -223,6 +223,8 @@ Numeracja w tej tabeli jest robocza: plan 1913 ma własne numery działek i budy
 - **skład artylerii** (*Artillerie-Depot*, nr 53–59d, czerwony kreskowany): wozownie, magazyny pocisków i zapalników, magazyny prochu, warsztat amunicyjny,
 - **lazaret** (*Lazareth*, nr 62–66, czerwony): budynek główny, kostnica, kotłownia,
 - na wstawce: **duży plac ćwiczeń** (*Großer Exerzierplatz*, nr 68) przy Buchelsdorf (Dębowcu).
+
+**Źródło:** Archiwum Państwowe we Wrocławiu, sygn. 82/329/0/-/10, teka *Situations-Pläne der größeren Garnison-Städte im Bezirk des VI. Armee-Corps* (plany sytuacyjne większych miast garnizonowych w okręgu VI Korpusu Armii), wydawnictwo Brehmer & Minuth. Skan: [polska-org.pl](https://polska-org.pl/11454549,foto.html?idEntity=521918).
 
 Część wpisów poprawiono odręcznie, m.in. dopisano budynek socjalny (*Wohlfahrtsgebäude*) i powierzchnię placu ćwiczeń.
 
