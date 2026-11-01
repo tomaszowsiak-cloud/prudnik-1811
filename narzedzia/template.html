@@ -52,6 +52,7 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 #hint{background:var(--carmine-soft);border-radius:6px;padding:10px 12px;font-size:.88rem}
 .del{border:none;background:none;color:var(--muted);padding:2px 6px}
 .lbl{font:600 11px var(--mono);color:#fff;background:var(--carmine);border-radius:9px;padding:1px 5px;white-space:nowrap;box-shadow:0 0 0 1.5px #fff}
+.kunszt{width:16px;height:16px;background:#0b4fc4;border:2px solid #fff;box-shadow:0 0 0 1px #0007;transform:rotate(45deg)}
 .cp{width:14px;height:14px;border-radius:50%;background:#1d6fd6;border:2px solid #fff;box-shadow:0 0 0 1px #0006}
 .cp.off{background:#888}
 #toggle{display:none}
@@ -81,6 +82,13 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
       <label><input id="showLabels" type="checkbox" checked> Numery obiektów z legendy</label>
       <label><input id="showCp" type="checkbox" checked> Punkty kontrolne</label>
     </div>
+  </section>
+
+  <section>
+    <h2>Wodociąg 1811</h2>
+    <label><input id="showWater" type="checkbox" checked> Kunszt wodny, rurociąg i zbiorniki</label>
+    <p class="src" style="margin-top:8px">Według legendy: kunszt wodny (nr 6), rurociąg z kunsztu (nr 21) i zbiorniki wody (nr 20). Przebieg rur odczytany z bladych niebieskich linii na planie, więc jest przybliżony.</p>
+    <button id="goWater" type="button" style="margin-top:8px">Pokaż na mapie</button>
   </section>
 
   <section>
@@ -215,7 +223,17 @@ const Plan = L.Layer.extend({
   setOpacity(o){ this._img.style.opacity = o; }
 });
 const plan = new Plan();
-const labelLayer = L.layerGroup(), cpLayer = L.layerGroup();
+const labelLayer = L.layerGroup(), cpLayer = L.layerGroup(), waterLayer = L.layerGroup();
+const W = DATA.water;
+function drawWater(){
+  waterLayer.clearLayers(); if (!T) return;
+  W.rury.forEach(r => L.polyline(r.pts.map(p => fwd(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
+  W.zbiorniki.forEach(z => L.circleMarker(fwd(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
+  const k = W.kunszt, q = fwd(k.u,k.v);
+  L.marker(q, {icon:L.divIcon({className:"", html:'<div class="kunszt"></div>', iconSize:[20,20], iconAnchor:[10,10]})})
+    .bindPopup(`<b>${k.pl}</b><br>${k.opis}<br><span style="font-family:monospace">${q[0].toFixed(5)}° N, ${q[1].toFixed(5)}° E</span><br><small>dokładność ok. ±20–30 m</small>`).addTo(waterLayer);
+  const u = W.ujecie; L.circleMarker(fwd(u.u,u.v), {radius:4, color:"#0b4fc4", weight:2, fill:false}).bindPopup(`<b>${u.pl}</b><br>${u.opis}`).addTo(waterLayer);
+}
 
 function drawLabels(){
   labelLayer.clearLayers();
@@ -264,6 +282,7 @@ function refresh(){
   T = fit(); save();
   if (T){ if (!map.hasLayer(plan)) plan.addTo(map); plan.update(); }
   if (document.getElementById("showLabels").checked && T) drawLabels();
+  drawWater();
   drawCp(); table(); stats();
 }
 
@@ -271,6 +290,8 @@ function refresh(){
 const op = document.getElementById("op");
 op.oninput = () => { plan.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
 document.getElementById("showLabels").onchange = e => { if (e.target.checked){ drawLabels(); labelLayer.addTo(map); } else map.removeLayer(labelLayer); };
+document.getElementById("showWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
+document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(1112,790), 18); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
 document.getElementById("showCp").onchange = e => e.target.checked ? cpLayer.addTo(map) : map.removeLayer(cpLayer);
 document.getElementById("model").onchange = e => { model = e.target.value; refresh(); };
 document.getElementById("resetBtn").onclick = () => { points = DATA.points.map(p => ({...p, on:true})); refresh(); };
@@ -315,7 +336,7 @@ document.getElementById("expJson").onclick = () => download("prudnik1811-punkty.
 
 refresh();
 op.oninput();
-labelLayer.addTo(map); cpLayer.addTo(map);
+labelLayer.addTo(map); waterLayer.addTo(map); cpLayer.addTo(map);
 </script>
 </body>
 </html>

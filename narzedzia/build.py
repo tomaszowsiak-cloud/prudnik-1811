@@ -15,6 +15,14 @@ res=np.hypot(A@c-E,A@d-N)
 for p,r in zip(P,res): print(f"{p['name']:40s} {r:5.1f} m")
 print('RMS',np.sqrt((res**2).mean()).round(1),'skala',np.hypot(c[0],d[0]).round(3),np.hypot(c[1],d[1]).round(3),'azymut gory',np.degrees(np.arctan2(-c[1],-d[1])).round(1))
 f=lambda u,v:(LAT0+(d@[u,v,1])/KY, LON0+(c@[u,v,1])/KX)
+WAT=D['water']
+def water_kml():
+    s='<Style id="rura"><LineStyle><color>ffc44f0b</color><width>4</width></LineStyle></Style><Folder><name>Wodociąg 1811</name>'
+    for r in WAT['rury']:
+        s+='<Placemark><name>%s</name><styleUrl>#rura</styleUrl><LineString><coordinates>%s</coordinates></LineString></Placemark>'%(r['pl'],' '.join('%.7f,%.7f,0'%(f(u,v)[1],f(u,v)[0]) for u,v in r['pts']))
+    for z in WAT['zbiorniki']+[WAT['kunszt']]:
+        la,lo=f(z['u'],z['v']); s+='<Placemark><name>%s</name><Point><coordinates>%.7f,%.7f,0</coordinates></Point></Placemark>'%(z['pl'],lo,la)
+    return s+'</Folder>'
 # KML LatLonQuad: corners counter-clockwise starting lower-left
 corners=[f(0,H),f(W,H),f(W,0),f(0,0)]
 coords=' '.join(f'{lo:.7f},{la:.7f},0' for la,lo in corners)
@@ -22,7 +30,7 @@ kml=f'''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2"><Document><name>Prudnik 1811</name>
 <GroundOverlay><name>Plan miasta Prudnika (Neustadt) 1811</name><color>b3ffffff</color><Icon><href>plan1811.jpg</href></Icon>
 <gx:LatLonQuad><coordinates>{coords}</coordinates></gx:LatLonQuad></GroundOverlay>
-''' + ''.join(f'<Placemark><name>{p["name"]}</name><Point><coordinates>{p["lon"]},{p["lat"]},0</coordinates></Point></Placemark>\n' for p in P) + '</Document></kml>'
+''' + ''.join(f'<Placemark><name>{p["name"]}</name><Point><coordinates>{p["lon"]},{p["lat"]},0</coordinates></Point></Placemark>\n' for p in P) + water_kml() + '</Document></kml>'
 with zipfile.ZipFile('../prudnik-1811.kmz','w',zipfile.ZIP_DEFLATED) as z:
     z.writestr('doc.kml',kml); z.write('../plan1811.jpg','plan1811.jpg')
 crs='#CRS: GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563]],CS[ellipsoidal,2],AXIS["latitude",north],AXIS["longitude",east],ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",4326]]'

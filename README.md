@@ -24,6 +24,16 @@ Plan miasta Prudnika (*Plan von der Stadt Neustadt und deren Vorstaedte*) pomier
 
 Punkty kontrolne: ratusz, kościół św. Michała, Wieża Woka, kościół bonifratrów, Wieża Bramy Dolnej, arsenał (Wieża Katowska). Współrzędne: rejestr zabytków (zabytek.pl), odtur.pl, Wikimedia Commons.
 
+## Wodociąg 1811
+
+Osobna warstwa na stronie i w pliku KMZ pokazuje miejski wodociąg zaznaczony na planie:
+
+- **kunszt wodny** (nr 6, *Die Wasser-Kunst*) w północnej części starego miasta, ok. 85 m na północ od ratusza; współrzędne ok. 50,32225° N, 17,58100° E (±20–30 m),
+- **rurociąg** (nr 21) z kunsztu na południe do rynku, z rozgałęzieniem na zachodnią i wschodnią stronę,
+- **zbiorniki wody** (nr 20) wokół rynku i w sąsiednich kwartałach.
+
+Przebieg rur odczytano z bladych niebieskich linii na planie, więc jest przybliżony.
+
 ## Legenda planu
 
 | Nr | Obiekt | Oryginał |
