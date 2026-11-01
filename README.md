@@ -82,9 +82,9 @@ Odczyt legendy z odręcznego pisma jest roboczy. W kilku miejscach różni się 
 - Góra planu jest niemal dokładnie na północ (odchylenie ok. 1°).
 - Punkty kontrolne: ratusz, kościół św. Michała, Wieża Woka, kościół bonifratrów, Wieża Bramy Dolnej, Wieża Katowska, areszt przy ul. Kościuszki 7 (na planie więzienie powiatowe, nr 16).
 
-### Stacja pomp z 1890 a czerpadło z 1811
+### Kunszt wodny w 1890 a czerpadło z 1811
 
-Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27, domy nr 515 i 516) stoi nad Prudnikiem przy jazie, ok. 50,32224° N, 17,58331° E. To niespełna 20 m od czerpadła z planu 1811, czyli w granicach dokładności obu dopasowań. Na planie 1890 widać też kanał biegnący od jazu wzdłuż ulicy.
+W legendzie planu 1890 pod nr 27 (domy nr 515 i 516) jest *Wasserhebewerk*. Nie jest to jeszcze stacja pomp, tylko kunszt wodny, czyli następca czerpadła z 1811 r. Stoi nad Prudnikiem przy jazie, ok. 50,32224° N, 17,58331° E, niespełna 20 m od czerpadła z planu 1811, czyli w granicach dokładności obu dopasowań. Widać też kanał biegnący od jazu wzdłuż ulicy. Pierwsza prawdziwa stacja pomp w Prudniku pochodzi z 1894 r.
 
 ### Legenda planu 1890 (*Nachweisung öffentlicher Gebäude*)
 
@@ -133,7 +133,7 @@ Na planie jest **oczyszczalnia ścieków** (*Kläranlage*, nr 39), na południe 
 
 ### Stacja pomp w 1908 roku
 
-Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27) leży poza ramką planu. Numer 27 jest wydrukowany pod dolną krawędzią, w kolumnie B, poniżej okolic Heilbrunnen. W 1908 r. stacja pomp nie stała już więc nad Prudnikiem przy jazie, jak na planie z 1890 r., tylko na południowym zachodzie, za miastem.
+Stacja pomp wodociągowych (*Wasserhebewerk*, nr 27) leży poza ramką planu. Numer 27 jest wydrukowany pod dolną krawędzią, w kolumnie B, poniżej okolic Heilbrunnen. To pierwsza prawdziwa stacja pomp w Prudniku, z 1894 r. Zastąpiła kunszt wodny przy jazie, widoczny jeszcze na planie z 1890 r.
 
 ### Legenda planu 1908 (*Erklärung zum Plan von Neustadt O.-Schl.*)
 
