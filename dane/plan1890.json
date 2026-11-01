@@ -1,0 +1,271 @@
+{
+ "points": [
+  {
+   "id": "p0",
+   "name": "Ratusz (nr 1)",
+   "u": 2260.5,
+   "v": 1958.0,
+   "lat": 50.321514,
+   "lon": 17.580574,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p1",
+   "name": "Wieża Woka (przy nr 13)",
+   "u": 2069.0,
+   "v": 1797.5,
+   "lat": 50.322914,
+   "lon": 17.578288,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p2",
+   "name": "Kościół bonifratrów (przy nr 22)",
+   "u": 1989.0,
+   "v": 1815.5,
+   "lat": 50.322662,
+   "lon": 17.577028,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p3",
+   "name": "Kościół św. Michała (nr 4)",
+   "u": 2216.5,
+   "v": 2114.5,
+   "lat": 50.320313,
+   "lon": 17.579909,
+   "src": "zabytek.pl"
+  },
+  {
+   "id": "p4",
+   "name": "Wieża Bramy Dolnej",
+   "u": 2453.5,
+   "v": 2021.5,
+   "lat": 50.320925,
+   "lon": 17.582839,
+   "src": "odtur.pl"
+  },
+  {
+   "id": "p5",
+   "name": "Wieża Katowska",
+   "u": 2456.0,
+   "v": 1914.0,
+   "lat": 50.321833,
+   "lon": 17.583139,
+   "src": "Wikimedia Commons"
+  },
+  {
+   "id": "p8",
+   "name": "Areszt (dawne więzienie powiatowe, nr 16)",
+   "u": 1800.5,
+   "v": 2070.5,
+   "lat": 50.320645,
+   "lon": 17.574791,
+   "src": "zabytek.pl"
+  }
+ ],
+ "labels": [
+  {
+   "n": 1,
+   "house": "1",
+   "de": "Amtsgericht, Rathhaus",
+   "pl": "Sąd rejonowy, ratusz",
+   "u": 2260.5,
+   "v": 1958.0
+  },
+  {
+   "n": 2,
+   "house": "80",
+   "de": "Siechenhaus, Frauenhospital",
+   "pl": "Przytułek, szpital dla kobiet"
+  },
+  {
+   "n": 3,
+   "house": "87",
+   "de": "Kath. Elementarschule (Mädchen)",
+   "pl": "Katolicka szkoła elementarna dla dziewcząt",
+   "u": 2240.5,
+   "v": 2075.5
+  },
+  {
+   "n": 4,
+   "house": "88",
+   "de": "Kath. Pfarrkirche",
+   "pl": "Kościół parafialny (św. Michała)",
+   "u": 2216.5,
+   "v": 2114.5
+  },
+  {
+   "n": 5,
+   "house": "89",
+   "de": "Gymnasium u. Elementarschule",
+   "pl": "Gimnazjum i szkoła elementarna",
+   "u": 2190.5,
+   "v": 2160.0
+  },
+  {
+   "n": 6,
+   "house": "90",
+   "de": "Kath. Pfarrei",
+   "pl": "Plebania katolicka",
+   "u": 2282.5,
+   "v": 2138.0
+  },
+  {
+   "n": 7,
+   "house": "154",
+   "de": "Siechenhaus „St. Lazarus” (Männer)",
+   "pl": "Przytułek św. Łazarza (dla mężczyzn)"
+  },
+  {
+   "n": 8,
+   "house": "167",
+   "de": "Königl. Haupt-Zollamt",
+   "pl": "Królewski Główny Urząd Celny"
+  },
+  {
+   "n": 9,
+   "house": "168",
+   "de": "Magistrats-Büreaus (Herrenhaus)",
+   "pl": "Biura magistratu (Herrenhaus)"
+  },
+  {
+   "n": 10,
+   "house": "199",
+   "de": "Stadtgefängniss",
+   "pl": "Więzienie miejskie",
+   "u": 2465.5,
+   "v": 1941.0
+  },
+  {
+   "n": 11,
+   "house": "213",
+   "de": "Spritzenschuppen",
+   "pl": "Szopa sikawek strażackich",
+   "u": 2188.5,
+   "v": 1791.0
+  },
+  {
+   "n": 12,
+   "house": "214",
+   "de": "Zeughaus",
+   "pl": "Zbrojownia (arsenał)"
+  },
+  {
+   "n": 13,
+   "house": "215, 216",
+   "de": "Garnisonställe u. Reitbahn",
+   "pl": "Stajnie garnizonowe i ujeżdżalnia (na terenie zamku)",
+   "u": 2085.0,
+   "v": 1807.5
+  },
+  {
+   "n": 14,
+   "house": "236",
+   "de": "Evang. Kirche",
+   "pl": "Kościół ewangelicki"
+  },
+  {
+   "n": 15,
+   "house": "237",
+   "de": "Kreisverwaltung",
+   "pl": "Starostwo powiatowe",
+   "u": 1940.5,
+   "v": 2047.0
+  },
+  {
+   "n": 16,
+   "house": "239",
+   "de": "Kreis-Gefängniss",
+   "pl": "Więzienie powiatowe (dziś areszt, ul. Kościuszki 7)",
+   "u": 1800.5,
+   "v": 2070.5
+  },
+  {
+   "n": 17,
+   "house": "238, 270",
+   "de": "Garnison-Kaserne, Ställe u. Reitbahn",
+   "pl": "Koszary garnizonu, stajnie i ujeżdżalnia",
+   "u": 1877.0,
+   "v": 2019.0
+  },
+  {
+   "n": 18,
+   "house": "271",
+   "de": "Turnhalle",
+   "pl": "Sala gimnastyczna",
+   "u": 1804.0,
+   "v": 1960.5
+  },
+  {
+   "n": 19,
+   "house": "–",
+   "de": "Kaiserliche Post",
+   "pl": "Poczta cesarska",
+   "u": 1900.5,
+   "v": 1957.0
+  },
+  {
+   "n": 20,
+   "house": "274",
+   "de": "Synagoge",
+   "pl": "Synagoga",
+   "u": 1994.0,
+   "v": 1982.0
+  },
+  {
+   "n": 21,
+   "house": "339",
+   "de": "Gas-Anstalt",
+   "pl": "Gazownia",
+   "u": 1740.0,
+   "v": 1045.0
+  },
+  {
+   "n": 22,
+   "house": "389",
+   "de": "Convent der barmh. Brüder (Kloster)",
+   "pl": "Konwent bonifratrów (klasztor)",
+   "u": 2020.0,
+   "v": 1827.5
+  },
+  {
+   "n": 23,
+   "house": "392",
+   "de": "Garnison-Lazareth",
+   "pl": "Lazaret garnizonowy",
+   "u": 1981.0,
+   "v": 2378.5
+  },
+  {
+   "n": 24,
+   "house": "395",
+   "de": "Schulgebäude (simultan)",
+   "pl": "Szkoła symultanna (międzywyznaniowa)",
+   "u": 2072.0,
+   "v": 2247.5
+  },
+  {
+   "n": 25,
+   "house": "451",
+   "de": "Krankenhaus",
+   "pl": "Szpital"
+  },
+  {
+   "n": 26,
+   "house": "457",
+   "de": "Waisenhaus „St. Anna Stift”",
+   "pl": "Sierociniec Fundacji św. Anny",
+   "u": 2481.0,
+   "v": 2228.5
+  },
+  {
+   "n": 27,
+   "house": "515, 516",
+   "de": "Wasserhebewerk",
+   "pl": "Stacja pomp wodociągowych (przy jazie na Prudniku)",
+   "u": 2477.5,
+   "v": 1862.5
+  }
+ ]
+}

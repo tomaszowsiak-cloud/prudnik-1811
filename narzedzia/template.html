@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prudnik 1811 na dzisiejszej mapie</title>
+<title>Dawne plany Prudnika</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -53,6 +53,16 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 .del{border:none;background:none;color:var(--muted);padding:2px 6px}
 .lbl{font:600 11px var(--mono);color:#fff;background:var(--carmine);border-radius:9px;padding:1px 5px;white-space:nowrap;box-shadow:0 0 0 1.5px #fff}
 .kunszt{width:16px;height:16px;background:#0b4fc4;border:2px solid #fff;box-shadow:0 0 0 1px #0007;transform:rotate(45deg)}
+.tabs{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.tabs button{font:600 .95rem var(--mono);padding:6px 14px}
+.tabs button[aria-selected="true"]{background:var(--carmine);border-color:var(--carmine);color:#fff}
+.leg{list-style:none;margin:0;padding:0;font-size:.86rem;max-height:260px;overflow-y:auto;border-top:1px solid var(--rule)}
+.leg li{display:flex;gap:8px;padding:5px 2px;border-bottom:1px solid var(--rule);align-items:baseline}
+.leg li b{font:600 .8rem var(--mono);min-width:2.2ch;text-align:right;color:var(--carmine)}
+.leg li span{flex:1;min-width:0}
+.leg li small{color:var(--muted)}
+.leg li button{border:none;background:none;color:var(--carmine);padding:0 4px;font-size:.8rem}
+.leg li.none b{color:var(--muted)}
 .cp{width:14px;height:14px;border-radius:50%;background:#1d6fd6;border:2px solid #fff;box-shadow:0 0 0 1px #0006}
 .cp.off{background:#888}
 #toggle{display:none}
@@ -71,9 +81,10 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 <aside id="panel">
   <button id="toggle" type="button">Zwiń</button>
   <header>
-    <h1><span>Plan von der Stadt Neustadt, 1811</span>Prudnik 1811 na dzisiejszej mapie</h1>
-    <p class="src" style="margin-top:6px">Pomiar: maj–sierpień 1811, konduktor Scheuerwasser młodszy; kopia: marzec 1835 (kopista Treeger lub Freeger). Podziałka: 150 prętów reńskich ≈ 565 m.</p>
-    <p class="src" style="margin-top:6px">Źródło: Archiwum Państwowe w Opolu, zespół Rejencja Opolska (nr 1191), seria Mapy i plany IX, sygn. 81.</p>
+    <h1><span id="planTitle">Plan</span>Dawne plany Prudnika</h1>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <p class="src" id="planMeta" style="margin-top:8px"></p>
+    <p class="src" id="planSource" style="margin-top:6px"></p>
   </header>
 
   <section>
@@ -86,9 +97,15 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
   </section>
 
   <section>
+    <h2>Legenda planu</h2>
+    <ul class="leg" id="legList"></ul>
+    <p class="src" id="legNote" style="margin-top:8px"></p>
+  </section>
+
+  <section>
     <h2>Wodociąg 1811</h2>
     <label><input id="showWater" type="checkbox" checked> Czerpadło, wieża wodna, rurociąg i zdroje</label>
-    <p class="src" style="margin-top:8px">Woda pobierana z rzeki w czerpadle przy jazie (nr 6) szła do wieży wodnej przy arsenale, a z niej rurociągiem (nr 21) do ośmiu zdrojów miejskich (nr 20). Kółko: czerpadło, romb: wieża wodna, białe kółka: zdroje.</p>
+    <p class="src" style="margin-top:8px">Woda pobierana z rzeki w czerpadle przy jazie (nr 6) szła do wieży wodnej przy arsenale, a z niej rurociągiem (nr 21) do ośmiu zdrojów miejskich (nr 20). Kółko: czerpadło, romb: wieża wodna, białe kółka: zdroje. Warstwę można włączyć także na innych planach, żeby porównać ją z późniejszą zabudową.</p>
     <button id="goWater" type="button" style="margin-top:8px">Pokaż na mapie</button>
   </section>
 
@@ -105,7 +122,7 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
       <div><b id="scale">–</b><small>skala, m/piksel</small></div>
       <div><b id="rot">–</b><small>góra planu wzgl. północy</small></div>
     </div>
-    <p class="src" style="margin-top:8px">Skala wynikająca z podziałki na planie: ok. 0,75 m/piksel. Zgodność z dopasowaniem świadczy, że punkty są dobrze rozpoznane.</p>
+    <p class="src" id="scaleNote" style="margin-top:8px"></p>
   </section>
 
   <section>
@@ -135,26 +152,25 @@ select,input[type=text]{font:inherit;color:var(--ink);background:var(--panel);bo
 
   <section>
     <h2>Źródła</h2>
-    <p class="src">Plan: Archiwum Państwowe w Opolu, Rejencja Opolska (nr 1191), Mapy i plany IX, sygn. 81. Odczyt wodociągu: Tomek Owsiak. Współrzędne punktów kontrolnych: rejestr zabytków (zabytek.pl), odtur.pl, Wikimedia Commons. Tło: OpenStreetMap, ortofotomapa Geoportalu, zdjęcia satelitarne Esri.</p>
+    <p class="src">Plan 1811: Archiwum Państwowe w Opolu, Rejencja Opolska (nr 1191), Mapy i plany IX, sygn. 81. Plan 1890: Polona (Biblioteka Narodowa). Odczyt wodociągu 1811: Tomek Owsiak. Współrzędne punktów kontrolnych: rejestr zabytków (zabytek.pl), odtur.pl, Wikimedia Commons. Tło: OpenStreetMap, ortofotomapa Geoportalu, zdjęcia satelitarne Esri.</p>
   </section>
 </aside>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-const IMG_SRC = "__IMG__";
-const IMG_W = __W__, IMG_H = __H__;
 const DATA = __DATA__;
+const PLANS = DATA.plans;
+let PL = PLANS[0], IMG_W = PL.w, IMG_H = PL.h;
 const LAT0 = 50.3215, LON0 = 17.5806;
 const KY = 111250, KX = 111320 * Math.cos(LAT0 * Math.PI / 180);
 const en = (lat, lon) => [(lon - LON0) * KX, (lat - LAT0) * KY];
 const ll = (E, N) => [LAT0 + N / KY, LON0 + E / KX];
-const STORE = "prudnik1811-points-v2";
-
-let points = load() || DATA.points.map(p => ({...p, on: true}));
-let model = "sim", T = null;
-
-function load(){ try { const s = localStorage.getItem(STORE); return s ? JSON.parse(s) : null; } catch(e){ return null; } }
-function save(){ try { localStorage.setItem(STORE, JSON.stringify(points)); } catch(e){} }
+const STORE = id => "prudnik-plany-v1-" + id;
+const fresh = pl => pl.points.map(p => ({...p, on: true}));
+function load(pl){ try { const s = localStorage.getItem(STORE(pl.id)); return s ? JSON.parse(s) : null; } catch(e){ return null; } }
+function save(){ try { localStorage.setItem(STORE(PL.id), JSON.stringify(points)); } catch(e){} }
+let points = load(PL) || fresh(PL);
+let model = "sim", T = null, TW = null;
 
 // --- rozwiązywanie układów równań (metoda najmniejszych kwadratów) ---
 function lsq(rows, rhs, n){
@@ -170,8 +186,8 @@ function lsq(rows, rhs, n){
   for (let i=n-1;i>=0;i--){ let s = b[i]; for (let j=i+1;j<n;j++) s -= A[i][j]*x[j]; x[i] = s/A[i][i]; }
   return x;
 }
-function fit(){
-  const act = points.filter(p => p.on);
+function fit(pts){
+  const act = (pts || points).filter(p => p.on);
   let m = model;
   if (m === "aff" && act.length < 3) m = "sim";
   if (act.length < 2) return null;
@@ -187,7 +203,9 @@ function fit(){
   if (!c || !d) return null;
   return {c, d, model:m};
 }
-const fwd = (u,v) => ll(T.c[0]*u + T.c[1]*v + T.c[2], T.d[0]*u + T.d[1]*v + T.d[2]);
+const fwdT = (X,u,v) => ll(X.c[0]*u + X.c[1]*v + X.c[2], X.d[0]*u + X.d[1]*v + X.d[2]);
+const fwd = (u,v) => fwdT(T,u,v);
+const fwdW = (u,v) => fwdT(TW,u,v);
 function inv(lat, lon){
   const [E,N] = en(lat,lon), a=T.c[0], b=T.c[1], c=T.d[0], d=T.d[1], det = a*d - b*c;
   const e = E - T.c[2], n = N - T.d[2];
@@ -207,7 +225,7 @@ L.control.scale({imperial:false}).addTo(map);
 const Plan = L.Layer.extend({
   onAdd(m){
     this._img = L.DomUtil.create("img", "leaflet-zoom-animated");
-    this._img.src = IMG_SRC; this._img.alt = "Plan Prudnika z 1811 roku";
+    this._img.src = PL.img; this._img.alt = "Plan Prudnika z " + PL.id + " roku";
     Object.assign(this._img.style, {position:"absolute", left:"0", top:"0", width:IMG_W+"px", height:IMG_H+"px", transformOrigin:"0 0", pointerEvents:"none", maxWidth:"none"});
     m.getPanes().overlayPane.appendChild(this._img);
     m.on("zoomanim", this._anim, this); m.on("viewreset zoomend", this.update, this);
@@ -227,22 +245,23 @@ const plan = new Plan();
 const labelLayer = L.layerGroup(), cpLayer = L.layerGroup(), waterLayer = L.layerGroup();
 const W = DATA.water;
 function drawWater(){
-  waterLayer.clearLayers(); if (!T) return;
-  W.rury.forEach(r => L.polyline(r.pts.map(p => fwd(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
-  W.zdroje.forEach(z => L.circleMarker(fwd(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
+  waterLayer.clearLayers(); if (!TW) return;
+  W.rury.forEach(r => L.polyline(r.pts.map(p => fwdW(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
+  W.zdroje.forEach(z => L.circleMarker(fwdW(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
   const pop = (o, q) => `<b>${o.pl}</b><br>${o.opis}<br><span style="font-family:monospace">${q[0].toFixed(5)}° N, ${q[1].toFixed(5)}° E</span><br><small>dokładność ok. ±20–30 m</small>`;
-  const c = W.czerpadlo, qc = fwd(c.u,c.v);
+  const c = W.czerpadlo, qc = fwdW(c.u,c.v);
   L.marker(qc, {icon:L.divIcon({className:"", html:'<div class="kunszt" style="border-radius:50%;transform:none"></div>', iconSize:[20,20], iconAnchor:[10,10]})}).bindPopup(pop(c, qc)).addTo(waterLayer);
-  const w = W.wieza, qw = fwd(w.u,w.v);
+  const w = W.wieza, qw = fwdW(w.u,w.v);
   L.marker(qw, {icon:L.divIcon({className:"", html:'<div class="kunszt"></div>', iconSize:[20,20], iconAnchor:[10,10]})}).bindPopup(pop(w, qw)).addTo(waterLayer);
 }
 
 
 function drawLabels(){
   labelLayer.clearLayers();
-  DATA.labels.forEach(l => {
+  PL.labels.forEach(l => {
+    if (l.u == null) return;
     L.marker(fwd(l.u,l.v), {icon: L.divIcon({className:"", html:`<span class="lbl">${l.n}</span>`, iconSize:[22,16], iconAnchor:[11,8]})})
-      .bindPopup(`<b>${l.n}. ${l.pl}</b><br><span style="color:#666">${l.de}</span>`).addTo(labelLayer);
+      .bindPopup(`<b>${l.n}. ${l.pl}</b><br><span style="color:#666">${l.de}${l.house ? " · dom nr " + l.house : ""}</span>`).addTo(labelLayer);
   });
 }
 function drawCp(){
@@ -283,6 +302,8 @@ function stats(){
 }
 function refresh(){
   T = fit(); save();
+  const p1811 = PLANS.find(p => p.id === "1811");
+  TW = PL.id === "1811" ? T : fit(load(p1811) || fresh(p1811));
   if (T){ if (!map.hasLayer(plan)) plan.addTo(map); plan.update(); }
   if (document.getElementById("showLabels").checked && T) drawLabels();
   drawWater();
@@ -294,10 +315,10 @@ const op = document.getElementById("op");
 op.oninput = () => { plan.setOpacity(op.value/100); document.getElementById("opv").textContent = op.value; };
 document.getElementById("showLabels").onchange = e => { if (e.target.checked){ drawLabels(); labelLayer.addTo(map); } else map.removeLayer(labelLayer); };
 document.getElementById("showWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
-document.getElementById("goWater").onclick = () => { if (!T) return; map.setView(fwd(2300,1540), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
+document.getElementById("goWater").onclick = () => { if (!TW) return; map.setView(fwdW(2300,1540), 17.5); waterLayer.addTo(map); document.getElementById("showWater").checked = true; };
 document.getElementById("showCp").onchange = e => e.target.checked ? cpLayer.addTo(map) : map.removeLayer(cpLayer);
 document.getElementById("model").onchange = e => { model = e.target.value; refresh(); };
-document.getElementById("resetBtn").onclick = () => { points = DATA.points.map(p => ({...p, on:true})); refresh(); };
+document.getElementById("resetBtn").onclick = () => { points = fresh(PL); refresh(); };
 document.getElementById("toggle").onclick = e => { const pn = document.getElementById("panel"); pn.classList.toggle("min"); e.target.textContent = pn.classList.contains("min") ? "Rozwiń" : "Zwiń"; setTimeout(() => map.invalidateSize(), 50); };
 
 // dodawanie punktu w dwóch krokach
@@ -333,13 +354,42 @@ document.getElementById("expQgis").onclick = () => {
   const lines = ["#CRS: GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563]],CS[ellipsoidal,2],AXIS[\"latitude\",north],AXIS[\"longitude\",east],ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",4326]]",
     "mapX,mapY,sourceX,sourceY,enable,dX,dY,residual"];
   points.forEach(p => lines.push(`${p.lon},${p.lat},${p.u},${-p.v},${p.on?1:0},0,0,0`));
-  download("plan1811.jpg.points", lines.join("\n"), "text/plain");
+  download(PL.img + ".points", lines.join("\n"), "text/plain");
 };
-document.getElementById("expJson").onclick = () => download("prudnik1811-punkty.json", JSON.stringify(points, null, 2), "application/json");
+document.getElementById("expJson").onclick = () => download("prudnik" + PL.id + "-punkty.json", JSON.stringify(points, null, 2), "application/json");
 
-refresh();
-op.oninput();
-labelLayer.addTo(map); waterLayer.addTo(map); cpLayer.addTo(map);
+function legend(){
+  const ul = document.getElementById("legList"); ul.innerHTML = "";
+  PL.labels.forEach(l => {
+    const li = document.createElement("li"); if (l.u == null) li.className = "none";
+    li.innerHTML = `<b>${l.n}</b><span>${l.pl}<br><small>${l.de}${l.house ? " · dom nr " + l.house : ""}</small></span>`;
+    if (l.u != null){ const b = document.createElement("button"); b.type = "button"; b.textContent = "pokaż"; b.setAttribute("aria-label", "Pokaż na mapie: " + l.pl);
+      b.onclick = () => { if (T) map.setView(fwd(l.u,l.v), 18); }; li.appendChild(b); }
+    ul.appendChild(li);
+  });
+  const miss = PL.labels.filter(l => l.u == null).length;
+  document.getElementById("legNote").textContent = miss ? `Pozycje wyszarzone (${miss}) nie są jeszcze zlokalizowane na planie.` : "";
+}
+function selectPlan(id){
+  PL = PLANS.find(p => p.id === id) || PLANS[0]; IMG_W = PL.w; IMG_H = PL.h;
+  points = load(PL) || fresh(PL);
+  if (map.hasLayer(plan)) map.removeLayer(plan);
+  document.getElementById("planTitle").textContent = PL.head;
+  document.getElementById("planMeta").textContent = PL.meta;
+  document.getElementById("planSource").textContent = "Źródło: " + PL.source;
+  document.getElementById("scaleNote").textContent = PL.scaleNote;
+  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.id === PL.id));
+  document.getElementById("showWater").checked = PL.id === "1811";
+  if (PL.id === "1811") waterLayer.addTo(map); else map.removeLayer(waterLayer);
+  legend(); refresh(); op.oninput();
+  try { localStorage.setItem("prudnik-plany-wybor", PL.id); } catch(e){}
+}
+const tabs = document.getElementById("tabs");
+PLANS.forEach(p => { const b = document.createElement("button"); b.type = "button"; b.role = "tab"; b.dataset.id = p.id; b.textContent = p.id; b.onclick = () => selectPlan(p.id); tabs.appendChild(b); });
+let start = PLANS[0].id; try { start = localStorage.getItem("prudnik-plany-wybor") || start; } catch(e){}
+if (location.hash && PLANS.some(p => "#p" + p.id === location.hash)) start = location.hash.slice(2);
+labelLayer.addTo(map); cpLayer.addTo(map);
+selectPlan(start);
 </script>
 </body>
 </html>
