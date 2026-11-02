@@ -266,7 +266,7 @@ const labelLayer = L.layerGroup(), cpLayer = L.layerGroup(), waterLayer = L.laye
 const W = DATA.water;
 function drawWater(){
   waterLayer.clearLayers(); if (!TW) return;
-  W.rury.forEach(r => L.polyline(r.pts.map(p => fwdW(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
+  W.rury.forEach(r => L.polyline(r.pts.map(p => fwdW(p[0],p[1])), {color:"#0b4fc4", weight:4, opacity:.9, lineJoin:"round", lineCap:"round"}).bindPopup(`<b>${r.pl}</b>`).addTo(waterLayer));
   W.zdroje.forEach(z => L.circleMarker(fwdW(z.u,z.v), {radius:7, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${z.pl}</b>`).addTo(waterLayer));
   const pop = (o, q) => `<b>${o.pl}</b><br>${o.opis}<br><span style="font-family:monospace">${q[0].toFixed(5)}° N, ${q[1].toFixed(5)}° E</span><br><small>dokładność ok. ±20–30 m</small>`;
   const c = W.czerpadlo, qc = fwdW(c.u,c.v);

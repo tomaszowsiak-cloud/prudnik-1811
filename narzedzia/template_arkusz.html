@@ -282,7 +282,7 @@ D.poi.forEach((p, i) => {
 const placLayer = L.layerGroup();
 D.plac.forEach(pg => L.polygon(pg.pts, {pane:"over", color:"#0b4fc4", weight:3, fillOpacity:.08}).bindPopup(`<b>${pg.pl}</b><br>${pg.opis}`).addTo(placLayer));
 const waterLayer = L.layerGroup();
-D.water.lines.forEach(l => L.polyline(l.pts, {pane:"over", color:"#0b4fc4", weight:3}).bindPopup(`<b>${l.pl}</b>`).addTo(waterLayer));
+D.water.lines.forEach(l => L.polyline(l.pts, {pane:"over", color:"#0b4fc4", weight:3, lineJoin:"round", lineCap:"round"}).bindPopup(`<b>${l.pl}</b>`).addTo(waterLayer));
 D.water.points.forEach(p => L.circleMarker([p.lat, p.lon], {pane:"over", radius:p.big ? 7 : 5, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${p.pl}</b>`).addTo(waterLayer));
 document.getElementById("lPoi").onchange = e => e.target.checked ? poiLayer.addTo(map) : map.removeLayer(poiLayer);
 document.getElementById("lPlac").onchange = e => e.target.checked ? placLayer.addTo(map) : map.removeLayer(placLayer);
