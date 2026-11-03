@@ -137,6 +137,7 @@ input[type=range]{flex:1;accent-color:var(--carmine);min-width:0}
       <label><input type="checkbox" id="lPoi" checked> Numery miejsc z listy</label>
       <label><input type="checkbox" id="lPlac"> Obrys placu ćwiczeń (plan garnizonu, nr 68)</label>
       <label><input type="checkbox" id="lWater"> Wodociąg z 1811 roku</label>
+      <label><input type="checkbox" id="lSewer"> Sieć kanalizacyjna z 1959 roku (sama sieć)</label>
     </div>
   </section>
 
@@ -170,7 +171,7 @@ function makeLayer(id, pane){
   if (id === "esri") return L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {pane, maxZoom:19, attribution:"Zdjęcia © Esri, Maxar, Earthstar Geographics"});
   if (id === "orto") return L.tileLayer.wms("https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WMS/StandardResolution", {pane, layers:"Raster", format:"image/jpeg", maxZoom:19, attribution:"Ortofotomapa © GUGiK"});
   const s = SHEETS.find(x => x.id === id);
-  return L.imageOverlay(s.img, B, {pane, alt:"Arkusz " + s.label, interactive:false});
+  return L.imageOverlay(s.img, s.bounds || B, {pane, alt:"Arkusz " + s.label, interactive:false});
 }
 const side = {L:{id:null, layer:null}, R:{id:null, layer:null}};
 function setSide(k, id){
@@ -286,6 +287,8 @@ D.water.lines.forEach(l => L.polyline(l.pts, {pane:"over", color:"#0b4fc4", weig
 D.water.points.forEach(p => L.circleMarker([p.lat, p.lon], {pane:"over", radius:p.big ? 7 : 5, color:"#0b4fc4", weight:3, fillColor:"#fff", fillOpacity:1}).bindPopup(`<b>${p.pl}</b>`).addTo(waterLayer));
 document.getElementById("lPoi").onchange = e => e.target.checked ? poiLayer.addTo(map) : map.removeLayer(poiLayer);
 document.getElementById("lPlac").onchange = e => e.target.checked ? placLayer.addTo(map) : map.removeLayer(placLayer);
+const sewerLayer = D.sewer ? L.imageOverlay(D.sewer.img, D.sewer.bounds, {pane:"over", alt:"Sieć kanalizacyjna 1959", interactive:false}) : null;
+document.getElementById("lSewer").onchange = e => { if (!sewerLayer) return; e.target.checked ? sewerLayer.addTo(map) : map.removeLayer(sewerLayer); };
 document.getElementById("lWater").onchange = e => e.target.checked ? waterLayer.addTo(map) : map.removeLayer(waterLayer);
 
 // --- wydania ---
