@@ -357,7 +357,7 @@ Pełna lista skanów arkusza: [Mapster, arkusz 5671](http://igrek.amzp.pl/result
 
 *Plan sytuacyjny sieci kanalizacyjnej m. Prudnika*, 1:2500, z inwentaryzacji sieci w 1959 roku. Na planie są kolektory z numerami studzienek, średnicami (Φ 0,15–0,75 m) i spadkami, wyloty do rzeki Prudnik i płuczki automatyczne.
 
-- Dopasowanie: plan nie ma siatki współrzędnych, więc nałożono go, dopasowując narysowany na nim bieg rzeki Prudnik do rzeki na arkuszu 5671 z 1930 roku (przekształcenie afiniczne, średnia odchyłka na rzece ok. 12 m). Plan jest sklejony z kilku fotografii, więc lokalnie, zwłaszcza przy szwach, może się rozjeżdżać o 20–30 m.
+- Dopasowanie: sklejka planu przygotowana wcześniej miała przesunięcia na szwach (np. rzeka urywała się przy Bramie Dolnej o ok. 50 m), więc plan złożono od nowa z 8 zdjęć: zdjęcia dopasowano do siebie po tysiącach wspólnych punktów (średni błąd zszycia kilka metrów). Gotowy plan nałożono po biegu rzeki na arkusz z 1930 roku i poprawiono po skrzyżowaniach ulic na arkuszu z 1943 roku. Dokładność ok. 10–20 m.
 - Na stronie arkusza 5671 plan jest do wyboru w porównaniu (*1959 – plan sieci kanalizacyjnej*), a sama sieć jako warstwa *Sieć kanalizacyjna z 1959 roku*, którą można nałożyć na dowolne wydanie arkusza albo na zdjęcia satelitarne.
 - Pliki: `kanal1959.jpg` (plan przeliczony do odwzorowania mapy), `kanal1959_siec.png` (wyodrębniona sieć i rzeka, przezroczyste tło), `dane/kanal1959.json` (zasięg).
 - Źródło: fotografie planu od Tomka Owsiaka; miejsce przechowywania do uzupełnienia.
