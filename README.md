@@ -4,7 +4,7 @@ Historyczne plany Prudnika (niem. Neustadt in Oberschlesien) nałożone na wspó
 
 **Strona:** https://tomaszowsiak-cloud.github.io/prudnik-1811/
 
-**Arkusz 5671 (1884–1953):** https://tomaszowsiak-cloud.github.io/prudnik-1811/arkusz.html
+**Jak rosło miasto (arkusz 5671, 1884–1953):** https://tomaszowsiak-cloud.github.io/prudnik-1811/arkusz.html
 
 | Plan | Autor | Skala | Źródło | Średni błąd dopasowania |
 |---|---|---|---|---|
