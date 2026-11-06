@@ -357,7 +357,8 @@ Pełna lista skanów arkusza: [Mapster, arkusz 5671](http://igrek.amzp.pl/result
 
 *Plan sytuacyjny sieci kanalizacyjnej m. Prudnika*, 1:2500, z inwentaryzacji sieci w 1959 roku. Na planie są kolektory z numerami studzienek, średnicami (Φ 0,15–0,75 m) i spadkami, wyloty do rzeki Prudnik i płuczki automatyczne.
 
-- Dopasowanie: sklejka planu przygotowana wcześniej miała przesunięcia na szwach (np. rzeka urywała się przy Bramie Dolnej o ok. 50 m), więc plan złożono od nowa z 8 zdjęć: zdjęcia dopasowano do siebie po tysiącach wspólnych punktów (średni błąd zszycia kilka metrów). Gotowy plan nałożono po biegu rzeki na arkusz z 1930 roku i poprawiono po skrzyżowaniach ulic na arkuszu z 1943 roku. Dokładność ok. 10–20 m.
+- Dopasowanie: plan złożono z 20 zdjęć zrobionych z bliska (6 listopada 2026). Każde pole planszy między zgięciami pochodzi z jednego zdjęcia, zdjęcia dopasowano do siebie po wspólnych punktach (błąd zszycia kilka pikseli), a oświetlenie wyrównano. Dzięki temu treść przy zgięciach się nie dubluje, a numery studzienek i średnice są czytelne po przybliżeniu. Na mapie plan osadzono według wcześniejszego dopasowania (po biegu rzeki na arkuszu z 1930 roku i po skrzyżowaniach ulic na arkuszu z 1943 roku): nowa sklejka zgadza się z poprzednią średnio na 3–4 m. Dokładność względem mapy ok. 10–20 m.
+- Poprzednia wersja była złożona z 8 zdjęć całego planu i miała mniejszą rozdzielczość.
 - Na stronie arkusza 5671 plan jest do wyboru w porównaniu (*1959 – plan sieci kanalizacyjnej*), a sama sieć jako warstwa *Sieć kanalizacyjna z 1959 roku*, którą można nałożyć na dowolne wydanie arkusza albo na zdjęcia satelitarne.
-- Pliki: `kanal1959.jpg` (plan przeliczony do odwzorowania mapy), `kanal1959_siec.png` (wyodrębniona sieć i rzeka, przezroczyste tło), `dane/kanal1959.json` (zasięg).
+- Pliki: `kanal1959.jpg` (plan przeliczony do odwzorowania mapy, 8724 × 5820 px), `kanal1959_siec.png` (wyodrębniona sieć i rzeka, przezroczyste tło), `dane/kanal1959.json` (zasięg).
 - Źródło: fotografie planu od Tomka Owsiaka; miejsce przechowywania do uzupełnienia.
